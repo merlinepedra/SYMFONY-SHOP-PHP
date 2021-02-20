@@ -4,12 +4,18 @@ namespace App\Entity;
 
 use App\Repository\ProductoRepository;
 use Doctrine\ORM\Mapping as ORM;
+use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=ProductoRepository::class)
  */
 class Producto
 {
+    public function __construct()
+    {
+        $this->fecha_creacion = new DateTime('now');
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -105,12 +111,14 @@ class Producto
         return $this->fecha_creacion;
     }
 
+    /*
     public function setFechaCreacion(\DateTimeInterface $fecha_creacion): self
     {
         $this->fecha_creacion = $fecha_creacion;
 
         return $this;
     }
+    */
 
     public function getPrecioUnidad(): ?float
     {

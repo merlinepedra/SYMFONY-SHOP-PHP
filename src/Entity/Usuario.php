@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use DateTime;
+
 /**
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
  */
@@ -57,7 +59,7 @@ class Usuario implements UserInterface, \Serializable
      */
     private $foto;
 
-        /**
+    /**
      * @ORM\Column(type="date")
      */
     private $fecha_join;
@@ -75,6 +77,7 @@ class Usuario implements UserInterface, \Serializable
     public function __construct()
     {
         $this->ordens = new ArrayCollection();
+        $this->fecha_join = new DateTime('now');
     }
 
 

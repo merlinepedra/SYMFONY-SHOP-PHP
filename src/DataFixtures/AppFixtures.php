@@ -31,7 +31,7 @@ class AppFixtures extends Fixture
             $producto->setNombre($nombre);
             $producto->setDescripcion($descripcion);
             $producto->setCategoria($categoria);
-            $producto->setFechaCreacion($fecha_creacion);
+            //$producto->setFechaCreacion($fecha_creacion);
             $producto->setPrecioUnidad($precio_unidad);
 
             $manager->persist($producto);
