@@ -1,0 +1,21 @@
+{% extends 'conbarra.html.twig' %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('./build/components/base_index.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class='jumbotron'>
+        <div class='row'>
+            <div class="col-sm-3">
+                    {#{{ dump(categorias) }}#}
+                <ul>
+                {% for cat in categoria_manager.getCategorias() %}
+                        <li>{{ cat.nombre }}</li>
+                {% endfor %}
+                </ul>
+            </div> 
+            {% block body2 %}{% endblock %}
+        </div>
+    </div> 
+{% endblock %}
