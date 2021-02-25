@@ -5,3 +5,4 @@ twig:
     exception_controller: null
     globals:
         categoria_manager: '@App\Service\CategoryService'
+    form_themes: ['bootstrap_4_layout.html.twig']

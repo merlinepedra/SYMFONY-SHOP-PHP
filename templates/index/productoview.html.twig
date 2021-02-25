@@ -1,0 +1,33 @@
+{% extends 'index/base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body2 %}
+<div class="col-sm-8">
+        <h2>{{ producto.nombre }}<h6 class="badge badge-danger">{{ producto.categoria.nombre }}</h6></h2>
+        <br>
+        <p>{{ producto.descripcion }}</p>
+        <br>
+        Creado: <strong>{{ producto.FechaCreacion|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+        <br>
+        Precio: <strong>{{ producto.preciounidad }}</strong>$
+        {#
+        #}
+
+        <figure> 
+                {% if producto.fotos %} 
+                {% for foto in fotos %}
+                        <img width="300" height="300" alt="picture" src="{{ asset('./images/') }}">
+                {% endfor %}
+                {% endif %}
+        <img width="300" height="300" alt="picture" src="{{ asset('./images/1.jpg') }}">
+        </figure>
+        
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="{{url('carrito_plus', {'productoid': producto.id})}}">Añadir al carrito</a>
+        {% else %}
+                Debes loguearte para realizar compras.
+        {% endif %}
+
+</div>
+{% endblock %}

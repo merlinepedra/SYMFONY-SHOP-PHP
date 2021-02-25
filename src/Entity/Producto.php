@@ -106,13 +106,13 @@ class Producto
         return $this;
     }
 
-    public function getFechaCreacion(): ?\DateTimeInterface
+    public function getFechaCreacion(): ?\DateTime
     {
         return $this->fecha_creacion;
     }
 
     /*
-    public function setFechaCreacion(\DateTimeInterface $fecha_creacion): self
+    public function setFechaCreacion(\DateTime $fecha_creacion): self
     {
         $this->fecha_creacion = $fecha_creacion;
 
