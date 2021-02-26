@@ -25,10 +25,26 @@ class IndexController extends AbstractController
     public function index(): Response
     {
         $manager = $this->getDoctrine()->getManager();
-        $categoriaRepo = $manager->getRepository(Categoria::class);
         $productoRepo = $manager->getRepository(Producto::class);
+        $categoriaRepo = $manager->getRepository(Categoria::class);
 
-        return $this->render('index/index.html.twig');
+        $novedades = $productoRepo->getUploadSince(10, 5);
+        $populares = $productoRepo->getMostPopular(5);
+        $valorados = $productoRepo->getMostExpensive(5);
+        $ventas = [];
+
+        for ($i=0; $i < count($populares); $i++) { 
+            $ventas[$i] = $populares[$i]['SUM(cantidad)'];        
+            $populares[$i] =  $productoRepo->find($populares[$i]['producto_id']);
+        }
+
+
+        return $this->render('index/index.html.twig', [
+            'novedades' => $novedades,
+            'populares' => $populares,
+            'valorados' => $valorados,
+            'ventas' => $ventas
+        ]);
     }
 
     /**

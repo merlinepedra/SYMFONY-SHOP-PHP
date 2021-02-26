@@ -2,6 +2,10 @@
 
 {% block title %}Home{% endblock %}
 
+{% block morestyle%}
+        <link rel="stylesheet" href="{{ asset('./build/components/productoview.css') }}">
+{% endblock %}
+
 {% block body2 %}
 <div class="col-sm-8">
         <h2>{{ producto.nombre }}<h6 class="badge badge-danger">{{ producto.categoria.nombre }}</h6></h2>

@@ -2,9 +2,15 @@
 
 namespace App\Repository;
 
+use App\Entity\Orden;
 use App\Entity\Producto;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+
+use DateTime;
+//use Doctrine\ORM\Query\AST\Join;
+use Doctrine\ORM\Query\Expr\Join;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 /**
  * @method Producto|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,22 +25,64 @@ class ProductoRepository extends ServiceEntityRepository
         parent::__construct($registry, Producto::class);
     }
 
-    // /**
-    //  * @return Producto[] Returns an array of Producto objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return Producto[]
+    */
+    public function getUploadSince($days, $max) : array
     {
+        $date = new DateTime('now - '.$days.' days');
+
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('p.fecha_creacion > :val')
+            ->setParameter('val', $date)
             ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults($max)
             ->getQuery()
             ->getResult()
         ;
     }
+
+    /**
+    * @return Producto[]
     */
+    public function getMostExpensive($max) : array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.precio_unidad', 'DESC')
+            ->setMaxResults($max)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    /**
+    * @return Producto[]
+    */
+    public function getMostPopular($max) : array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 
+        "SELECT producto_id, SUM(cantidad), 
+        producto.nombre, producto.precio_unidad, categoria_id
+        FROM `orden`
+        INNER JOIN `producto`
+        ON producto_id = producto.id
+        INNER JOIN `categoria`
+        ON categoria.id = producto.categoria_id
+        WHERE estado = 'pagado'
+        GROUP BY producto_id
+        ORDER BY sum(cantidad) DESC
+        LIMIT 5
+        ";
+
+        $stm = $conn->prepare($sql);
+        $stm->execute();
+        $result = $stm->fetchAllAssociative();
+        //die;
+        
+        return $result;
+    }
 
     /*
     public function findOneBySomeField($value): ?Producto

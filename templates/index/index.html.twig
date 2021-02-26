@@ -2,10 +2,39 @@
 
 {% block title %}Home{% endblock %}
 
-{% block stylesheets %}
+{% block morestyle%}
         <link rel="stylesheet" href="{{ asset('./build/components/index.css') }}">
 {% endblock %}
 
 {% block body2 %}
-Este es el index!!
+
+{% set conjuntos = {
+        'Novedades': novedades, 
+        'Más populares': populares,
+        'Más valorados': valorados}%}
+
+<ul>
+{% for key,array in conjuntos%}
+        <li>
+        <div>
+                <h4 class="h3 mb-3 font-weight-normal">{{key}}</h4>
+                <ul>
+                        {% for index, x in array %}
+                                <li>
+                                        <h5>{{ x.nombre }}</h5>
+                                        <span class="badge badge-danger">{{ x.categoria.nombre }}</span>
+                                        <span>Precio: <strong>{{ x.preciounidad }}</strong>$</span>
+                                        Creado: <strong>{{ x.FechaCreacion|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                                        {% if key == 'Más populares'%}
+                                        Ventas: <strong>{{ventas[index]}}</strong>
+                                        {% endif %}
+                                </li>
+                        {% else %}
+                                No tenemos {{key|lower}} para ti, al menos hoy.
+                        {% endfor %}
+                </ul>
+        </div>
+        </li>
+{% endfor %}
+</ul>
 {% endblock %}
