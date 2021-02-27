@@ -13,8 +13,15 @@
             <div class="col-sm-3">
                     {#{{ dump(categorias) }}#}
                 <ul>
-                {% for cat in categoria_manager.getCategorias() %}
+                {% for cat in category_repo.findAll() %}
                         <li>{{ cat.nombre }}</li>
+                        <ul>
+                            {% set lista_productos = products_repo.getByCategory(cat) %}
+                            {# {{ dump(products_repo.getByCategory(cat)) }} #}
+                            {% for producto in  lista_productos%}
+                                <li><a href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
+                            {% endfor %}
+                        </ul>
                 {% endfor %}
                 </ul>
             </div> 

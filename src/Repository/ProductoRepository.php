@@ -55,6 +55,19 @@ class ProductoRepository extends ServiceEntityRepository
         ;
     }
 
+
+    public function getByCategory($category) : array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.categoria = :cat')
+            ->setParameter('cat', $category)
+            ->orderBy('p.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
     /**
     * @return Producto[]
     */

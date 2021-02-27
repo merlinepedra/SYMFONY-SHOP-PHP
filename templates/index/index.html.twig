@@ -21,7 +21,9 @@
                 <ul>
                         {% for index, x in array %}
                                 <li>
-                                        <h5>{{ x.nombre }}</h5>
+                                        <a href='{{ path('productoview', {productoid: x.id }) }}'>
+                                                <h5>{{ x.nombre }}</h5>
+                                        </a>
                                         <span class="badge badge-danger">{{ x.categoria.nombre }}</span>
                                         <span>Precio: <strong>{{ x.preciounidad }}</strong>$</span>
                                         Creado: <strong>{{ x.FechaCreacion|format_datetime('medium', 'short', '', 'UTC') }}</strong>

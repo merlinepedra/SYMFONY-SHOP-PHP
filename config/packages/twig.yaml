@@ -4,5 +4,6 @@ twig:
     strict_variables: '%kernel.debug%'
     exception_controller: null
     globals:
-        categoria_manager: '@App\Service\CategoryService'
+        category_repo: '@App\Repository\CategoriaRepository'
+        products_repo: '@App\Repository\ProductoRepository'
     form_themes: ['bootstrap_4_layout.html.twig']
