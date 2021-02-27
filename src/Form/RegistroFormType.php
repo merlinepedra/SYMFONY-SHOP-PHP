@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\Image;
+
 
 class RegistroFormType extends AbstractType
 {
@@ -26,7 +28,13 @@ class RegistroFormType extends AbstractType
             ->add('direccion', TextareaType::class, ['label'=>'Dirección particular'])  
             ->add('foto', FileType::class, [
                 'label'=> 'Foto de perfil',
-                'required' => false])
+                'mapped' => false,
+                'required' => false,
+                'constraints'=> [
+                    new Image([
+                        'mimeTypesMessage'=>'Este archivo no es una imagen válida.'
+                    ])
+                ]])
             //->add('fecha_join')
             //->add('ultima_fecha_acceso')
             ->add('save', SubmitType::class)

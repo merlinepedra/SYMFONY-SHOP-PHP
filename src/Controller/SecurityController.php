@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,13 +10,10 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Form\RegistroFormType;
 use App\Entity\Usuario;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-
+use App\Service\FileUploader;
 
 class SecurityController extends AbstractController
 {
@@ -62,7 +58,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/sing_in", name="sing_in")
      */
-    public function new(Request $request, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator) : Response
+    public function new(Request $request, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, FileUploader $fileUploader) : Response
     {
         $user = new Usuario();
         $user->setRoles(['ROLE_USER']);
@@ -75,6 +71,13 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
             $user->setPassword($this->passwordEncoder->encodePassword($user, $form->get('password')->getData()));
+
+            $fotoFile = $form->get('foto')->getData();
+            if($fotoFile){
+                $fotoFileName =  $fileUploader->upload($fotoFile);
+                $user->setFoto($fotoFileName);
+            }
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block body2 %}
+{% if producto %}
 <div class="col-sm-8">
         <h2>{{ producto.nombre }}<h6 class="badge badge-danger">{{ producto.categoria.nombre }}</h6></h2>
         <br>
@@ -34,4 +35,7 @@
         {% endif %}
 
 </div>
+{% else %}
+        <h2>Ese producto no existe.</h2>
+{% endif %}
 {% endblock %}

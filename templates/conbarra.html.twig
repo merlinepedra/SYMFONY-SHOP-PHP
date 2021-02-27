@@ -20,7 +20,13 @@
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                         <li class="nav-item dropdown" *ngIf='isLoggedIn()'>
                             <a class="nav-link dropdown-toggle" data-toggle='dropdown'>
-                                    {{app.user.nombre}}
+                                <span>
+                                        {% if app.user.foto %}
+                                                <img src="{{ asset('uploads/' ~ app.user.foto) }}" 
+                                                style="margin: 5px; width: 40px; height: 40px; border-radius: 40px;">
+                                        {% endif %}
+                                        {{app.user.nombre}}
+                                </span>
                             </a>
                             <a href="{{url('app_logout')}}" class="nav-link dropdown-toggle" data-toggle='dropdown'>
                                 Cerrar sesión
