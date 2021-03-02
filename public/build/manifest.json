@@ -1,6 +1,21 @@
 {
-  "build/app.css": "/build/app.css",
-  "build/app.js": "/build/app.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-28f194.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-28f194.js"
+  "tiendecita/public/build/app.css": "/tiendecita/public/build/app.css",
+  "tiendecita/public/build/app.js": "/tiendecita/public/build/app.js",
+  "tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.css": "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.css",
+  "tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.js": "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.js",
+  "tiendecita/public/build/images/fa-solid-900.svg": "/tiendecita/public/build/images/fa-solid-900.0454203f.svg",
+  "tiendecita/public/build/images/fa-brands-400.svg": "/tiendecita/public/build/images/fa-brands-400.991c1c76.svg",
+  "tiendecita/public/build/fonts/fa-solid-900.eot": "/tiendecita/public/build/fonts/fa-solid-900.6606667d.eot",
+  "tiendecita/public/build/fonts/fa-solid-900.ttf": "/tiendecita/public/build/fonts/fa-solid-900.915a0b79.ttf",
+  "tiendecita/public/build/images/fa-regular-400.svg": "/tiendecita/public/build/images/fa-regular-400.f3187c74.svg",
+  "tiendecita/public/build/fonts/fa-brands-400.eot": "/tiendecita/public/build/fonts/fa-brands-400.98f20b9e.eot",
+  "tiendecita/public/build/fonts/fa-brands-400.ttf": "/tiendecita/public/build/fonts/fa-brands-400.330e879a.ttf",
+  "tiendecita/public/build/fonts/fa-solid-900.woff": "/tiendecita/public/build/fonts/fa-solid-900.f4f93856.woff",
+  "tiendecita/public/build/fonts/fa-brands-400.woff": "/tiendecita/public/build/fonts/fa-brands-400.5f63cb7f.woff",
+  "tiendecita/public/build/fonts/fa-solid-900.woff2": "/tiendecita/public/build/fonts/fa-solid-900.3eb06c70.woff2",
+  "tiendecita/public/build/fonts/fa-brands-400.woff2": "/tiendecita/public/build/fonts/fa-brands-400.6e63bd22.woff2",
+  "tiendecita/public/build/fonts/fa-regular-400.eot": "/tiendecita/public/build/fonts/fa-regular-400.62a07ffe.eot",
+  "tiendecita/public/build/fonts/fa-regular-400.ttf": "/tiendecita/public/build/fonts/fa-regular-400.ac236764.ttf",
+  "tiendecita/public/build/fonts/fa-regular-400.woff": "/tiendecita/public/build/fonts/fa-regular-400.ea5a41ec.woff",
+  "tiendecita/public/build/fonts/fa-regular-400.woff2": "/tiendecita/public/build/fonts/fa-regular-400.2c154b0f.woff2"
 }
