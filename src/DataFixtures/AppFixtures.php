@@ -174,7 +174,7 @@ class AppFixtures extends Fixture
         $random_user = function(){
             return $this->getReference([
                 'amalia@gmail.com', 
-                'july@symfony.com', 
+                'july@symfony.com',
                 'john_user@symfony.com'][random_int(0, 2)]);
         };
 

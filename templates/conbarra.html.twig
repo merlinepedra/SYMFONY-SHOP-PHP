@@ -1,48 +1,43 @@
 {% extends 'base.html.twig' %}
 
 {% block barra %}
-<nav class="navbar navbar-expand-lg"> 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                                <a class="nav-link" href=''>Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="">Mi perfil</a>
-                        </li>
 
-                        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class="nav-item">
                         <a class="nav-link" href="{{url('app_login')}}">Iniciar sesión</a>
-                        </li>
-                        {% endif %}
-                        
-                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <li class="nav-item dropdown" *ngIf='isLoggedIn()'>
-                            <a class="nav-link dropdown-toggle" data-toggle='dropdown'>
-                                <span>
-                                        {% if app.user.foto %}
-                                                <img src="{{ asset('uploads/' ~ app.user.foto) }}" 
-                                                style="margin: 5px; width: 40px; height: 40px; border-radius: 40px;">
-                                        {% endif %}
-                                        {{app.user.nombre}}
-                                </span>
-                            </a>
-                            <a href="{{url('app_logout')}}" class="nav-link dropdown-toggle" data-toggle='dropdown'>
-                                Cerrar sesión
-                            </a>
-                            <div class="dropdown-menu">
-                                    <a class="dropdown-item">Cerrar sesión</a>
-                            </div>
-                        </li> 
-                        {% endif %}
-      
-                </ul>
-
-                <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><fa-icon [icon]="search"></fa-icon></button>
-                </form>
-        </div>
-        </nav>
+                </li>
+        {% endif %}
+        {% if app.user %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown">
+                {% if app.user.foto %}
+                        <img src="{{ asset('uploads/' ~ app.user.foto) }}" 
+                        style="margin: 5px; width: 40px; height: 40px; border-radius: 40px;">
+                {% endif %}
+                {{app.user.nombre}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="">Editar perfil</a></li>
+                <li><a class="dropdown-item" href="{{url('app_logout')}}">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
+                </a></li>
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+        <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><fa-icon [icon]="search"></fa-icon></button>
+        </form>
+  </div>
+</nav>
 {% endblock %}

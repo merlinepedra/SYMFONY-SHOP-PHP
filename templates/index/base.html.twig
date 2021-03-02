@@ -1,27 +1,34 @@
 {% extends 'conbarra.html.twig' %}
 
-{% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('./build/components/base_index.css') }}">
-
-        {% block morestyle%}
-        {% endblock %}        
-{% endblock %}
-
 {% block body %}
+
     <div class='jumbotron'>
         <div class='row'>
             <div class="col-sm-3">
-                    {#{{ dump(categorias) }}#}
+                <button class="btn btn-lg btn-primary" type="submit">
+                Ver carrito
+                </button>
                 <ul>
+                <li style="text-align: center;background-color: darkgray; color: white;">Categorías</li>
                 {% for cat in category_repo.findAll() %}
-                        <li>{{ cat.nombre }}</li>
-                        <ul>
-                            {% set lista_productos = products_repo.getByCategory(cat) %}
-                            {# {{ dump(products_repo.getByCategory(cat)) }} #}
-                            {% for producto in  lista_productos%}
-                                <li><a href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
-                            {% endfor %}
-                        </ul>
+                    {% set lista_productos = products_repo.getByCategory(cat) %}
+                {% if lista_productos%}
+                <li>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        {{ cat.nombre }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        {% for producto in  lista_productos%}
+                            <li><a class="dropdown-item" href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
+                            <li class="divider"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                </li>
+                {% else %}
+                <li>{{ cat.nombre }}</li>
+                {% endif %}
                 {% endfor %}
                 </ul>
             </div> 
