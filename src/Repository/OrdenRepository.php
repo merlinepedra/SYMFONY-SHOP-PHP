@@ -19,32 +19,36 @@ class OrdenRepository extends ServiceEntityRepository
         parent::__construct($registry, Orden::class);
     }
 
-    // /**
-    //  * @return Orden[] Returns an array of Orden objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return Orden[]
+    */
+    public function getCarrito($userid) : array
     {
         return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
+            ->where('o.usuario = :user')
+            ->andWhere('o.estado = :estado')
+            ->setParameter('user', $userid)
+            ->setParameter('estado', 'sin pagar')
             ->orderBy('o.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Orden
+
+    /**
+    * @return Orden[]
+    */
+    public function getMisCompras($userid) : array
     {
         return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
+            ->where('o.usuario = :user')
+            ->andWhere('o.estado = :estado')
+            ->setParameter('user', $userid)
+            ->setParameter('estado', 'pagado')
+            ->orderBy('o.id', 'ASC')
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
 }

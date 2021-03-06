@@ -1,34 +1,37 @@
-{% extends 'conbarra.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('baseIndex')}}
+{% endblock %}
 
 {% block body %}
 
     <div class='jumbotron'>
         <div class='row'>
             <div class="col-sm-3">
-                <button class="btn btn-lg btn-primary" type="submit">
-                Ver carrito
-                </button>
-                <ul>
-                <li style="text-align: center;background-color: darkgray; color: white;">Categorías</li>
+                {% include 'index/verCarrito.html' %}
+                <ul class='listaDeElementos'>
+                <li class='listaDeElementos bg-dark' style="text-align: center;background-color: darkgray; color: white;">Categorías</li>
                 {% for cat in category_repo.findAll() %}
                     {% set lista_productos = products_repo.getByCategory(cat) %}
-                {% if lista_productos%}
-                <li>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
-                        {{ cat.nombre }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        {% for producto in  lista_productos%}
-                            <li><a class="dropdown-item" href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
-                            <li class="divider"></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                </li>
-                {% else %}
-                <li>{{ cat.nombre }}</li>
-                {% endif %}
+                    {% if lista_productos%}
+                        <li class='listaDeElementos'>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" style="font-size: large;">
+                                {{ cat.nombre }} <span style="color: orangered" class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                {% for producto in  lista_productos%}
+                                    <li><a class="dropdown-item" href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
+                                    <li class="divider"></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        </li>
+                    {% else %}
+                        <li class='listaDeElementos'>{{ cat.nombre }}</li>
+                    {% endif %}
                 {% endfor %}
                 </ul>
             </div> 

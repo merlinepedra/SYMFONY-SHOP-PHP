@@ -30,10 +30,14 @@ services:
         tags: ['controller.service_arguments']
 
 
-    App\Service\FileUploader:
+    App\Repository\ImageRepository:
             arguments:
                 $targetDirectory: '%foto_directory%'
-                
+
+
+    App\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%foto_directory%'               
 
                 
     admin.category:
@@ -59,6 +63,23 @@ services:
         arguments: [~, App\Entity\Orden, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Orden }
+
+    admin.image:
+        class: App\Admin\ImagenAdmin
+        arguments: [~, App\Entity\Image, ~]
+        #arguments:
+        #    - ~
+        #    - App\Entity\Image
+        #    - 'Sonata\AdminBundle\Controller\CRUDController'
+        #calls:  [setTranslationDomain, ['App']]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Image }
+        public: true
+
+
+    App\EventSubscriber\DataBaseSubscriber:
+        tags:
+                - { name: doctrine.event_subscriber, connection: default }
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

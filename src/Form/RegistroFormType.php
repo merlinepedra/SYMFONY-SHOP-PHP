@@ -36,7 +36,6 @@ class RegistroFormType extends AbstractType
                     ])
                 ]])
             //->add('fecha_join')
-            //->add('ultima_fecha_acceso')
             ->add('save', SubmitType::class)
         ;
     }
@@ -45,6 +44,7 @@ class RegistroFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Usuario::class,
+            'allow_extra_fields' => true
         ]);
     }
 }

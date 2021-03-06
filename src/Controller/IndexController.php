@@ -53,20 +53,13 @@ class IndexController extends AbstractController
     public function productoview($productoid): Response
     {
         $manager = $this->getDoctrine()->getManager();
-        $categoriaRepo = $manager->getRepository(Categoria::class);
         $productoRepo = $manager->getRepository(Producto::class);
-
-
-        $categorias = $categoriaRepo->findAll();
-        $user = $this->getUser();
 
         if($productoid == -1) $producto = $productoRepo->findAll()[0];
         else $producto = $productoRepo->find($productoid);
 
         return $this->render('index/productoview.html.twig', [
-            'categorias' => $categorias,
-            'producto' => $producto,
-            'user'=> $user
+            'producto' => $producto
         ]);
     }
 

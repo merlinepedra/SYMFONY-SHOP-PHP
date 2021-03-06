@@ -54,10 +54,7 @@ class Usuario implements UserInterface, \Serializable
      */
     private $direccion;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $foto;
+
 
     /**
      * @ORM\Column(type="date")
@@ -65,14 +62,14 @@ class Usuario implements UserInterface, \Serializable
     private $fecha_join;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $ultima_fecha_acceso;
-
-    /**
      * @ORM\OneToMany(targetEntity=Orden::class, mappedBy="usuario")
      */
     private $ordens;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Image::class, cascade={"persist", "remove"})
+     */
+    private $foto;
 
     public function __construct()
     {
@@ -199,18 +196,6 @@ class Usuario implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getFoto(): ?string
-    {
-        return $this->foto;
-    }
-
-    public function setFoto(?string $foto): self
-    {
-        $this->foto = $foto;
-
-        return $this;
-    }
-
     public function getFechaJoin(): ?\DateTimeInterface
     {
         return $this->fecha_join;
@@ -222,58 +207,47 @@ class Usuario implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getUltimaFechaAcceso(): ?\DateTimeInterface
+    /** @see \Serializable::serialize() */
+    public function serialize()
     {
-        return $this->ultima_fecha_acceso;
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+    
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
-    public function setUltimaFechaAcceso(\DateTimeInterface $fecha): self
+    /**
+     * @return Collection|Orden[]
+     */
+    public function getOrdens(): Collection
     {
-        $this->ultima_fecha_acceso = $fecha;
+        return $this->ordens;
+    }
+
+    public function addOrden(Orden $orden): self
+    {
+        if (!$this->ordens->contains($orden)) {
+            $this->ordens[] = $orden;
+            $orden->setUsuario($this);
+        }
+
         return $this;
     }
-
-        /** @see \Serializable::serialize() */
-        public function serialize()
-        {
-            return serialize(array(
-                $this->id,
-                $this->email,
-                $this->password,
-                // see section on salt below
-                // $this->salt,
-            ));
-        }
-    
-        /** @see \Serializable::unserialize() */
-        public function unserialize($serialized)
-        {
-            list (
-                $this->id,
-                $this->email,
-                $this->password,
-                // see section on salt below
-                // $this->salt
-            ) = unserialize($serialized, array('allowed_classes' => false));
-        }
-
-        /**
-         * @return Collection|Orden[]
-         */
-        public function getOrdens(): Collection
-        {
-            return $this->ordens;
-        }
-
-        public function addOrden(Orden $orden): self
-        {
-            if (!$this->ordens->contains($orden)) {
-                $this->ordens[] = $orden;
-                $orden->setUsuario($this);
-            }
-
-            return $this;
-        }
 
         public function removeOrden(Orden $orden): self
         {
@@ -283,6 +257,18 @@ class Usuario implements UserInterface, \Serializable
                     $orden->setUsuario(null);
                 }
             }
+
+            return $this;
+        }
+
+        public function getFoto(): ?Image
+        {
+            return $this->foto;
+        }
+
+        public function setFoto(?Image $foto): self
+        {
+            $this->foto = $foto;
 
             return $this;
         }

@@ -1,0 +1,5 @@
+a:link, a:visited {
+    text-decoration: none;
+    display: inline-block;
+    color: DarkSlateGray;
+}

@@ -9,16 +9,16 @@
         'Más populares': populares,
         'Más valorados': valorados}%}
 
-<ul>
+<ul class='listaDeElementos'>
 {% for key,array in conjuntos%}
-        <li>
+        <li class='listaDeElementos'>
         <div>
                 <h4 class="h3 mb-3 font-weight-normal">{{key}}</h4>
-                <ul>
+                <ul class='listaDeElementos'>
                         {% for index, x in array %}
-                                <li>
+                                <li class='listaDeElementos'>
                                         <a href='{{ path('productoview', {productoid: x.id }) }}'>
-                                                <h5>{{ x.nombre }}</h5>
+                                                <p>{{ x.nombre }}</p>
                                         </a>
                                         <span class="badge badge-danger">{{ x.categoria.nombre }}</span>
                                         <span>Precio: <strong>{{ x.preciounidad }}</strong>$</span>

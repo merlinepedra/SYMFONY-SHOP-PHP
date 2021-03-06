@@ -1,0 +1,16 @@
+App\Entity\Producto:
+    properties:
+        fotos:
+            - Count:
+                min: 1
+                max: 50
+                minMessage: 'El producto debe mostrar al menos una variante(foto).'
+                maxMessage: 'No se pueden especificar mas de {{ limit }} variantes para un producto.'
+
+
+App\Entity\Usuario:
+    properties:
+        roles:
+            - Count:
+                min: 1
+                minMessage: 'El usuario debe tener al menos un rol.'

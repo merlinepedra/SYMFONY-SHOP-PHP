@@ -1,6 +1,10 @@
 {
   "tiendecita/public/build/app.css": "/tiendecita/public/build/app.css",
   "tiendecita/public/build/app.js": "/tiendecita/public/build/app.js",
+  "tiendecita/public/build/viewProduct.css": "/tiendecita/public/build/viewProduct.css",
+  "tiendecita/public/build/viewProduct.js": "/tiendecita/public/build/viewProduct.js",
+  "tiendecita/public/build/baseIndex.css": "/tiendecita/public/build/baseIndex.css",
+  "tiendecita/public/build/baseIndex.js": "/tiendecita/public/build/baseIndex.js",
   "tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.css": "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.css",
   "tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.js": "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.js",
   "tiendecita/public/build/images/fa-solid-900.svg": "/tiendecita/public/build/images/fa-solid-900.0454203f.svg",

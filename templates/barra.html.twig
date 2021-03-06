@@ -1,7 +1,3 @@
-{% extends 'base.html.twig' %}
-
-{% block barra %}
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand">Inicio</a>
@@ -26,6 +22,8 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="">Editar perfil</a></li>
+                <li><a class="dropdown-item" href="">Ver carrito</a></li>
+                <li><a class="dropdown-item" href="">Ver actividad</a></li>
                 <li><a class="dropdown-item" href="{{url('app_logout')}}">
                         <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
                 </a></li>
@@ -36,8 +34,7 @@
     </div>
         <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><fa-icon [icon]="search"></fa-icon></button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
   </div>
 </nav>
-{% endblock %}

@@ -10,13 +10,16 @@ use App\Entity\Producto;
 use App\Entity\Usuario;
 use App\Entity\Orden;
 use App\Entity\Categoria;
+use App\Entity\Image;
 use DateTime;
+use Doctrine\ORM\Query\Expr\Math;
 use Symfony\Component\Validator\Constraints\Length;
 
 class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        $this->loadImages($manager);
         $this->loadProductos($manager);
         $this->loadUsers($manager);
         $this->loadOrdenes($manager);
@@ -26,13 +29,14 @@ class AppFixtures extends Fixture
     {
         $this->loadCategorias($manager);
 
-        foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad]) {
+        foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad, $fotos]) {
             $producto = new Producto();
             $producto->setNombre($nombre);
             $producto->setDescripcion($descripcion);
             $producto->setCategoria($categoria);
             //$producto->setFechaCreacion($fecha_creacion);
             $producto->setPrecioUnidad($precio_unidad);
+            $producto->setFotos($fotos);
 
             $manager->persist($producto);
             $this->addReference($nombre, $producto);
@@ -43,7 +47,7 @@ class AppFixtures extends Fixture
 
     private function getProductoData() : array
     {
-        //[$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad]
+        //[$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad, $fotos]
         $productos = [];
         foreach ($this->getProductosName() as $i => $name) {
             $productos[] = [
@@ -51,7 +55,8 @@ class AppFixtures extends Fixture
                 'Descripcion muy random',
                 $this->getReference(['Juguetes', 'Artefactos de cocina', 'Celulares'][random_int(0, 2)]),
                 new DateTime('now'),
-                random_int(20, 100)
+                random_int(20, 100),
+                $this->getRandomColorList()
             ];
         }
         return $productos;
@@ -118,18 +123,98 @@ class AppFixtures extends Fixture
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    private function loadImages(ObjectManager $manager)
+    {
+        $imagesCollection = $this->getImageNames();
+        foreach ($imagesCollection as $name) {
+            $image = new Image();
+            $image->setFileName($name);
+            $manager->persist($image);
+            $this->addReference($image->getFileName(), $image);
+        } 
+
+        $manager->flush();
+    }
+
+    private function getImageNames() : array
+    {
+        return [
+            '6ae4d0fd9ab660ad5d79f1675a634d76-6042b4544fcc6.jpeg',
+            '7e9783f61338caf9d78ed664550b86d0-6042b513558fd.jpeg',
+            '58b4318003a209e64b642aa7cea3be17-6042b4c07453a.jpeg',
+            '82f0907a140e2fd734a6fdfc2d911ee8-6042b49e67668.jpeg',
+            '732f115b90226647487a4ac1feba0ac1prettyfaceprettygirls-6042b47e2ab13.jpeg',
+            'imagejnkjns-6042b531b58bb.jpeg',
+            'princess_wallpaper1-6042b4f6cfdc0.png'
+        ];
+    }
+
+
+
+    private function getRandomColorList(): array
+    {
+        $size = random_int(1, 10);
+        $list = [];
+        $colors = $this->getColorsData();
+        $colorsCount = count($colors);
+
+        for ($i=0; $i < $size; $i++) { 
+            $newColor = $colors[random_int(0, $colorsCount - 1)];
+            if(in_array($newColor, $list)) continue;
+            $list[] = $newColor;
+        }
+
+        return $list;
+    }
+
+
+
+    private function getColorsData(): array
+    {
+        return [
+            'royalblue',
+            'saddlebrown',
+            'aqua',
+            'white',
+            'yellow',
+            'greenyellow',
+            'orangered',
+            'olive',
+            'orange',
+            'orchid',
+            'magenta',
+            'maroon',
+            'mediumblue',
+            'mediumorchid',
+            'mediumseagreen',
+            'mediumvioletred',
+            'lightblue',
+            'lightcoral',
+            'lightcyan',
+            'lightpink',
+            'darkcyan',
+            'darkgoldenrod',
+            'darkgreen',
+            'darkslateblue',
+        ];
+    }
+
     private function loadUsers(ObjectManager $manager)
     {
-        foreach ($this->getUserData() as [$nombre, $password, $email, $roles, $activo, $direccion, $fecha_join, $ultima_fecha_acceso]) {
+        $dataCollection = $this->getNameEmailRoleAdress();
+        $fotoNames = $this->getImageNames();
+
+        for ($i=0; $i < count($dataCollection); $i++) { 
+            [$nombre, $email, $roles, $direccion] = $dataCollection[$i];
+
             $user = new Usuario();
             $user->setNombre($nombre);
-            $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
+            $user->setPassword($this->passwordEncoder->encodePassword($user, 'kitten'));
             $user->setEmail($email);
             $user->setRoles($roles);
-            $user->setActivo($activo);
+            $user->setActivo(true);
             $user->setDireccion($direccion);
-            $user->setFechaJoin($fecha_join);
-            $user->setUltimaFechaAcceso($ultima_fecha_acceso);
+            $user->setFoto($this->getReference($fotoNames[$i]));
 
             $manager->persist($user);
             $this->addReference($email, $user);
@@ -138,17 +223,15 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
-    private function getUserData(): array
+    private function getNameEmailRoleAdress() : array
     {
-        $fecha = new \DateTime('now + 5 seconds');
-        // [$nombre, $password, $email, $roles, $activo, $direccion, $fecha_join, $ultima_fecha_acceso]
         return [
-            ['Jane Doe', 'kitten', 'jane_admin@symfony.com', ['ROLE_ADMIN'], true, 'Calle 5ta', $fecha, $fecha],
-            ['Tom Doe', 'kitten', 'tom_admin@symfony.com', ['ROLE_ADMIN'], true, 'Calle 1ra', $fecha, $fecha],
-            ['John Doe', 'kitten', 'john_user@symfony.com', ['ROLE_USER'], true, 'Calle 2da', $fecha, $fecha],
-            ['Amalia Ruiz', 'kitten', 'amalia@gmail.com', ['ROLE_USER'], true, 'Calle 5ta', $fecha, $fecha],
-            ['Conrado Perez', 'kitten', 'conrado@symfony.com', ['ROLE_USER'], true, 'Calle 1ra', $fecha, $fecha],
-            ['July Edison', 'kitten', 'july@symfony.com', ['ROLE_USER'], true, 'Calle 2da', $fecha, $fecha]
+            ['Jane Doe', 'jane_admin@symfony.com', ['ROLE_ADMIN'],  'Calle 5ta'],
+            ['Tom Doe',  'tom_admin@symfony.com', ['ROLE_ADMIN'],  'Calle 1ra'],
+            ['John Doe',  'john_user@symfony.com', ['ROLE_USER'],  'Calle 2da'],
+            ['Amalia Ruiz',  'amalia@gmail.com', ['ROLE_USER'],  'Calle 5ta'],
+            ['Conrado Perez',  'conrado@symfony.com', ['ROLE_USER'],  'Calle 1ra'],
+            ['July Edison',  'july@symfony.com', ['ROLE_USER'],  'Calle 2da']
         ];
     }
 

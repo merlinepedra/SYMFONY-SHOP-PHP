@@ -2,10 +2,15 @@
 
 {% block title %}Home{% endblock %}
 
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('viewProduct')}}
+{% endblock %}
+
 {% block body2 %}
 {% if producto %}
 <div class="col-sm-8">
-        <h2>{{ producto.nombre }}<h6 class="badge badge-danger">{{ producto.categoria.nombre }}</h6></h2>
+                <h2>{{ producto.nombre }}<h6 class="badge badge-pill" style="color: white; background-color:  orangered; box-shadow: 3px 5px 4px #888888;">{{ producto.categoria.nombre }}</h6></h2>
         <br>
         <p>{{ producto.descripcion }}</p>
         <br>
@@ -16,12 +21,11 @@
         #}
 
         <figure> 
-                {% if producto.fotos %} 
-                {% for foto in fotos %}
-                        <img width="300" height="300" alt="picture" src="{{ asset('./images/') }}">
+                {% for foto in producto.fotos %}
+                        {#<img width="300" height="300" alt="picture">#}
+                        <div class="box" style="background-color: {{ foto }};"></div>
                 {% endfor %}
-                {% endif %}
-        <img width="300" height="300" alt="picture" src="{{ asset('./images/1.jpg') }}">
+        {#<img width="300" height="300" alt="picture" src="{{ asset('./images/1.jpg') }}">#}
         </figure>
         
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}

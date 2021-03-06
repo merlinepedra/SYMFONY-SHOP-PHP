@@ -15,6 +15,8 @@ use App\Security\LoginFormAuthenticator;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Service\FileUploader;
 
+use App\Entity\Image;
+
 class SecurityController extends AbstractController
 {
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -64,8 +66,8 @@ class SecurityController extends AbstractController
         $user->setRoles(['ROLE_USER']);
         $user->setActivo(true);
 
+        $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createForm(RegistroFormType::class, $user);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -74,12 +76,12 @@ class SecurityController extends AbstractController
 
             $fotoFile = $form->get('foto')->getData();
             if($fotoFile){
-                $fotoFileName =  $fileUploader->upload($fotoFile);
-                $user->setFoto($fotoFileName);
+                $fotoImage = new Image();
+                $fotoImage->setFile($fotoFile);
+                $entityManager->persist($fotoImage);
+                $user->setFoto($fotoImage);
             }
 
-
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 

@@ -7,7 +7,6 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {{encore_entry_link_tags('app')}}
-            {#<link rel="stylesheet" href="{{ asset('./vendor/bootstrap-4.5.2-dist/css/bootstrap.min.css') }}">#}
         {% endblock %}
 
         {% block javascripts %}
@@ -15,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        {% block barra %}{% endblock %}
+        {% include 'barra.html.twig' %}
         <div class='jumbotron'>
                 {% block body %}{% endblock %} 
         </div>

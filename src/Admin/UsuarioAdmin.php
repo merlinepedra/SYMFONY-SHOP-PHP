@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 use Symfony\Component\Validator\Constraints\Image;
@@ -22,6 +21,8 @@ use Sonata\DoctrineORMAdminBundle\Filter\DateRangeFilter;
 use Sonata\DoctrineORMAdminBundle\Filter\StringFilter;
 use Sonata\DoctrineORMAdminBundle\Filter\BooleanFilter;
 
+
+use Sonata\AdminBundle\Form\Type\AdminType;
 
 
 final class UsuarioAdmin extends AbstractAdmin
@@ -40,6 +41,7 @@ final class UsuarioAdmin extends AbstractAdmin
                 'Administrador' => 'ROLE_ADMIN',
                 'Usuario' => 'ROLE_USER' 
             ],
+            'required' => true           
         ]);
         $formMapper->add('password', PasswordType::class, array(
             'required' => true,
@@ -57,20 +59,22 @@ final class UsuarioAdmin extends AbstractAdmin
             'required' => true,
             'label' => 'Dirección'
         ));
-        $formMapper->add('foto', FileType::class, array(
+        $formMapper
+        /*
+        ->add('foto', FileType::class, array(
             'required' => false,
             'mapped' => false,
             'label' => 'Foto de perfil',
             'constraints' => [new Image([
                 'mimeTypesMessage' => 'Por favor seleccione un archivo tipo imagen válido.'])],
         ));
+        */
+        ->add('foto', AdminType::class, [
+            'delete' => false,
+        ]);
         $formMapper->add('fecha_join', DateTimeType::class, array(
             'required' => true,
             'label' => 'Unión a la plataforma'
-        ));
-        $formMapper->add('ultima_fecha_acceso', DateTimeType::class, array(
-            'required' => true,
-            'label' => 'Último acceso'
         ));
     }
 
@@ -82,19 +86,72 @@ final class UsuarioAdmin extends AbstractAdmin
         $datagridMapper->add('activo', BooleanFilter::class);
         $datagridMapper->add('fecha_join', DateRangeFilter::class, array(
             'label' => 'Unión a la plataforma'));
-        $datagridMapper->add('ultima_fecha_acceso', DateRangeFilter::class, array(
-            'label' => 'Último acceso'));
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('nombre');
         $listMapper->addIdentifier('email', null, ['label' => 'Correo']);
+        $listMapper->addIdentifier('password', null, ['label' => 'Contraseña']);
         $listMapper->addIdentifier('activo');
         $listMapper->addIdentifier('roles');
         $listMapper->addIdentifier('direccion', null, ['label' => 'Dirección']);
         $listMapper->addIdentifier('foto');
         $listMapper->addIdentifier('fecha_join', null, array('label' => 'Unión'));
-        $listMapper->addIdentifier('ultima_fecha_acceso', null, array('label' => 'Último acceso'));
+    }
+
+    public function prePersist($user) { // $user is an instance of App\Entity\User as specified in services.yaml
+        $this->encrypt_password($user);
+        $this->manageEmbeddedImageAdmins($user);
+        $this->checkUser($user);
+    }
+
+    public function preUpdate($user)
+    {
+        $this->encrypt_password($user);
+        $this->manageEmbeddedImageAdmins($user);
+        $this->checkUser($user);
+    }
+
+    public function checkUser($user){
+        if(count($user->getRoles()) == 0){
+            $user->setRoles(['ROLE_USER']);
+        }
+    }
+
+    private function encrypt_password($user)
+    {
+        $plainPassword = $user->getPassword();
+        $container = $this->getConfigurationPool()->getContainer();
+        $encoder = $container->get('security.password_encoder');
+        $encoded = $encoder->encodePassword($user, $plainPassword);
+    
+        $user->setPassword($encoded);
+    }
+
+    private function manageEmbeddedImageAdmins($user)
+    {        
+        // Cycle through each field
+        foreach ($this->getFormFieldDescriptions() as $fieldName => $fieldDescription) 
+        {
+            // detect embedded Admins that manage Images
+            if ($fieldDescription->getType() === 'Sonata\AdminBundle\Form\Type\AdminType' &&
+                ($associationMapping = $fieldDescription->getAssociationMapping()) &&
+                $associationMapping['targetEntity'] === 'App\Entity\Image') 
+            {
+
+                $getter = 'get'.$fieldName;
+                $setter = 'set'.$fieldName;
+
+
+                /** @var Image $image */
+                $image = $user->$getter();
+                $imageForm = $this->getForm()->get('foto');
+                $file = $imageForm['file']->getData();                             
+
+                if ($image && $file) $image->setFile($file);
+                else $user->$setter(null);
+            }
+        }
     }
 }

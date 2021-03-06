@@ -4,3 +4,39 @@
 body {
     background-color: white;
 }
+
+.jumbotron{
+    /*background-color: lightsteelblue;*/
+    background-color: white;
+}
+
+.micontainer{
+    background-color: white;
+    border-radius: 20px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    display: inline-block;
+    color: DarkSlateGray;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: slateblue;
+}
+
+
+li.listaDeElementos {
+    /*border: 5px solid coral;
+    padding: 25px;
+    margin: 25px;
+    */
+}
+
+ul.listaDeElementos{
+    /*border: 5px solid;*/
+    list-style-type: none;
+    padding: 10px;
+    margin: 20px;
+}
