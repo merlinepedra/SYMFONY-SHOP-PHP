@@ -10,13 +10,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Sonata\AdminBundle\Form\Type\AdminType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\DoctrineORMAdminBundle\Filter\DateRangeFilter;
 
 use App\Entity\Categoria;
-use App\Entity\Image;
 
 
 final class ProductoAdmin extends AbstractAdmin
@@ -65,7 +63,7 @@ final class ProductoAdmin extends AbstractAdmin
         $datagridMapper->add('nombre');
         $datagridMapper->add('categoria.nombre', null, array('label' => 'Categoria'));
         $datagridMapper->add('precio_unidad', null, array('label' => 'Precio por unidad'));
-        $datagridMapper->add('fecha_creacion', DateRangeFilter::class, array('label' => 'Creado'));
+        $datagridMapper->add('created', DateRangeFilter::class, array('label' => 'Creado'));
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -74,6 +72,6 @@ final class ProductoAdmin extends AbstractAdmin
         //$listMapper->addIdentifier('descripcion');
         $listMapper->addIdentifier('categoria.nombre', null, array('label' => 'Categoria'));
         $listMapper->addIdentifier('precio_unidad', null, array('label' => 'Precio por unidad'));
-        $listMapper->addIdentifier('fecha_creacion', null, array('label' => 'Creado'));
+        $listMapper->addIdentifier('created', null, array('label' => 'Creado'));
     }
 }

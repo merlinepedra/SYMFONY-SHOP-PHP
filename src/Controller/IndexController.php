@@ -80,8 +80,6 @@ class IndexController extends AbstractController
         $orden->setUsuario($user);
         $orden->setProducto($producto);
         $orden->setCantidad($cantidad);
-        $orden->setEstado('sin pagar');
-        $orden->setFechaOrden(new DateTime('now'));
 
         $manager->persist($orden);
         $manager->flush();

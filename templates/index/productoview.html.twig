@@ -14,7 +14,7 @@
         <br>
         <p>{{ producto.descripcion }}</p>
         <br>
-        Creado: <strong>{{ producto.FechaCreacion|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+        Creado: <strong>{{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}</strong>
         <br>
         Precio: <strong>{{ producto.preciounidad }}</strong>$
         {#

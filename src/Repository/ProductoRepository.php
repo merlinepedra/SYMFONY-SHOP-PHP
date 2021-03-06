@@ -33,7 +33,7 @@ class ProductoRepository extends ServiceEntityRepository
         $date = new DateTime('now - '.$days.' days');
 
         return $this->createQueryBuilder('p')
-            ->andWhere('p.fecha_creacion > :val')
+            ->andWhere('p.created > :val')
             ->setParameter('val', $date)
             ->orderBy('p.id', 'ASC')
             ->setMaxResults($max)

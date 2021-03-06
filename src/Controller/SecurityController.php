@@ -63,8 +63,6 @@ class SecurityController extends AbstractController
     public function new(Request $request, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, FileUploader $fileUploader) : Response
     {
         $user = new Usuario();
-        $user->setRoles(['ROLE_USER']);
-        $user->setActivo(true);
 
         $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createForm(RegistroFormType::class, $user);

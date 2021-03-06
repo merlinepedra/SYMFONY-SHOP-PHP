@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-//use App\Entity\Image;
+use App\Entity\Image;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,16 +14,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ImageRepository extends ServiceEntityRepository
 {
-    private $targetDirectory;
-    public function __construct(ManagerRegistry $registry, $targetDirectory)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Image::class);
-        $this->targetDirectory = $targetDirectory;
-    }
-
-    public function getUploadDir() : string
-    {
-        return $this->targetDirectory;
     }
 
     // /**

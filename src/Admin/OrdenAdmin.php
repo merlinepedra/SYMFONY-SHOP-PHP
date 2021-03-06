@@ -32,10 +32,6 @@ final class OrdenAdmin extends AbstractAdmin
             'class' => Producto::class,
             'property' => 'nombre',
             'required' => true));
-        $formMapper->add('fecha_orden', DateTimeType::class, array(
-            'required' => true,
-            'label' => 'Ordenado'
-        ));
         $formMapper->add('cantidad', NumberType::class, array('required' => true));
         $formMapper->add('fecha_pago', DateTimeType::class, array(
             'required' => false,

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+
+use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -31,11 +33,6 @@ class Image
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $fileName;
-
-    /**
-     * @ORM\OneToOne(targetEntity=Usuario::class, mappedBy="foto", cascade={"persist", "remove"})
-     */
-    private $usuario;
 
     public function getId(): ?int
     {
@@ -90,29 +87,6 @@ class Image
        $this->fileName = $fileName;
        return $this;
    }
-
-   public function getUsuario(): ?Usuario
-   {
-       return $this->usuario;
-   }
-
-   public function setUsuario(?Usuario $usuario): self
-   {
-       // unset the owning side of the relation if necessary
-       if ($usuario === null && $this->usuario !== null) {
-           $this->usuario->setFoto(null);
-       }
-
-       // set the owning side of the relation if necessary
-       if ($usuario !== null && $usuario->getFoto() !== $this) {
-           $usuario->setFoto($this);
-       }
-
-       $this->usuario = $usuario;
-
-       return $this;
-   }
-
 
    public function __toString() 
    {

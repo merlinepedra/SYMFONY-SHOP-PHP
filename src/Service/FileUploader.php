@@ -14,6 +14,15 @@ class FileUploader
         $this->targetDirectory = $targetDirectory;
     }
 
+    public function removeImageFile(string $fileName)
+    {
+        try {
+            unlink($this->getTargetDirectory().'/'.$fileName);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
     public function upload(UploadedFile $file)
     {
         $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);

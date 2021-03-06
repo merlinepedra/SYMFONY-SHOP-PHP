@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Entity;
-
-use App\Repository\UsuarioRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use App\Repository\UsuarioRepository;
 use DateTime;
 
 /**
@@ -15,6 +11,14 @@ use DateTime;
  */
 class Usuario implements UserInterface, \Serializable
 {
+
+    public function __construct()
+    {
+        // esto no se puede borrar x nada de la vida xq no se xq motivo
+        // empieza a crearme los usuarios con los roles vacios
+        $this->roles[] = 'ROLE_USER';
+    }
+    
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -54,30 +58,15 @@ class Usuario implements UserInterface, \Serializable
      */
     private $direccion;
 
-
-
     /**
      * @ORM\Column(type="date")
      */
-    private $fecha_join;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Orden::class, mappedBy="usuario")
-     */
-    private $ordens;
+    private $created;
 
     /**
      * @ORM\OneToOne(targetEntity=Image::class, cascade={"persist", "remove"})
      */
     private $foto;
-
-    public function __construct()
-    {
-        $this->ordens = new ArrayCollection();
-        $this->fecha_join = new DateTime('now');
-    }
-
-
 
     public function getId(): ?int
     {
@@ -196,14 +185,14 @@ class Usuario implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getFechaJoin(): ?\DateTimeInterface
+    public function getCreated(): ?\DateTimeInterface
     {
-        return $this->fecha_join;
+        return $this->created;
     }
 
-    public function setFechaJoin(\DateTimeInterface $fecha_join): self
+    public function setCreated(\DateTimeInterface $created): self
     {
-        $this->fecha_join = $fecha_join;
+        $this->created = $created;
         return $this;
     }
 
@@ -231,45 +220,15 @@ class Usuario implements UserInterface, \Serializable
         ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
-    /**
-     * @return Collection|Orden[]
-     */
-    public function getOrdens(): Collection
+    public function getFoto(): ?Image
     {
-        return $this->ordens;
+        return $this->foto;
     }
 
-    public function addOrden(Orden $orden): self
+    public function setFoto(?Image $foto): self
     {
-        if (!$this->ordens->contains($orden)) {
-            $this->ordens[] = $orden;
-            $orden->setUsuario($this);
-        }
+        $this->foto = $foto;
 
         return $this;
     }
-
-        public function removeOrden(Orden $orden): self
-        {
-            if ($this->ordens->removeElement($orden)) {
-                // set the owning side to null (unless already changed)
-                if ($orden->getUsuario() === $this) {
-                    $orden->setUsuario(null);
-                }
-            }
-
-            return $this;
-        }
-
-        public function getFoto(): ?Image
-        {
-            return $this->foto;
-        }
-
-        public function setFoto(?Image $foto): self
-        {
-            $this->foto = $foto;
-
-            return $this;
-        }
 }

@@ -22,7 +22,7 @@
                                         </a>
                                         <span class="badge badge-danger">{{ x.categoria.nombre }}</span>
                                         <span>Precio: <strong>{{ x.preciounidad }}</strong>$</span>
-                                        Creado: <strong>{{ x.FechaCreacion|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                                        Creado: <strong>{{ x.Created|format_datetime('medium', 'short', '', 'UTC') }}</strong>
                                         {% if key == 'Más populares'%}
                                         Ventas: <strong>{{ventas[index]}}</strong>
                                         {% endif %}

@@ -72,10 +72,6 @@ final class UsuarioAdmin extends AbstractAdmin
         ->add('foto', AdminType::class, [
             'delete' => false,
         ]);
-        $formMapper->add('fecha_join', DateTimeType::class, array(
-            'required' => true,
-            'label' => 'Unión a la plataforma'
-        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -103,20 +99,12 @@ final class UsuarioAdmin extends AbstractAdmin
     public function prePersist($user) { // $user is an instance of App\Entity\User as specified in services.yaml
         $this->encrypt_password($user);
         $this->manageEmbeddedImageAdmins($user);
-        $this->checkUser($user);
     }
 
     public function preUpdate($user)
     {
         $this->encrypt_password($user);
         $this->manageEmbeddedImageAdmins($user);
-        $this->checkUser($user);
-    }
-
-    public function checkUser($user){
-        if(count($user->getRoles()) == 0){
-            $user->setRoles(['ROLE_USER']);
-        }
     }
 
     private function encrypt_password($user)

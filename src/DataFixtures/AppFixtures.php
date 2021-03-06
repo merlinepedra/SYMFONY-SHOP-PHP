@@ -29,12 +29,12 @@ class AppFixtures extends Fixture
     {
         $this->loadCategorias($manager);
 
-        foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad, $fotos]) {
+        foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $created, $precio_unidad, $fotos]) {
             $producto = new Producto();
             $producto->setNombre($nombre);
             $producto->setDescripcion($descripcion);
             $producto->setCategoria($categoria);
-            //$producto->setFechaCreacion($fecha_creacion);
+            //$producto->setCreated($created);
             $producto->setPrecioUnidad($precio_unidad);
             $producto->setFotos($fotos);
 
@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
 
     private function getProductoData() : array
     {
-        //[$nombre, $descripcion, $categoria, $fecha_creacion, $precio_unidad, $fotos]
+        //[$nombre, $descripcion, $categoria, $created, $precio_unidad, $fotos]
         $productos = [];
         foreach ($this->getProductosName() as $i => $name) {
             $productos[] = [
@@ -117,15 +117,37 @@ class AppFixtures extends Fixture
     }
 
     private $passwordEncoder;
+    private $projectDir;
 
-    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder, string $projectDir)
     {
         $this->passwordEncoder = $passwordEncoder;
+        $this->projectDir = $projectDir;
+    }
+
+    private function copyImages()
+    {
+        $source = $this->projectDir.'/public/images';
+        $dest = $this->projectDir.'/public/uploads';
+        $imageNames = [];
+
+        $files = scandir($source);
+        foreach ($files as $fileName) 
+        {
+            if($fileName != '..' and $fileName != '.')
+            {
+                echo 'Mira  loca '.$source.'/'.$fileName;
+                copy($source.'/'.$fileName, $dest.'/'.$fileName);
+                $imageNames[] = $fileName;
+            }
+        }
+        return $imageNames;
     }
 
     private function loadImages(ObjectManager $manager)
     {
-        $imagesCollection = $this->getImageNames();
+        //$imagesCollection = $this->getImageNames();
+        $imagesCollection = $this->copyImages();
         foreach ($imagesCollection as $name) {
             $image = new Image();
             $image->setFileName($name);
@@ -136,18 +158,6 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
-    private function getImageNames() : array
-    {
-        return [
-            '6ae4d0fd9ab660ad5d79f1675a634d76-6042b4544fcc6.jpeg',
-            '7e9783f61338caf9d78ed664550b86d0-6042b513558fd.jpeg',
-            '58b4318003a209e64b642aa7cea3be17-6042b4c07453a.jpeg',
-            '82f0907a140e2fd734a6fdfc2d911ee8-6042b49e67668.jpeg',
-            '732f115b90226647487a4ac1feba0ac1prettyfaceprettygirls-6042b47e2ab13.jpeg',
-            'imagejnkjns-6042b531b58bb.jpeg',
-            'princess_wallpaper1-6042b4f6cfdc0.png'
-        ];
-    }
 
 
 
@@ -241,7 +251,7 @@ class AppFixtures extends Fixture
             $orden = new Orden();
             $orden->setUsuario($usuario);
             $orden->setProducto($producto);
-            $orden->setFechaOrden($fecha);
+            $orden->setCreated($fecha);
             $orden->setCantidad($cantidad);
             $orden->setEstado($estado);
             $orden->setFechaPago($fecha_pago);

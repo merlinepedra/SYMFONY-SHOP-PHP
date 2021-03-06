@@ -11,11 +11,6 @@ use DateTime;
  */
 class Producto
 {
-    public function __construct()
-    {
-        $this->fecha_creacion = new DateTime('now');
-    }
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -46,7 +41,7 @@ class Producto
     /**
      * @ORM\Column(type="datetime")
      */
-    private $fecha_creacion;
+    private $created;
 
     /**
      * @ORM\Column(type="float")
@@ -106,19 +101,17 @@ class Producto
         return $this;
     }
 
-    public function getFechaCreacion(): ?\DateTime
+    public function getCreated(): ?\DateTime
     {
-        return $this->fecha_creacion;
+        return $this->created;
     }
 
-    /*
-    public function setFechaCreacion(\DateTime $fecha_creacion): self
+    public function setCreated(\DateTime $created): self
     {
-        $this->fecha_creacion = $fecha_creacion;
+        $this->created = $created;
 
         return $this;
     }
-    */
 
     public function getPrecioUnidad(): ?float
     {

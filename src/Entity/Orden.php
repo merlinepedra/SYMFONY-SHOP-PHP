@@ -37,7 +37,7 @@ class Orden
     /**
      * @ORM\Column(type="datetime")
      */
-    private $fecha_orden;
+    private $created;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -90,14 +90,14 @@ class Orden
         return $this;
     }
 
-    public function getFechaOrden(): ?\DateTimeInterface
+    public function getCreated(): ?\DateTimeInterface
     {
-        return $this->fecha_orden;
+        return $this->created;
     }
 
-    public function setFechaOrden(\DateTimeInterface $fecha_orden): self
+    public function setCreated(\DateTimeInterface $created): self
     {
-        $this->fecha_orden = $fecha_orden;
+        $this->created = $created;
 
         return $this;
     }
