@@ -1,0 +1,13 @@
+{% extends 'index/base.html.twig' %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('carrito')}}
+{% endblock %}
+
+{% block javascripts %}
+        {{parent()}}
+        {{ encore_entry_script_tags('carrito') }}
+{% endblock %}

@@ -1,38 +1,46 @@
 {% extends 'index/base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Inicio{% endblock %}
+
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('index')}}
+{% endblock %}
+
+{% block javascripts %}
+        {{parent()}}
+        {{ encore_entry_script_tags('index') }}
+{% endblock %}
 
 {% block body2 %}
 
-{% set conjuntos = {
-        'Novedades': novedades, 
-        'Más populares': populares,
-        'Más valorados': valorados}%}
+{% set conjuntos = [novedades, populares, valorados] %}
 
-<ul class='listaDeElementos'>
+<div class="col-md-10">
+<ul class='listaDeElementos' style="padding-left: 10px;">
 {% for key,array in conjuntos%}
-        <li class='listaDeElementos'>
-        <div>
-                <h4 class="h3 mb-3 font-weight-normal">{{key}}</h4>
-                <ul class='listaDeElementos'>
-                        {% for index, x in array %}
-                                <li class='listaDeElementos'>
-                                        <a href='{{ path('productoview', {productoid: x.id }) }}'>
-                                                <p>{{ x.nombre }}</p>
-                                        </a>
-                                        <span class="badge badge-danger">{{ x.categoria.nombre }}</span>
-                                        <span>Precio: <strong>{{ x.preciounidad }}</strong>$</span>
-                                        Creado: <strong>{{ x.Created|format_datetime('medium', 'short', '', 'UTC') }}</strong>
-                                        {% if key == 'Más populares'%}
-                                        Ventas: <strong>{{ventas[index]}}</strong>
-                                        {% endif %}
-                                </li>
-                        {% else %}
-                                No tenemos {{key|lower}} para ti, al menos hoy.
-                        {% endfor %}
-                </ul>
+        <li class='listaDeElementos container-fluid'>
+        <div class="row border" style="margin-bottom: 20px;">
+                <div class="col-md-0 texto-vertical">
+                        <span class="h5 font-weight-normal categoriaCarteles">
+                                {{key}}
+                        </span>
+                        <a class="h6 font-weight-light ver-mas">
+                                ver
+                                <br>
+                                <i class="fas fa-plus"></i>
+                        </a>
+                </div>
+                <div class="col-md-10">
+                        <table class="table">
+                                <tbody>
+                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': array})) }}
+                                </tbody>
+                        </table>  
+                </div>
         </div>
         </li>
 {% endfor %}
 </ul>
+</div>
 {% endblock %}

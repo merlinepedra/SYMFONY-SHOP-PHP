@@ -1,0 +1,51 @@
+tbody tr:nth-child(odd) td {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-emphasis: ;
+}
+
+.table>tbody>tr>td {
+  border-top: none;
+}
+
+.pname{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.precio{
+    color: black;
+    /*
+    -webkit-text-stroke: 10px white;
+    text-shadow:
+        3px 3px 0 black,
+      -1px -1px 0 black,  
+       1px -1px 0 black,
+       -1px 1px 0 black,
+        1px 1px 0 black
+    */
+}
+
+.texto-vertical {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align-last: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    /*
+    text-align: left;
+    unicode-bidi: bidi-override;
+    */
+}
+
+.ver-mas{
+    writing-mode: horizontal-tb;
+    transform: rotate(180deg);
+    color: white; 
+    position: absolute; 
+    top: 3px; 
+    left: 5px;
+    text-align: center;
+}

@@ -28,7 +28,7 @@ class OrdenRepository extends ServiceEntityRepository
             ->where('o.usuario = :user')
             ->andWhere('o.estado = :estado')
             ->setParameter('user', $userid)
-            ->setParameter('estado', 'sin pagar')
+            ->setParameter('estado', 'en el carrito')
             ->orderBy('o.id', 'ASC')
             ->getQuery()
             ->getResult()

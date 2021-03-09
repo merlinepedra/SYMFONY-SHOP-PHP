@@ -17,8 +17,11 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class AppFixtures extends Fixture
 {
+    private $imagesCollection;
+
     public function load(ObjectManager $manager)
     {
+        $this->imagesCollection = $this->copyImages();
         $this->loadImages($manager);
         $this->loadProductos($manager);
         $this->loadUsers($manager);
@@ -32,7 +35,7 @@ class AppFixtures extends Fixture
         foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $created, $precio_unidad, $fotos]) {
             $producto = new Producto();
             $producto->setNombre($nombre);
-            $producto->setDescripcion($descripcion);
+            $producto->setDescripcion(str_repeat($descripcion, random_int(5, 100)));
             $producto->setCategoria($categoria);
             //$producto->setCreated($created);
             $producto->setPrecioUnidad($precio_unidad);
@@ -146,9 +149,7 @@ class AppFixtures extends Fixture
 
     private function loadImages(ObjectManager $manager)
     {
-        //$imagesCollection = $this->getImageNames();
-        $imagesCollection = $this->copyImages();
-        foreach ($imagesCollection as $name) {
+        foreach ($this->imagesCollection as $name) {
             $image = new Image();
             $image->setFileName($name);
             $manager->persist($image);
@@ -212,7 +213,6 @@ class AppFixtures extends Fixture
     private function loadUsers(ObjectManager $manager)
     {
         $dataCollection = $this->getNameEmailRoleAdress();
-        $fotoNames = $this->getImageNames();
 
         for ($i=0; $i < count($dataCollection); $i++) { 
             [$nombre, $email, $roles, $direccion] = $dataCollection[$i];
@@ -224,7 +224,7 @@ class AppFixtures extends Fixture
             $user->setRoles($roles);
             $user->setActivo(true);
             $user->setDireccion($direccion);
-            $user->setFoto($this->getReference($fotoNames[$i]));
+            $user->setFoto($this->getReference($this->imagesCollection[$i]));
 
             $manager->persist($user);
             $this->addReference($email, $user);

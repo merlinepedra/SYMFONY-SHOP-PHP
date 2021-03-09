@@ -1,8 +1,25 @@
-.box {
+.badge{
+    vertical-align: top;
+    color: white; 
+    background-color:  orangered; 
+    box-shadow: 3px 5px 4px #888888;
+}
+
+.descripcion{
+    text-indent: 20px;
+}
+
+.carousel{
+    bottom: -150px;
     float: left;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    box-shadow: 5px 10px 8px #888888;
-    clear: both;
-    }
+}
+
+.details span:nth-child(odd)
+{
+    float: left;
+}
+
+.details span:nth-child(even)
+{
+    float: right;
+}

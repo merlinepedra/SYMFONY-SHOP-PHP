@@ -5,37 +5,46 @@
         {{encore_entry_link_tags('baseIndex')}}
 {% endblock %}
 
+{% block javascripts %}
+    {{parent()}}
+    {{ encore_entry_script_tags('baseIndex') }}
+{% endblock %}
+
 {% block body %}
 
-    <div class='jumbotron'>
-        <div class='row'>
-            <div class="col-sm-3">
-                {% include 'index/verCarrito.html' %}
-                <ul class='listaDeElementos'>
-                <li class='listaDeElementos bg-dark' style="text-align: center;background-color: darkgray; color: white;">Categorías</li>
-                {% for cat in category_repo.findAll() %}
-                    {% set lista_productos = products_repo.getByCategory(cat) %}
-                    {% if lista_productos%}
-                        <li class='listaDeElementos'>
-                        <div class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="font-size: large;">
-                                {{ cat.nombre }} <span style="color: orangered" class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                {% for producto in  lista_productos%}
-                                    <li><a class="dropdown-item" href='{{ path('productoview', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
-                                    <li class="divider"></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        </li>
-                    {% else %}
-                        <li class='listaDeElementos'>{{ cat.nombre }}</li>
-                    {% endif %}
-                {% endfor %}
+<div class='container-fluid'>
+    <div class='row row-no-gutters'>
+        <ul class='listaDeElementos col-md-2 border' style="padding: 0;">
+            {% include 'index/carritoSection.html.twig' %}
+        <li class='h4 font-weight-light listaDeElementos bg-dark' style="text-align: center; padding: 5px; color: white;">
+            Categorías
+        </li>
+        {% for cat in category_repo.findAll() %}
+            {% set lista_productos = products_repo.getByCategory(cat) %}
+            <li class='listaDeElementos'>
+            {% if lista_productos%}
+            <div class="dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <span style="padding-left: 10px; color: grey;">
+                        {{ cat.nombre }} <span class="caret"></span>
+                    </span>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    {% for producto in  lista_productos%}
+                        <li><a class="dropdown-item" href='{{ path('productoView', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
+                        <li class="divider"></li>
+                    {% endfor %}
                 </ul>
-            </div> 
-            {% block body2 %}{% endblock %}
-        </div>
-    </div> 
+            </div>
+            {% else %}
+            <span style="padding-left: 10px; color: grey;">
+                {{ cat.nombre }}
+            </span>
+            {% endif %}
+            </li>            
+        {% endfor %}
+        </ul>
+        {% block body2 %}{% endblock %}
+    </div>
+</div> 
 {% endblock %}

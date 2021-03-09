@@ -1,0 +1,83 @@
+.box:hover {
+    box-shadow: 8px 13px 11px #888888;
+    cursor:zoom-in;
+}
+
+.carousel-indicators li { visibility: hidden; }
+
+.box {
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    /*left: 25px;*/
+    box-shadow: 5px 10px 8px #888888;
+    clear: both;
+}
+
+.col-md-4{
+    /*
+    border: 1px solid lime;
+    padding:30px;
+    background-color: lightpink;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-left: 50px;
+    */
+}
+
+.carousel-control{
+    width: 4%;
+    /*
+    bottom: 300px;
+    */
+}
+
+.out {
+    padding: 25px;
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    /*
+    background-color: #555;
+    background-color: lightsteelblue;
+    border: 3px solid #aaa;
+    */
+  }
+  
+  .in {
+    top: 0;
+    /*
+    left: 15px;
+    width: calc(50% + 6px);
+    height: 50%;
+    */
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+
+.carousel{
+    /*
+    background-color: lightsteelblue;
+    */
+    left: 0;
+    width: 100%;
+    position:absolute;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    /*
+    align-items: center;
+    background-color: orange;
+    */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: orange;
+    /*
+    background-color: gray;
+    */
+}

@@ -86,7 +86,6 @@ class ProductoRepository extends ServiceEntityRepository
         WHERE estado = 'pagado'
         GROUP BY producto_id
         ORDER BY sum(cantidad) DESC
-        LIMIT 5
         ";
 
         $stm = $conn->prepare($sql);

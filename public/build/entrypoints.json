@@ -1,21 +1,23 @@
 {
   "entrypoints": {
     "app": {
-      "css": [
-        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.css",
-        "/tiendecita/public/build/app.css"
-      ],
       "js": [
-        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_collapse_js-no-0ae057.js",
+        "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_carousel_js-no-986c26.js",
         "/tiendecita/public/build/app.js"
+      ],
+      "css": [
+        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_carousel_js-no-986c26.css",
+        "/tiendecita/public/build/app.css"
       ]
     },
-    "viewProduct": {
-      "css": [
-        "/tiendecita/public/build/viewProduct.css"
-      ],
+    "productoView": {
       "js": [
-        "/tiendecita/public/build/viewProduct.js"
+        "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/productoView.js"
+      ],
+      "css": [
+        "/tiendecita/public/build/productoView.css"
       ]
     },
     "baseIndex": {
@@ -24,6 +26,32 @@
       ],
       "js": [
         "/tiendecita/public/build/baseIndex.js"
+      ]
+    },
+    "index": {
+      "js": [
+        "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/index.js"
+      ],
+      "css": [
+        "/tiendecita/public/build/index.css"
+      ]
+    },
+    "carrito": {
+      "css": [
+        "/tiendecita/public/build/carrito.css"
+      ],
+      "js": [
+        "/tiendecita/public/build/carrito.js"
+      ]
+    },
+    "easyCarousel": {
+      "js": [
+        "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/easyCarousel.js"
+      ],
+      "css": [
+        "/tiendecita/public/build/easyCarousel.css"
       ]
     }
   }

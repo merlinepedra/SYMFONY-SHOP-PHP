@@ -1,0 +1,64 @@
+{% block stylesheets %}
+    {{encore_entry_link_tags('easyCarousel')}}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('easyCarousel') }}
+{% endblock %}
+
+
+<div class="container-fluid my-4">
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="carousel-controls">
+      <a class="carousel-control carousel-control-prev" href="#multi-item-example" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+      <a class="carousel-control carousel-control-next" href="#multi-item-example" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </div>
+    <!--/.Controls-->
+
+    {% set toShow = 3 %}
+    {% set div = fotos|length is divisible by(toShow) ? -1 : 0 %}
+    {% set slidersCount = ((fotos|length // toShow) + div) %}
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      {% for i in 0..slidersCount %}
+        <li data-target="#multi-item-example" data-slide-to="{{i}}"></li>
+      {% endfor %}
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      {% for i in 0..slidersCount %}
+       <div class="carousel-item">
+          <div class="row">
+            {% for j in 0..(toShow - 1) %}
+              {% set index = (i*toShow) + j %}
+              {% if index < fotos|length %}
+                <div class="col-md-4">
+                  <div class="mb-2 container-fluid out">
+                    <div class="box in" style="background-color: {{fotos[index]}};"></div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+</div>

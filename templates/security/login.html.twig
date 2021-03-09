@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Iniciar sesión{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -10,11 +10,11 @@
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Has iniciado sesión como {{ app.user.username }}, <a href="{{ path('app_logout') }}">Cerrar sesión</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Por favor, autentíquese para acceder a la plataforma</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Por favor, autentíquese para acceder a la plataforma.</h1>
     <br>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
@@ -43,4 +43,8 @@
         Iniciar sesión
     </button>
 </form>
+
+<br>
+<br>
+<h5 class="h5 mb-3 font-weight-normal">Aún no tiene cuenta? Regístrese <a href="{{url('sing_in')}}">aquí</a>.</h5>
 {% endblock %}

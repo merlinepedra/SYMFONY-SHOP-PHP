@@ -25,8 +25,12 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('viewProduct', './assets/js/viewProduct.js')
+    .addEntry('productoView', './assets/js/productoView.js')
     .addEntry('baseIndex', './assets/js/baseIndex.js')
+    .addEntry('index', './assets/js/index.js')
+    .addEntry('carrito', './assets/js/carrito.js')
+    .addEntry('easyCarousel', './assets/js/easyCarousel.js')
+    
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -67,7 +71,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer require api-admin)
     //.enableReactPreset()
