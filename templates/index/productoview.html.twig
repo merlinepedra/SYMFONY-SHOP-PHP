@@ -45,10 +45,35 @@
 
         <div class="jumbotron-fluid">
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <input style="width: 30%; margin: 10px;" type="number" min="1" step="1" value="1" name="cantidad" id="cantidad" class="form-control">
-                <a class="btn btn-lg btn-warning" role="button" href="{{url('carrito_plus', {'productoid': producto.id, 'cantidad': 1 })}}">
-                        Agregar al carrito
-                </a>
+                {{ form_start(form, {'method': 'post'}) }}
+
+                {{ form_widget(form.cantidad, {
+                        'attr': 
+                        {
+                                'min': 1,
+                                'name': form.cantidad.vars.name,
+                                'id': form.cantidad.vars.id,
+                                'class': 'form_control',
+                                'style': "margin: 10px;"
+                        },
+                        'type': 'number'
+                })}}
+
+                {#
+                        <input style="width: 30%; margin: 10px;" type="number" min="1" step="1" value="1" name="cantidad" id="cantidad" class="form-control">
+                        <a class="btn btn-lg btn-warning" type="submit" role="button" href="{{url('productoView', {'productoid': producto.id })}}">
+                                Agregar al carrito
+                        </a>
+                #}
+                {{ form_widget(form.agregar, {
+                        'attr': 
+                                {
+                                        'class': 'btn btn-lg btn-warning',
+                                        'style': "margin: 10px; width: 100%;"
+                                },
+                        'label': 'Agregar al carrito'
+        }) }}
+                {{ form_end(form) }}
                 {% else %}
                         Debes iniciar sesión para realizar compras.
                 {% endif %}

@@ -6,9 +6,19 @@ App\Entity\Producto:
                 max: 50
                 minMessage: 'El producto debe mostrar al menos una variante(foto).'
                 maxMessage: 'No se pueden especificar mas de {{ limit }} variantes para un producto.'
+
 App\Entity\Usuario:
     properties:
         roles:
             - Count:
                 min: 1
                 minMessage: 'El usuario debe tener al menos un rol.'
+
+App\Entity\Orden:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [usuario, producto, created]
+            errorPath: producto
+            message: 'Ya esta orden existe: el usuario pertinente ya ha pedido este
+            producto en ese mismo momento.'
+            groups: [ordenUnica]

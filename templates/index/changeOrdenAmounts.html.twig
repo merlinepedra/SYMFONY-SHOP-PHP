@@ -22,10 +22,6 @@
         <p class="h1 font-weight-light">Tu carrito<i style="color: orange;" class="fas fa-shopping-cart"></i></p>
         {% set enCarrito = orden_repo.getCarrito(app.user.id) %}
 
-        <div class="my-custom-class-for-errors">
-                {{ form_errors(form) }}
-        </div>
-
         {# <p id='miFormulario' data-form="{{form}}"></p> #}
 
         <table class="table">
@@ -38,13 +34,22 @@
                                         {#                                        
                                         <input type="number" min="1" value="{{orden.cantidad}}" name="form[{{orden.id}}]" id="{{form[orden.id].vars.id}}" class="form-control">
                                         #}
-                                        {{ form_widget(form[orden.id], {'attr': {
-                                                'type': 'number',
-                                                'min': 1,
-                                                'name': form[orden.id].vars.name,
-                                                'id': form[orden.id].vars.id,
-                                                'class': 'form_control'
-                                        }}) }}                                
+                                        {{ form_widget(form[orden.id], {
+                                                'attr': 
+                                                {
+                                                        'min': 1,
+                                                        'name': form[orden.id].vars.name,
+                                                        'id': form[orden.id].vars.id,
+                                                        'class': 'form_control',
+                                                        'style': "width: 40%;"
+                                                },
+                                                'type': 'number'
+                                        }
+                                        ) }} 
+
+                                        <div class="my-custom-class-for-errors">
+                                                {{ form_errors(form[orden.id]) }}
+                                        </div>                               
                                 </td>
                                 <td>
                                     <a style="color: white;" class="btn btn-lg btn-danger" href="{{url('cancel_orden', {'ordenId':orden.id})}}">Cancelar</a>    

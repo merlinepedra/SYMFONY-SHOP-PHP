@@ -24,6 +24,9 @@
                 {#<li><a class="dropdown-item" href="">Editar perfil</a></li>#}
                 <li><a class="dropdown-item" href="{{url('tus_compras')}}">Tus compras</a></li>
                 <li><a class="dropdown-item" href="{{url('ver_carrito')}}">Ver carrito</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a class="dropdown-item" href="./admin">Administración</a></li>
+                {% endif %}
                 <li><a class="dropdown-item" href="{{url('app_logout')}}">
                         <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
                 </a></li>

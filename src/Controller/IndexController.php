@@ -82,41 +82,61 @@ class IndexController extends AbstractController
     /**
      * @Route("/productoView/{productoid}", name="productoView")
      */
-    public function productoView($productoid): Response
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $productoRepo = $manager->getRepository(Producto::class);
-
-        if($productoid == -1) $producto = $productoRepo->findAll()[0];
-        else $producto = $productoRepo->find($productoid);
-
-        return $this->render('index/productoView.html.twig', [
-            'producto' => $producto
-        ]);
-    }
-
-    /**
-     * @Route("/carrito_plus/{productoid}/{cantidad}", name="carrito_plus")
-     */
-    public function carrito_plus($productoid, $cantidad, EventDispatcherInterface $eventDispatcher): Response
+    public function productoView($productoid, Request $request): Response
     {
         $manager = $this->getDoctrine()->getManager();
         $productoRepo = $manager->getRepository(Producto::class);
         $producto = $productoRepo->find($productoid);
-        $user = $this->getUser();
 
-        $orden = new Orden();
-        $orden->setUsuario($user);
-        $orden->setProducto($producto);
-        $orden->setCantidad($cantidad);
-        $orden->setEstado('en el carrito');
 
-        $manager->persist($orden);
-        $manager->flush();
+        $defaultData = ['cantidad' => 1];
+        $form = $this->createFormBuilder($defaultData)
+        ->add('cantidad', NumberType::class)
+        ->add('agregar', SubmitType::class)
+        ->getForm();
 
-        //$eventDispatcher->dispatch(new OrdenCreatedEvent($orden));
+        $form->handleRequest($request);
 
-        return $this->redirectToRoute('changeOrdenAmounts');
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $cantidad = $form->getData()['cantidad'];
+            $ordenRepo = $manager->getRepository(Orden::class);
+            $user = $this->getUser();
+    
+            $preOrden = $ordenRepo->findBy([
+                'usuario'=> $user->getId(),
+                'producto' => $productoid,
+                'estado' => 'en el carrito'
+            ]);
+    
+            if($preOrden && count($preOrden) > 0)
+            {
+                $preOrden = $preOrden[0];
+                $preCantidad = $preOrden->getCantidad();
+                $preOrden->setCantidad($preCantidad + $cantidad);
+                $manager->persist($preOrden);
+                $manager->flush();
+                return $this->redirectToRoute('changeOrdenAmounts');
+            }
+
+            $orden = new Orden();
+            $orden->setUsuario($user);
+            $orden->setProducto($producto);
+            $orden->setCantidad($cantidad);
+            $orden->setEstado('en el carrito');
+    
+            $manager->persist($orden);
+            $manager->flush();
+    
+            //$eventDispatcher->dispatch(new OrdenCreatedEvent($orden));
+    
+            return $this->redirectToRoute('changeOrdenAmounts');
+        }
+
+        return $this->render('index/productoview.html.twig', [
+            'form' => $form->createView(),
+            'producto' => $producto
+        ]);
     }
 
     /**
