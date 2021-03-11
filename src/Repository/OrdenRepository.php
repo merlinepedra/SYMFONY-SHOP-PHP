@@ -29,7 +29,7 @@ class OrdenRepository extends ServiceEntityRepository
             ->andWhere('o.estado = :estado')
             ->setParameter('user', $userid)
             ->setParameter('estado', 'en el carrito')
-            ->orderBy('o.id', 'ASC')
+            ->orderBy('o.created', 'ASC')
             ->getQuery()
             ->getResult()
         ;
@@ -46,7 +46,7 @@ class OrdenRepository extends ServiceEntityRepository
             ->andWhere('o.estado = :estado')
             ->setParameter('user', $userid)
             ->setParameter('estado', 'pagado')
-            ->orderBy('o.id', 'ASC')
+            ->orderBy('o.created', 'ASC')
             ->getQuery()
             ->getResult()
         ;

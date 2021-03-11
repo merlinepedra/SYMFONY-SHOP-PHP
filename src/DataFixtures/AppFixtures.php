@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
         foreach ($this->getProductoData() as [$nombre, $descripcion, $categoria, $created, $precio_unidad, $fotos]) {
             $producto = new Producto();
             $producto->setNombre($nombre);
-            $producto->setDescripcion(str_repeat($descripcion, random_int(5, 100)));
+            $producto->setDescripcion(str_repeat($descripcion, random_int(5, 10)));
             $producto->setCategoria($categoria);
             //$producto->setCreated($created);
             $producto->setPrecioUnidad($precio_unidad);
@@ -55,7 +55,7 @@ class AppFixtures extends Fixture
         foreach ($this->getProductosName() as $i => $name) {
             $productos[] = [
                 $name,
-                'Descripcion muy random',
+                'Descripcion muy random. ',
                 $this->getReference(['Juguetes', 'Artefactos de cocina', 'Celulares'][random_int(0, 2)]),
                 new DateTime('now'),
                 random_int(20, 100),
@@ -277,12 +277,12 @@ class AppFixtures extends Fixture
         };
 
         return [
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
-            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
+            [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'en el carrito', null],
             [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'pagado', new DateTime('now + 14 days')],
             [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],
             [$random_user(), $random_product(), new DateTime('now'), random_int(1, 50), 'sin pagar', null],

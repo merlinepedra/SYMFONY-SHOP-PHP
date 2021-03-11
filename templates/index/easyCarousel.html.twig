@@ -11,6 +11,11 @@
   <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
+    {% set toShow = 3 %}
+    {% set div = fotos|length is divisible by(toShow) ? 0 : 1 %}
+    {% set slidersCount = ((fotos|length // toShow) + div) %}
+
+    {% if slidersCount > 1 %}
     <!--Controls-->
     <div class="carousel-controls">
       <a class="carousel-control carousel-control-prev" href="#multi-item-example" data-slide="prev">
@@ -21,14 +26,11 @@
       </a>
     </div>
     <!--/.Controls-->
-
-    {% set toShow = 3 %}
-    {% set div = fotos|length is divisible by(toShow) ? -1 : 0 %}
-    {% set slidersCount = ((fotos|length // toShow) + div) %}
+    {% endif %}
 
     <!--Indicators-->
     <ol class="carousel-indicators">
-      {% for i in 0..slidersCount %}
+      {% for i in 0..(slidersCount - 1) %}
         <li data-target="#multi-item-example" data-slide-to="{{i}}"></li>
       {% endfor %}
     </ol>
@@ -37,20 +39,18 @@
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
       <!--First slide-->
-      {% for i in 0..slidersCount %}
+      {% for i in 0..(slidersCount - 1) %}
        <div class="carousel-item">
-          <div class="row">
+          <ul>
             {% for j in 0..(toShow - 1) %}
               {% set index = (i*toShow) + j %}
               {% if index < fotos|length %}
-                <div class="col-md-4">
-                  <div class="mb-2 container-fluid out">
-                    <div class="box in" style="background-color: {{fotos[index]}};"></div>
-                  </div>
-                </div>
+              <li>
+                <div class="box" style="background-color: {{fotos[index]}};"></div>
+              </li>
               {% endif %}
             {% endfor %}
-          </div>
+          </ul>
         </div>
       {% endfor %}
     </div>

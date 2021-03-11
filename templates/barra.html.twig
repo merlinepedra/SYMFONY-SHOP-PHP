@@ -21,9 +21,9 @@
                 {{app.user.nombre}}
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="">Editar perfil</a></li>
-                <li><a class="dropdown-item" href="">Ver carrito</a></li>
-                <li><a class="dropdown-item" href="">Ver actividad</a></li>
+                {#<li><a class="dropdown-item" href="">Editar perfil</a></li>#}
+                <li><a class="dropdown-item" href="{{url('tus_compras')}}">Tus compras</a></li>
+                <li><a class="dropdown-item" href="{{url('ver_carrito')}}">Ver carrito</a></li>
                 <li><a class="dropdown-item" href="{{url('app_logout')}}">
                         <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
                 </a></li>

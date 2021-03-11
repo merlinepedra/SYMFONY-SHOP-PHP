@@ -37,12 +37,12 @@
         "/tiendecita/public/build/index.css"
       ]
     },
-    "carrito": {
+    "changeOrdenAmounts": {
       "css": [
-        "/tiendecita/public/build/carrito.css"
+        "/tiendecita/public/build/changeOrdenAmounts.css"
       ],
       "js": [
-        "/tiendecita/public/build/carrito.js"
+        "/tiendecita/public/build/changeOrdenAmounts.js"
       ]
     },
     "easyCarousel": {
@@ -52,6 +52,22 @@
       ],
       "css": [
         "/tiendecita/public/build/easyCarousel.css"
+      ]
+    },
+    "verCarrito": {
+      "css": [
+        "/tiendecita/public/build/verCarrito.css"
+      ],
+      "js": [
+        "/tiendecita/public/build/verCarrito.js"
+      ]
+    },
+    "tusCompras": {
+      "css": [
+        "/tiendecita/public/build/tusCompras.css"
+      ],
+      "js": [
+        "/tiendecita/public/build/tusCompras.js"
       ]
     }
   }

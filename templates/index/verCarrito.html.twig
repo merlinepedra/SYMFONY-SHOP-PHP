@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('verCarrito')}}
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    {{ encore_entry_script_tags('verCarrito') }}
+{% endblock %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+<div class="jumbotron">
+        <p class="h1 font-weight-light">Tu carrito<i style="color: orange;" class="fas fa-shopping-cart"></i></p>
+        {% set enCarrito = orden_repo.getCarrito(app.user.id) %}
+
+        {% if enCarrito %}
+        <table class="table">
+              <tbody>
+                {% for orden in enCarrito %}
+                        <tr>
+                                <td>{{orden.producto.nombre}}</td>
+                                <td>{{orden.created|format_datetime('medium', 'short', '', 'UTC')}}</td>
+                                <td>{{orden.cantidad}} unidades</td>
+                        </tr>
+                {% endfor %}
+              </tbody>  
+        </table>
+
+        <a style="color: white;" class="btn btn-success" href="{{url('pagar')}}">Pagar<i class="fa fa-money-check"></i></a>
+        <a style="color: white;" class="btn btn-danger" href="{{url('changeOrdenAmounts')}}">Modificar pedido<i class="fa fa-shopping-basket"></i></a>
+        {% else %}
+        <p class="h6 font-weight-light">Aún no has hecho realizado ningún pedido... 
+                revisa nuestra tienda y elige qué productos necesitas.</p>
+        {% endif %}
+{% else %}
+<div class="jumbotron">
+        <h1>No podemos identificarte si no <a href="{{url('app_login')}}">inicias sesión</a>.</h1>
+</div>
+{% endif %}
+{% endblock %}

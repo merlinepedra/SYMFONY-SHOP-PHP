@@ -15,41 +15,52 @@
 {% block body2 %}
 {% if producto %}
 
-<div class="col-md-6" style="overflow: scroll; margin-top:20px;">
+
+<div class="col-md-5" style="padding-top: 20px;">
         <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
         <span data-color='{{producto.fotos[0]}}' class="h5 badge badge-pill">
                 {{ producto.categoria.nombre }}
         </span>
-        <br>
-        <div class='other-box border' style="padding: 10px; margin:10px;"></div>
-
-        <p class="descripcion" style="height: 230px; overflow: auto; margin-bottom: 20px;">{{ producto.descripcion }}</p>
-
-        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %}      
-
+        <p class="descripcion">{{ producto.descripcion }}</p>
 </div>
-<div class="col-md-2 details">
-        <div class="container">
+<div class="col-md-2" style="padding-top: 20px;">
+        <div class="jumbotron-fluid" style="margin-bottom: 100px;">
                 <span>
                         <p class="font-weight-light h4">Precio:</p>
                         <span class='precio h3 font-weight-bolder'>{{ producto.preciounidad }}.00 $</span>
                 </span> 
-                <span>Redes sociales</span>
         </div>
 
-        <div class="jumbotron" style="margin-top:40px; margin-left: 0px;">
-                <br>
-                Creado: <strong>{{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}</strong>
-                <br>
-
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <a href="{{url('carrito_plus', {'productoid': producto.id})}}">Añadir al carrito</a>
-                {% else %}
-                        Debes loguearte para realizar compras.
-                {% endif %}
+        <div class="jumbotron-fluid" style="margin-bottom: 100px;">
+                <span>
+                        <p class="font-weight-light h6">Disponible desde:</p>
+                        <span>
+                                <i class="fa fa-clock-o"></i>
+                        </span>
+                        <span class='precio h5 font-weight-normal' style="width: 20%;">
+                                {{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}
+                        </span>
+                </span>
         </div> 
+
+        <div class="jumbotron-fluid">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <input style="width: 30%; margin: 10px;" type="number" min="1" step="1" value="1" name="cantidad" id="cantidad" class="form-control">
+                <a class="btn btn-lg btn-warning" role="button" href="{{url('carrito_plus', {'productoid': producto.id, 'cantidad': 1 })}}">
+                        Agregar al carrito
+                </a>
+                {% else %}
+                        Debes iniciar sesión para realizar compras.
+                {% endif %}
+        </div>
+</div>
+<div class="col-md-3" style="margin-top:20px;">
         
-        
+        <br>
+        <div class='other-box border' style="padding: 10px; margin:10px;"></div>
+
+        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %}      
+
 </div>
 
 {% else %}

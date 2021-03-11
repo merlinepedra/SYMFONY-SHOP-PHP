@@ -6,4 +6,5 @@ twig:
     globals:
         category_repo: '@App\Repository\CategoriaRepository'
         products_repo: '@App\Repository\ProductoRepository'
+        orden_repo: '@App\Repository\OrdenRepository'
     form_themes: ['bootstrap_4_layout.html.twig']

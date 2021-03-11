@@ -28,8 +28,12 @@ Encore
     .addEntry('productoView', './assets/js/productoView.js')
     .addEntry('baseIndex', './assets/js/baseIndex.js')
     .addEntry('index', './assets/js/index.js')
-    .addEntry('carrito', './assets/js/carrito.js')
+    .addEntry('changeOrdenAmounts', './assets/js/changeOrdenAmounts.js')
     .addEntry('easyCarousel', './assets/js/easyCarousel.js')
+    .addEntry('verCarrito', './assets/js/verCarrito.js')
+    .addEntry('tusCompras', './assets/js/tusCompras.js')
+
+    
     
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Tus compras{% endblock %}
+
+{% block stylesheets %}
+        {{parent()}}
+        {{encore_entry_link_tags('tusCompras')}}
+{% endblock %}
+
+{% block javascripts %}
+        {{parent()}}
+        {{ encore_entry_script_tags('tusCompras') }}
+{% endblock %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+<div class="jumbotron">
+        <p class="h1 font-weight-light">Tus compras <i style="color: orange;" class="fas fa-shopping-bag"></i></p>
+        {% set misCompras = orden_repo.getMisCompras(app.user.id) %}
+
+        {% if misCompras %}
+        <table class="table">
+              <tbody>
+                {% for orden in misCompras %}
+                        <tr>
+                                <td>{{orden.producto.nombre}}</td>
+                                <td>{{orden.created|format_datetime('medium', 'short', '', 'UTC')}}</td>
+                                <td>{{orden.cantidad}} unidades</td>
+                        </tr>
+                {% endfor %}
+              </tbody>  
+        </table>
+        {% else %}
+        <p class="h6 font-weight-lighter">Nos complace tu visita... 
+                revisa nuestros productos, puede que alguno sea lo que estás buscando.</p>
+        {% endif %}
+        
+{% else %}
+<div class="jumbotron">
+        <h1>No podemos identificarte sino <a href="{{url('app_login')}}">inicias sesión</a>.</h1>
+</div>
+{% endif %}
+{% endblock %}

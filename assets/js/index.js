@@ -35,21 +35,21 @@ $('.categoriaCarteles').each( function(index, element ){
     }
 });
 
-$('.other-box').each(function(index, element){
+$('.other-box-index').each(function(index, element){
     var color = $(this).data('color')
     $(this).css('background-color', color)
 });
 
 
 $('.pname').each(function(index, element){
-    var imageWidth = $(this).closest('.other-box').width
+    var imageWidth = $(this).closest('.other-box-index').width
     $(this).css('max-width', imageWidth-5)
 });
 
 
 /*
 $('tbody tr:nth-child(1) .precio').each(function(index, element){
-    var obw = $('.other-box').height()
+    var obw = $('.other-box-index').height()
     var labels = $('tbody tr:nth-child(1) .precio').height()
     console.log(obw)
     console.log(Math.max(labels))
@@ -71,7 +71,7 @@ $('tbody').each(function(index, element)
             var p = productos[4*i + j]
             var $newColumna = $(`<td><div class="container">
                 <picture>
-                    <div class="other-box" style="background-color: 'red';"></div>
+                    <div class="other-box-index" style="background-color: 'red';"></div>
                     <figcaption>${p.nombre}</figcaption>
                 </picture>
             </div></td>`)

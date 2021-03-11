@@ -5,32 +5,24 @@
 
 .carousel-indicators li { visibility: hidden; }
 
+.carousel-item li {
+    display: inline;
+    float: left;
+}
+
 .box {
-    margin: 20px;
+    /*
     width: 80px;
     height: 80px;
+    */
     position: relative;
-    /*left: 25px;*/
     box-shadow: 5px 10px 8px #888888;
     clear: both;
 }
 
-.col-md-4{
-    /*
-    border: 1px solid lime;
-    padding:30px;
-    background-color: lightpink;
-    padding-top: 50px;
-    padding-right: 100px;
-    padding-left: 50px;
-    */
-}
 
 .carousel-control{
     width: 4%;
-    /*
-    bottom: 300px;
-    */
 }
 
 .out {
@@ -59,20 +51,13 @@
 
 .carousel{
     /*
-    background-color: lightsteelblue;
+    background-color: red;
     */
     left: 0;
     width: 100%;
     position:absolute;
 }
 
-.carousel-control-prev,
-.carousel-control-next{
-    /*
-    align-items: center;
-    background-color: orange;
-    */
-}
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
