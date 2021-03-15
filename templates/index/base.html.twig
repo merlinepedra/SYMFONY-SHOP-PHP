@@ -19,29 +19,8 @@
         <li class='h4 font-weight-light listaDeElementos bg-dark' style="text-align: center; padding: 5px; color: white;">
             Categorías
         </li>
-        {% for cat in category_repo.findAll() %}
-            {% set lista_productos = products_repo.getByCategory(cat) %}
-            <li class='listaDeElementos'>
-            {% if lista_productos%}
-            <div class="dropdown">
-                <div class="dropdown-toggle" data-toggle="dropdown">
-                    <span style="padding-left: 10px; color: grey;">
-                        {{ cat.nombre }} <span class="caret"></span>
-                    </span>
-                </div>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    {% for producto in  lista_productos%}
-                        <li><a class="dropdown-item" href='{{ path('productoView', {productoid: producto.id }) }}'>{{producto.nombre}}</a></li>
-                        <li class="divider"></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% else %}
-            <span style="padding-left: 10px; color: grey;">
-                {{ cat.nombre }}
-            </span>
-            {% endif %}
-            </li>            
+        {% for cat in category_repo.getRaices() %}
+            {{ render(controller('App\\Controller\\IndexController::createPanelResponse', {'categoria': cat})) }}          
         {% endfor %}
         </ul>
         {% block body2 %}{% endblock %}

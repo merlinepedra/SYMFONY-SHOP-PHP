@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=CategoriaRepository::class)
  */
@@ -29,9 +30,21 @@ class Categoria
      */
     private $productos;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Categoria::class, inversedBy="subcategorias")
+     */
+    private $padre;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Categoria::class, mappedBy="padre")
+     */
+    private $subcategorias;
+
     public function __construct()
     {
         $this->productos = new ArrayCollection();
+        $this->subcategorias = new ArrayCollection();
+        $this->padre = null;
     }
 
     public function getId(): ?int
@@ -79,5 +92,53 @@ class Categoria
         }
 
         return $this;
+    }
+
+    public function getPadre(): ?self
+    {
+        return $this->padre;
+    }
+
+    public function setPadre(?self $padre): self
+    {
+        $this->padre = $padre;
+        if($padre != null) $padre->addSubcategoria($this);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getSubcategorias(): Collection
+    {
+        return $this->subcategorias;
+    }
+
+    public function addSubcategoria(self $subcategoria): self
+    {
+        if (!$this->subcategorias->contains($subcategoria)) {
+            $this->subcategorias[] = $subcategoria;
+            $subcategoria->setPadre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubcategoria(self $subcategoria): self
+    {
+        if ($this->subcategorias->removeElement($subcategoria)) {
+            // set the owning side to null (unless already changed)
+            if ($subcategoria->getPadre() === $this) {
+                $subcategoria->setPadre(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre;
     }
 }

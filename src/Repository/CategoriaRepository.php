@@ -18,4 +18,16 @@ class CategoriaRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Categoria::class);
     }
+
+    /**
+    * @return Categoria[]
+    */
+    public function getRaices() : array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.padre is NULL')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

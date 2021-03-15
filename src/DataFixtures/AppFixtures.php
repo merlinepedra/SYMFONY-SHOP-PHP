@@ -139,7 +139,7 @@ class AppFixtures extends Fixture
         {
             if($fileName != '..' and $fileName != '.')
             {
-                echo 'Mira  loca '.$source.'/'.$fileName;
+                // echo 'Mira  loca '.$source.'/'.$fileName;
                 copy($source.'/'.$fileName, $dest.'/'.$fileName);
                 $imageNames[] = $fileName;
             }

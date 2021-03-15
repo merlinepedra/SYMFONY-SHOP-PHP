@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\OrdenRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass=OrdenRepository::class)
  */
@@ -44,8 +46,13 @@ class Orden
      */
     private $fecha_pago;
 
-    /**
-     * @ORM\Column(type="string", length=255)
+
+     /**
+    * @ORM\Column(type="string", length=255)
+     * @Assert\Choice(
+     *     choices = {"pagado", "en el carrito", "cancelado"},
+     *     message = "Elige un estado valido para esta orden."
+     * )
      */
     private $estado;
 

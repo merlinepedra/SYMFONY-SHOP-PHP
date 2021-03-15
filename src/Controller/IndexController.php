@@ -235,4 +235,75 @@ class IndexController extends AbstractController
     {
         return $this->render('index/verCarrito.html.twig');
     }
+
+    public function createPanelResponse(Categoria $categoria) : Response
+    {
+        return new Response($this->createPanel($categoria));
+    }
+
+    public function createPanel(Categoria $categoria) : string
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $productoRepo = $manager->getRepository(Producto::class);
+        $products = $productoRepo->getByCategory($categoria);
+        $subcategorias = $categoria->getSubcategorias();
+        $categoriaName = $categoria->getNombre();
+
+        /*
+        if(count($subcategorias) == 0 && count($products) == 0) 
+        {
+            return new Response(
+                "<li class='listaDeElementos'>
+                    <span style='padding-left: 10px; color: grey;'>
+                        $categoriaName 
+                    </span>
+                </li>");
+        }
+        */
+
+        $productsHTML = "";
+        $subsHTML = "";
+
+        /*
+        {% for producto in  lista_productos%}
+                <li><a class='dropdown-item' 
+                href='{{ path('productoView', {productoid: producto.id }) }}'>
+                {{producto.nombre}}</a></li>
+                <li class='divider'></li>
+            {% endfor %}
+        */
+
+        foreach ($subcategorias as $sub) {
+            $subsHTML .= $this->createPanel($sub);
+        }
+
+        foreach ($products as $prod) {
+            $proName = $prod->getNombre();
+            $proId = $prod->getId();
+            $productsHTML .= "
+            <li><a class='dropdown-item' 
+            href='productoView/$proId'>
+            $proName</a></li>
+            <li class='divider'></li>";
+        }
+
+
+        
+        $response = " <li class='listaDeElementos'>
+        <div class='dropdown'>
+        <div class='dropdown-toggle' data-toggle='dropdown'>
+            <span style='padding-left: 10px; color: grey;'>
+                $categoriaName <span class='caret'></span>
+            </span>
+        </div>
+        <ul class='dropdown-menu dropdown-menu-right'>
+            $subsHTML
+            $productsHTML
+        </ul>
+    </div>
+    </li>
+    ";
+        
+        return $response;
+    }
 }

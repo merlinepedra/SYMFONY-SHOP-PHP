@@ -13,6 +13,37 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+    <header>
+        <div class="row">
+            <div class="col-md-4 jumbotron-fluid" style="padding-left: 30px; padding-top: 30px;">
+                <img src="{{ asset('images/xatem.png') }}" style="width: 100%;">
+                <p class="h4 font-weight-lighter" style="color: grey; width: 100%;">
+                    Todo lo que buscas... y mucho más!
+                </p>
+                <p style="color: orangered; opacity: 80%;">
+                    <i class="fa fa-envelope"></i> 
+                    xatem-mail@hotmail.com
+                </p>
+                <p style="color: orangered; opacity: 80%;">
+                    <i class="fa fa-phone"></i>
+                    555 222 444 21
+                </p>
+            </div>
+            <div class="col-md-3 centro-header">        
+                <h5>
+                    Descuentos por cantidades
+                </h5>
+                <h5>
+                    Venta al por mayor B2B
+                </h5>
+                <h5>
+                    Proveedor dropshipping
+                </h5>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+    </header>
     <body>
         
         {% include 'barra.html.twig' %}
