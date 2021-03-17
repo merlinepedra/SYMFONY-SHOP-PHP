@@ -16,7 +16,7 @@
     <div class='row row-no-gutters'>
         <ul class='listaDeElementos col-md-2 border' style="padding: 0;">
             {% include 'index/carritoSection.html.twig' %}
-        <li class='h4 font-weight-light listaDeElementos bg-dark' style="text-align: center; padding: 5px; color: white;">
+        <li class='h4 font-weight-light bg-dark' style="text-align: center; padding: 5px; color: white;">
             Categorías
         </li>
         {% for cat in category_repo.getRaices() %}

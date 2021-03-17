@@ -69,6 +69,22 @@
       "js": [
         "/tiendecita/public/build/tusCompras.js"
       ]
+    },
+    "barra1": {
+      "css": [
+        "/tiendecita/public/build/barra1.css"
+      ],
+      "js": [
+        "/tiendecita/public/build/barra1.js"
+      ]
+    },
+    "header": {
+      "css": [
+        "/tiendecita/public/build/header.css"
+      ],
+      "js": [
+        "/tiendecita/public/build/header.js"
+      ]
     }
   }
 }

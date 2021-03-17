@@ -32,7 +32,8 @@ Encore
     .addEntry('easyCarousel', './assets/js/easyCarousel.js')
     .addEntry('verCarrito', './assets/js/verCarrito.js')
     .addEntry('tusCompras', './assets/js/tusCompras.js')
-
+    .addEntry('barra1', './assets/js/barra1.js')
+    .addEntry('header', './assets/js/header.js')
     
     
 
