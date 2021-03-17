@@ -1,0 +1,69 @@
+{% block stylesheets %}
+        {{encore_entry_link_tags('header')}}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('header') }}
+{% endblock %}
+
+
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" style="padding-left: 30px; padding-top: 30px; padding-right: 40px;">
+                <img src="{{ asset('images/xatem.png') }}" style="width: 100%;">
+                <p class="h5 font-weight-lighter" style="color: grey; width: 100%;">
+                    Todo lo que buscas... y mucho más!
+                </p>
+                <p style="color: orangered; opacity: 80%;">
+                    <i class="fa fa-envelope"></i> 
+                    xatem-mail@hotmail.com
+                </p>
+                <p style="color: orangered; opacity: 80%;">
+                    <i class="fa fa-phone"></i>
+                    555 222 444 21
+                </p>
+            </div>
+            <div class="col-md-3" style="padding: 0px; margin: 0px;">    
+                <ul class="miul">
+                    <li class="h5 font-weight-normal">
+                        <i class='fa fa-user'></i>
+                        Descuentos por cantidades</li>
+                    <li class="h5 font-weight-normal">
+                        <i class='fa fa-user'></i>
+                        Venta al por mayor B2B</li>
+                    <li class="h5 font-weight-normal">
+                        <i class='fa fa-user'></i>
+                        Proveedor dropshipping</li>
+                </ul>    
+            </div>
+            <div class="col-md-5 losPagos" style="margin-right: 0px;">
+                <table class="table">
+                    <tbody>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('images/1.jpeg')}}">
+                                    <p>Contra reembolso</p>
+                                </td>
+                                <td>
+                                    <img src="{{ asset('images/1.jpeg')}}">
+                                    <p>PyPal</p>
+                                </td>
+                                <td>
+                                    <img src="{{ asset('images/1.jpeg')}}">
+                                    <p>Tarjeta de crédito</p>
+                                </td>
+                                <td>
+                                    <img src="{{ asset('images/1.jpeg')}}">
+                                    <p>Transferencia bancaria</p>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table> 
+                <p class="h2 font-weight-normal" style="color: maroon; margin-bottom: 10px; text-align: center;">
+                    ¡Paga como quieras!
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
