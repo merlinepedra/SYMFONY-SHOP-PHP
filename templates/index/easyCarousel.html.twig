@@ -40,7 +40,7 @@
     <div class="carousel-inner" role="listbox">
       <!--First slide-->
       {% for i in 0..(slidersCount - 1) %}
-       <div class="carousel-item">
+      <div class="carousel-item">
           <ul>
             {% for j in 0..(toShow - 1) %}
               {% set index = (i*toShow) + j %}
@@ -55,10 +55,5 @@
       {% endfor %}
     </div>
 
-    </div>
-    <!--/.Slides-->
-
   </div>
-  <!--/.Carousel Wrapper-->
-
 </div>

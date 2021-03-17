@@ -15,7 +15,11 @@
 {% block body2 %}
 {% if producto %}
 
+<div class="col-md-3" style="margin-top:20px;">
+        <div class='other-box border' style="padding: 10px; margin:10px;"></div>
 
+        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %}      
+</div>
 <div class="col-md-5" style="padding-top: 20px;">
         <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
         <span data-color='{{producto.fotos[0]}}' class="h5 badge badge-pill">
@@ -79,14 +83,7 @@
                 {% endif %}
         </div>
 </div>
-<div class="col-md-3" style="margin-top:20px;">
-        
-        <br>
-        <div class='other-box border' style="padding: 10px; margin:10px;"></div>
 
-        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %}      
-
-</div>
 
 {% else %}
         <h2>Ese producto no existe.</h2>
