@@ -1,3 +1,43 @@
+.list-group-item{
+    /*border: none;*/
+}
+
+.list-group{
+    width: 100%;
+}
+
+.precio .h2
+{ 
+    box-shadow: 3px 5px 4px #888888;
+}
+
+.path
+{
+    padding:7px; 
+    margin:10px; 
+    background-color: rgb(155, 154, 154);
+    width: 100%;
+}
+
+.path i{
+    color:white;
+}
+
+.path span{
+    color: black;
+}
+
+.fa-star:hover{
+    cursor:s-resize;
+    color: orangered;
+}
+
+.clasificacion i{
+    display: inline; 
+    color:grey; 
+    text-shadow: 2px 5px 2px #99978888;
+}
+
 .badge{
     vertical-align: top;
     color: white; 
@@ -5,45 +45,13 @@
     box-shadow: 3px 5px 4px #888888;
 }
 
-.col-md-2, .col-md-5, .col-md-3 {
-    margin-right: 0px !important;
-    padding-right: 0px !important;
-}
 
-.col-md-2 {
-    margin-left: 0px;
-    padding-left: 0px;
-}
 
-.other-box {
-    position: absolute;
-    top: 20px;
-    height: 200px;
-    width: 200px;
-    margin: 2px;
-    box-shadow: 3px 8px 6px #888888;
-    clear: both;
-}
+
 
 .descripcion{
     margin: 10px;
-    overflow-y: scroll; 
     width: 90%; 
     height: 500px;
     margin-bottom: 20px;
-}
-
-.carousel{
-    top:auto;
-    float: left;
-}
-
-.details span:nth-child(odd)
-{
-    float: left;
-}
-
-.details span:nth-child(even)
-{
-    float: right;
 }

@@ -15,14 +15,13 @@
 
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
     <div class="mispan">
-        <i class="fa fa-user fa-2x" style="color: white;"></i><a class="nav-link" href="{{url('sing_in')}}">Nueva cuenta</a>
+        <i class="fa fa-user" style="color: white;"></i><a class="nav-link" href="{{url('sing_in')}}">Nueva cuenta</a>
         <span style="border-right: 2px solid black; width: 5px;"></span>
         <a class="nav-link" href="{{url('app_login')}}">Iniciar sesión</a>
     </div>
     {% else %}
-    <ul class="navbar-nav">
         {% if app.user %}
-        <li class="nav-item dropdown">
+        <div class="dropdown mispan">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown">
                 {% if app.user.foto %}
                         <img src="{{ asset('uploads/' ~ app.user.foto) }}" 
@@ -33,7 +32,7 @@
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 {#<li><a class="dropdown-item" href="">Editar perfil</a></li>#}
                 <li><a class="dropdown-item" href="{{url('tus_compras')}}">Tus compras</a></li>
-                <li><a class="dropdown-item" href="{{url('ver_carrito')}}">Ver carrito</a></li>
+                <li><a class="dropdown-item" href="{{url('changeOrdenAmounts')}}">Ver carrito</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
                 <li><a class="dropdown-item" href="./admin">Administración</a></li>
                 {% endif %}
@@ -41,8 +40,7 @@
                         <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
                 </a></li>
           </ul>
-        </li>
+        </div>
         {% endif %}
-      </ul>
     {% endif %}
 </nav>

@@ -14,62 +14,61 @@
 {% endblock %}
 
 {% block body %}
-{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-<div class="jumbotron">
-{{ form_start(form, {'method': 'post'}) }}
-
-
+<div class="col-md-10">
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="jumbotron">
         <p class="h1 font-weight-light">Tu carrito<i style="color: orange;" class="fas fa-shopping-cart"></i></p>
         {% set enCarrito = orden_repo.getCarrito(app.user.id) %}
 
-        {# <p id='miFormulario' data-form="{{form}}"></p> #}
+                {% if enCarrito %}
+                        {{ form_start(form, {'method': 'post'}) }}
 
-        <table class="table">
-              <tbody>
-                {% for orden in enCarrito %}
-                        <tr>
-                                <td>{{orden.producto.nombre}}</td>
-                                <td>{{orden.created|format_datetime('medium', 'short', '', 'UTC')}}</td>
-                                <td>
-                                        {#                                        
-                                        <input type="number" min="1" value="{{orden.cantidad}}" name="form[{{orden.id}}]" id="{{form[orden.id].vars.id}}" class="form-control">
-                                        #}
-                                        {{ form_widget(form[orden.id], {
-                                                'attr': 
-                                                {
-                                                        'min': 1,
-                                                        'name': form[orden.id].vars.name,
-                                                        'id': form[orden.id].vars.id,
-                                                        'class': 'form_control',
-                                                        'style': "width: 40%;"
-                                                },
-                                                'type': 'number'
-                                        }
-                                        ) }} 
-
-                                        <div class="my-custom-class-for-errors">
-                                                {{ form_errors(form[orden.id]) }}
-                                        </div>                               
-                                </td>
-                                <td>
-                                    <a style="color: white;" class="btn btn-lg btn-danger" href="{{url('cancel_orden', {'ordenId':orden.id})}}">Cancelar</a>    
-                                </td>
-                        </tr>
-                {% endfor %}
-              </tbody>  
-        </table>
-
-        {#
-                <button class="btn btn-lg btn-warning" type="submit">
-                        Actualizar pedidos
-                </button>
-        #}
-        {{ form_widget(form.actualizar, {'attr': {'class': 'task_field btn-lg btn-warning'}}) }}
+                        <table class="table">
+                                <tbody>
+                                        {% for orden in enCarrito %}
+                                                <tr>
+                                                        <td>{{orden.producto.nombre}}</td>
+                                                        <td>{{orden.created|format_datetime('medium', 'short', '', 'UTC')}}</td>
+                                                        <td>
+                                                                {#                                        
+                                                                <input type="number" min="1" value="{{orden.cantidad}}" name="form[{{orden.id}}]" id="{{form[orden.id].vars.id}}" class="form-control">
+                                                                #}
+                                                                {{ form_widget(form[orden.id], {
+                                                                        'attr': 
+                                                                        {
+                                                                                'min': 1,
+                                                                                'name': form[orden.id].vars.name,
+                                                                                'id': form[orden.id].vars.id,
+                                                                                'class': 'form_control',
+                                                                                'style': "width: 40%;"
+                                                                        },
+                                                                        'type': 'number'
+                                                                }
+                                                                ) }} 
+                
+                                                                <div class="my-custom-class-for-errors">
+                                                                        {{ form_errors(form[orden.id]) }}
+                                                                </div>                               
+                                                        </td>
+                                                        <td>
+                                                        <a style="color: white;" class="btn btn-lg btn-danger" href="{{url('cancel_orden', {'ordenId':orden.id})}}">Cancelar</a>    
+                                                        </td>
+                                                </tr>
+                                        {% endfor %}
+                                </tbody>  
+                        </table>
         
-{{ form_end(form) }}
-{% else %}
-<div class="jumbotron">
-        <h1>No podemos identificarte sino <a href="{{url('app_login')}}">inicias sesión</a>.</h1>
+                        {{ form_widget(form.actualizar, {'attr': {'class': 'task_field btn-lg btn-warning'}}) }}
+                        {{ form_end(form) }}
+                {% else %}
+                        <p class="h6 font-weight-lighter">
+                                No has realizado ningún pedido... revisa nuestra tienda y define qué productos necesitas.
+                        </p>
+                {% endif %}
+        {% else %}
+        <div class="jumbotron">
+                <p class="h5 font-weight-lighter">No podemos identificarte si no <a href="{{url('app_login')}}">inicias sesión</a>.</p>
+        </div>
+        {% endif %}
 </div>
-{% endif %}
 {% endblock %}

@@ -26,11 +26,9 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('productoView', './assets/js/productoView.js')
-    .addEntry('baseIndex', './assets/js/baseIndex.js')
     .addEntry('index', './assets/js/index.js')
     .addEntry('changeOrdenAmounts', './assets/js/changeOrdenAmounts.js')
     .addEntry('easyCarousel', './assets/js/easyCarousel.js')
-    .addEntry('verCarrito', './assets/js/verCarrito.js')
     .addEntry('tusCompras', './assets/js/tusCompras.js')
     .addEntry('barra1', './assets/js/barra1.js')
     .addEntry('header', './assets/js/header.js')

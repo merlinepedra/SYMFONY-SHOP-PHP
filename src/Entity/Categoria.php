@@ -5,7 +5,9 @@ namespace App\Entity;
 use App\Repository\CategoriaRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 
 /**
@@ -39,6 +41,23 @@ class Categoria
      * @ORM\OneToMany(targetEntity=Categoria::class, mappedBy="padre")
      */
     private $subcategorias;
+
+    public function validate(ExecutionContextInterface $context, $payload)
+    {
+        if($this->soyAncestro($this->getPadre()))
+        {
+            $context->buildViolation('Esta categoria no puede ser mi padre!')
+            ->atPath('padre')
+            ->addViolation();
+        }
+    }
+
+    private function soyAncestro($node)
+    {
+        if($node === null) return false;
+        if($node->getId() === $this->getId()) return true;
+        else return soyAncestro($node->getPadre());
+    }
 
     public function __construct()
     {

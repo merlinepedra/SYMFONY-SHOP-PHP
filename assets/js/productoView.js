@@ -1,18 +1,19 @@
 import '../styles/productoView.css'
 
+/*
 var firstColor = $('.badge').data('color')
 $('.other-box').css("background-color", firstColor)
+*/
 
-var otherBoxWidth = $('.other-box').width()
-$('.carousel').css('width', otherBoxWidth + 60)
-
-
-var carouselTop = otherBoxWidth + (otherBoxWidth/3)
-console.log('carouselTop: ', carouselTop)
-$('.carousel').css('top', carouselTop)
-
-$('.carousel-item .box').click(function(){
-    console.log('Diste click!!!')
-    var thisColor = $(this).css("background-color");
-    $('.other-box').css("background-color", thisColor);
+$('.clasificacion i').click(function(){
+    $actual = this
+    $color = 'orangered'
+    $('.clasificacion i').each(function(index, element){
+        element.css('color', $color)
+        if(element === $actual) 
+        {
+            $color = 'grey'
+            document.forms["form"]["clasificacion"].value = index
+        }
+    })
 })

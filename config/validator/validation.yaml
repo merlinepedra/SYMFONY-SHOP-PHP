@@ -22,3 +22,7 @@ App\Entity\Orden:
             message: 'Ya esta orden existe: el usuario pertinente ya ha pedido este
             producto en ese mismo momento.'
             groups: [ordenUnica]
+
+App\Entity\Categoria:
+    constraints:
+        - Callback: validate

@@ -52,11 +52,12 @@ class AppFixtures extends Fixture
     {
         //[$nombre, $descripcion, $categoria, $created, $precio_unidad, $fotos]
         $productos = [];
+        $cats = $this->getCategoriaDataChilds();
         foreach ($this->getProductosName() as $i => $name) {
             $productos[] = [
                 $name,
                 'Descripcion muy random. ',
-                $this->getReference(['Juguetes', 'Artefactos de cocina', 'Celulares'][random_int(0, 2)]),
+                $this->getReference($cats[random_int(0, count($cats) - 1)]),
                 new DateTime('now'),
                 random_int(20, 100),
                 $this->getRandomColorList()
@@ -93,7 +94,8 @@ class AppFixtures extends Fixture
 
     private function loadCategorias(ObjectManager $manager)
     {
-        foreach ($this->getCategoriaData() as $nombre) {
+        $parents = $this->getCategoriaDataParents();
+        foreach ($parents as $nombre) {
             $categoria = new Categoria();
 
             $categoria->setNombre($nombre);
@@ -102,10 +104,21 @@ class AppFixtures extends Fixture
             $this->addReference($nombre, $categoria);
         }
 
+        foreach ($this->getCategoriaDataChilds() as $nombre) {
+            $categoria = new Categoria();
+            $parent = $this->getReference($parents[random_int(0, count($parents) - 1)]);
+
+            $categoria->setNombre($nombre);
+            $categoria->setPadre($parent);
+
+            $manager->persist($categoria);
+            $this->addReference($nombre, $categoria);
+        }
+
         $manager->flush();
     }
 
-    private function getCategoriaData(): array
+    private function getCategoriaDataParents(): array
     {
         // [$nombre]
         return [
@@ -116,6 +129,26 @@ class AppFixtures extends Fixture
             'Ropa',
             'Accesorios',
             'Joyeria'
+        ];
+    }
+
+    private function getCategoriaDataChilds(): array
+    {
+        // [$nombre]
+        return [
+            'Mascotas',
+            'Jardineria',
+            'Comestibles',
+            'Vestidos',
+            'Zapatos',
+            'Joyas',
+            'Gorros',
+            'Carteras',
+            'Relojes',
+            'Consolas y videojuegos',
+            'Maquinarias',
+            'Libros, revistas y comics',
+            'Belleza y salud'
         ];
     }
 

@@ -12,7 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Categoria;
 use App\Entity\Producto;
 use App\Entity\Orden;
-use app\Entity\Usuario;
+use App\Entity\Usuario;
+use App\Entity\Calificacion;
 use DateTime;
 
 use App\Event\OrdenCreatedEvent;
@@ -88,10 +89,13 @@ class IndexController extends AbstractController
         $productoRepo = $manager->getRepository(Producto::class);
         $producto = $productoRepo->find($productoid);
 
-
         $defaultData = ['cantidad' => 1];
         $form = $this->createFormBuilder($defaultData)
         ->add('cantidad', NumberType::class)
+        ->add('clasificacion', NumberType::class, array(
+            'mapped' => false,
+            'required' => false,
+        ))
         ->add('agregar', SubmitType::class)
         ->getForm();
 
@@ -99,9 +103,20 @@ class IndexController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $user = $this->getUser();
+
+            if(array_key_exists('calificacion', $form->getData()))
+            {
+                $calificacion = $form->getData()['calificacion'];
+                $new_rate = new Calificacion();
+                $new_rate->setUsuario($user);
+                $new_rate->setProducto($producto);
+                $new_rate->setValue($calificacion);
+                $manager->persist($new_rate);
+            }
+
             $cantidad = $form->getData()['cantidad'];
             $ordenRepo = $manager->getRepository(Orden::class);
-            $user = $this->getUser();
     
             $preOrden = $ordenRepo->findBy([
                 'usuario'=> $user->getId(),
@@ -140,100 +155,11 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/changeOrdenAmounts", name="changeOrdenAmounts")
-    */
-    public function changeCantidadOrden(Request $request) : Response
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $ordenRepo = $manager->getRepository(Orden::class);
-        $enCarrito = $ordenRepo->getCarrito($this->getUser()->getId());
-
-        $defaultData = [];
-        $form = $this->createFormBuilder();
-
-        foreach ($enCarrito as $orden) {
-            $name = strval($orden->getId());
-            $defaultData[$name] = $orden->getCantidad();
-            $form->add(
-                $name, 
-                NumberType::class, 
-                array('required' => false));
-        }
-        $form->add('actualizar', SubmitType::class);
-        $form->setData($defaultData);
-        $form = $form->getForm();
-        $form->handleRequest($request);
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();        
-
-            foreach ($data as $key => $value) {
-                if($value)
-                {
-                    $orden = $ordenRepo->find((int)$key);
-                    if ($orden) {
-                        $orden->setCantidad($value);
-                        $manager->persist($orden);
-                    }
-                }
-            }
-
-            $manager->flush();
-            return $this->redirectToRoute('ver_carrito');
-        }
-
-        return $this->render('index/changeOrdenAmounts.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/cancelOrden/{ordenId}", name="cancel_orden")
-     */
-    public function cancel($ordenId) : Response
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $ordenRepo = $manager->getRepository(Orden::class);
-        $orden =$ordenRepo->find($ordenId);
-        if($orden) $orden->setEstado('cancelado');
-        $manager->flush();
-
-        return $this->redirectToRoute('changeOrdenAmounts');
-    }
-
-    /**
-     * @Route("/pagar", name="pagar")
-     */
-    public function pagar() : Response
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $ordenRepo = $manager->getRepository(Orden::class);
-        $enCarrito = $ordenRepo->getCarrito($this->getUser()->getId());
-
-        foreach ($enCarrito as $orden) {
-            $orden->setEstado('pagado');
-            $manager->persist($orden);
-        }
-
-        $manager->flush();
-        return $this->redirectToRoute('tus_compras');
-    }
-
-    /**
      * @Route("/tusCompras", name="tus_compras")
      */
     public function tus_compras() : Response
     {
         return $this->render("index/tusCompras.html.twig");
-    }
-
-    /**
-     * @Route("/verCarrito", name="ver_carrito")
-     */
-    public function verCarrito() : Response
-    {
-        return $this->render('index/verCarrito.html.twig');
     }
 
     public function createPanelResponse(Categoria $categoria) : Response
@@ -249,29 +175,13 @@ class IndexController extends AbstractController
         $subcategorias = $categoria->getSubcategorias();
         $categoriaName = $categoria->getNombre();
 
-        /*
         if(count($subcategorias) == 0 && count($products) == 0) 
         {
-            return new Response(
-                "<li class='listaDeElementos'>
-                    <span style='padding-left: 10px; color: grey;'>
-                        $categoriaName 
-                    </span>
-                </li>");
+            return "";
         }
-        */
 
         $productsHTML = "";
         $subsHTML = "";
-
-        /*
-        {% for producto in  lista_productos%}
-                <li><a class='dropdown-item' 
-                href='{{ path('productoView', {productoid: producto.id }) }}'>
-                {{producto.nombre}}</a></li>
-                <li class='divider'></li>
-            {% endfor %}
-        */
 
         foreach ($subcategorias as $sub) {
             $subsHTML .= $this->createPanel($sub);
@@ -280,29 +190,37 @@ class IndexController extends AbstractController
         foreach ($products as $prod) {
             $proName = $prod->getNombre();
             $proId = $prod->getId();
+            $url = $this->generateUrl('productoView', array(
+                'productoid'=> $proId
+            ));
             $productsHTML .= "
             <li><a class='dropdown-item' 
-            href='productoView/$proId'>
+            href=$url>
             $proName</a></li>
             <li class='divider'></li>";
         }
 
+        // @Route("/productoView/{productoid}", name="productoView")
 
-        
-        $response = " <li class='listaDeElementos'>
+        $inside = "
         <div class='dropdown'>
-        <div class='dropdown-toggle' data-toggle='dropdown'>
-            <span style='padding-left: 10px; color: grey;'>
-                $categoriaName <span class='caret'></span>
-            </span>
+            <div class='dropdown-toggle' data-toggle='dropdown'>
+                <span style='padding-left: 10px; color: grey;'>
+                    $categoriaName <i class='fa fa-caret-down' style='color: orangered;'></i>
+                </span>
+            </div>
+            <ul class='dropdown-menu dropdown-menu-right'>
+                $subsHTML
+                $productsHTML
+            </ul>
         </div>
-        <ul class='dropdown-menu dropdown-menu-right'>
-            $subsHTML
-            $productsHTML
-        </ul>
-    </div>
-    </li>
-    ";
+        ";
+        
+        $response = " 
+        <li class='listaDeElementos'>
+            $inside
+        </li>
+        ";
         
         return $response;
     }

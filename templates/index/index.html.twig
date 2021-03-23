@@ -1,4 +1,4 @@
-{% extends 'index/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Inicio{% endblock %}
 
@@ -12,7 +12,7 @@
         {{ encore_entry_script_tags('index') }}
 {% endblock %}
 
-{% block body2 %}
+{% block body %}
 
 {% set conjuntos = [novedades, populares, valorados] %}
 

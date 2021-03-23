@@ -14,48 +14,34 @@
     /*
     width: 80px;
     height: 80px;
-    */
     position: relative;
+    */
     box-shadow: 5px 10px 8px #888888;
     clear: both;
 }
-
 
 .carousel-control{
     width: 4%;
 }
 
-.out {
-    padding: 25px;
-    position: relative;
-    box-sizing: border-box;
-    width: 200px;
-    height: 200px;
-    /*
-    background-color: #555;
-    background-color: lightsteelblue;
-    border: 3px solid #aaa;
-    */
-  }
-  
-  .in {
-    top: 0;
-    /*
-    left: 15px;
-    width: calc(50% + 6px);
-    height: 50%;
-    */
-    position: absolute;
-    background-color: rgba(255, 0, 0, 0.5);
-  }
-
 .carousel{
-    /*
-    background-color: red;
-    */
-    left: 0;
     width: 100%;
-    position:absolute;
+    /*
+    left: 0;
+    position:relative;*/
+}
+
+.other-box {
+    /*
+    top: 20px;
+    */
+    position: relative;
+    left: 10px;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    box-shadow: 3px 8px 6px #888888;
+    clear: both;
 }
 
 

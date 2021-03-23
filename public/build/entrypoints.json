@@ -20,14 +20,6 @@
         "/tiendecita/public/build/productoView.css"
       ]
     },
-    "baseIndex": {
-      "css": [
-        "/tiendecita/public/build/baseIndex.css"
-      ],
-      "js": [
-        "/tiendecita/public/build/baseIndex.js"
-      ]
-    },
     "index": {
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
@@ -54,14 +46,6 @@
         "/tiendecita/public/build/easyCarousel.css"
       ]
     },
-    "verCarrito": {
-      "css": [
-        "/tiendecita/public/build/verCarrito.css"
-      ],
-      "js": [
-        "/tiendecita/public/build/verCarrito.js"
-      ]
-    },
     "tusCompras": {
       "css": [
         "/tiendecita/public/build/tusCompras.css"
@@ -79,11 +63,12 @@
       ]
     },
     "header": {
+      "js": [
+        "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/header.js"
+      ],
       "css": [
         "/tiendecita/public/build/header.css"
-      ],
-      "js": [
-        "/tiendecita/public/build/header.js"
       ]
     }
   }

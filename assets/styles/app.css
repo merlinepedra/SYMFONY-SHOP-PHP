@@ -19,3 +19,15 @@ a:hover, a:active {
 ul.listaDeElementos{
     list-style-type: none;
 }
+
+.miSideBar li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.fa-caret-down
+{
+    position: absolute;
+    right: 5px;
+}

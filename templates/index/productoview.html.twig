@@ -1,4 +1,4 @@
-{% extends 'index/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Productos{% endblock %}
 
@@ -12,79 +12,95 @@
         {{ encore_entry_script_tags('productoView') }}
 {% endblock %}
 
-{% block body2 %}
+{% block body %}
 {% if producto %}
 
-
-<div class="col-md-5" style="padding-top: 20px;">
-        <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
-        <span data-color='{{producto.fotos[0]}}' class="h5 badge badge-pill">
-                {{ producto.categoria.nombre }}
-        </span>
-        <p class="descripcion">{{ producto.descripcion }}</p>
-</div>
-<div class="col-md-2" style="padding-top: 20px;">
-        <div class="jumbotron-fluid" style="margin-bottom: 100px;">
-                <span>
-                        <p class="font-weight-light h4">Precio:</p>
-                        <span class='precio h3 font-weight-bolder'>{{ producto.preciounidad }}.00 $</span>
-                </span> 
+<div class="col-md-10">
+        <div class="path">
+                <span style="color: white;">Estás en: </span>
+                <span>Inicio</span>
+                <i class="fa fa-caret-right"></i>
+                {% for x in products_repo.getPath(producto.id) %}
+                        <span>{{x}}</span>
+                        <i class="fa fa-caret-right"></i>
+                {% endfor %}
         </div>
 
-        <div class="jumbotron-fluid" style="margin-bottom: 100px;">
-                <span>
-                        <p class="font-weight-light h6">Disponible desde:</p>
-                        <span>
-                                <i class="fa fa-clock-o"></i>
-                        </span>
-                        <span class='precio h5 font-weight-normal' style="width: 20%;">
-                                {{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}
-                        </span>
-                </span>
-        </div> 
-
-        <div class="jumbotron-fluid">
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                {{ form_start(form, {'method': 'post'}) }}
-
-                {{ form_widget(form.cantidad, {
-                        'attr': 
-                        {
-                                'min': 1,
-                                'name': form.cantidad.vars.name,
-                                'id': form.cantidad.vars.id,
-                                'class': 'form_control',
-                                'style': "margin: 10px;"
-                        },
-                        'type': 'number'
-                })}}
-
-                {#
-                        <input style="width: 30%; margin: 10px;" type="number" min="1" step="1" value="1" name="cantidad" id="cantidad" class="form-control">
-                        <a class="btn btn-lg btn-warning" type="submit" role="button" href="{{url('productoView', {'productoid': producto.id })}}">
-                                Agregar al carrito
-                        </a>
-                #}
-                {{ form_widget(form.agregar, {
-                        'attr': 
-                                {
-                                        'class': 'btn btn-lg btn-warning',
-                                        'style': "margin: 10px; width: 100%;"
-                                },
-                        'label': 'Agregar al carrito'
-        }) }}
-                {{ form_end(form) }}
-                {% else %}
-                        Debes iniciar sesión para realizar compras.
-                {% endif %}
+        <div class="border-bottom" style="padding-bottom: 10px; margin-bottom: 15px;">
+                <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
+                <span style="margin: 100px;">(Referencia: {{producto.id}})</span>
         </div>
-</div>
-<div class="col-md-3" style="margin-top:20px;">
-        
-        <br>
-        <div class='other-box border' style="padding: 10px; margin:10px;"></div>
 
-        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %}      
+        <div class="row">
+                <div class="col-md-3">
+                        {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %} 
+                </div>
+                <div class="col-md-8">
+                        <ul class="list-group">
+                                <li class="list-group-item">
+                                        <div style="float: left;">
+                                                <p class="font-weight-light h6">Precio:</p>
+                                                <p class='precio h5 font-weight-bolder' style="text-decoration: line-through; color: grey;">{{ producto.preciounidad + 20 }}.00 $</p>
+                                                <p class='precio h2 font-weight-bolder'>{{ producto.preciounidad }}.00 $</p>
+                                        </div> 
+                                        <div style="float: right;">Redes sociales</div>
+                                </li>
+                                <li class="list-group-item">
+                                        <div style="float: left;">
+                                        <span class="h6 font-weight-normal">Elige tu inicial</span>
+                                        <i class="fa fa-info-circle" style="color: orangered;"></i>
+                                        <input type="checkbox" value="A">
+                                        </div>
+                                        <div class="clasificacion" style="float: right;">
+                                                <p class="h6 font-weight-normal">Clasificación:</p>
+                                                {% for i in 1..5 %}
+                                                        <i class="fa fa-star"></i>
+                                                {% endfor %}
+                                        </div>
+                                </li>
+                                <li class="list-group-item">
+                                        <p class="font-weight-light h6">Disponible desde:</p>
+                                        <span>
+                                                <i class="fa fa-clock-o"></i>
+                                        </span>
+                                        <span class='precio h5 font-weight-normal' style="width: 20%;">
+                                                {{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}
+                                        </span>                                
+                                </li>
+                                <li class="list-group-item">
+                                        {{ form_start(form, {'method': 'post'}) }}
+                                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
+                                        {{ form_widget(form.cantidad, {
+                                                'attr': 
+                                                {
+                                                        'min': 1,
+                                                        'name': form.cantidad.vars.name,
+                                                        'id': form.cantidad.vars.id,
+                                                        'class': 'form_control',
+                                                        'style': "margin: 10px;"
+                                                },
+                                                'type': 'number'
+                                        })}}
+                        
+                                        {{ form_widget(form.agregar, {
+                                                'attr': 
+                                                        {
+                                                                'class': 'btn btn-lg btn-warning',
+                                                                'style': "margin: 10px; width: 100%;"
+                                                        },
+                                                'label': 'Agregar al carrito'
+                                        }) }}
+                                {{ form_end(form) }}
+                
+                                {% else %}
+                                        Debes iniciar sesión para realizar compras.
+                                {% endif %}
+                                </li>
+                        </ul>
+                            
+                        <p class="descripcion">{{ producto.descripcion }}</p>
+                </div>
+        </div>
 </div>
 
 {% else %}

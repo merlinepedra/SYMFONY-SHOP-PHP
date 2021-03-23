@@ -15,7 +15,7 @@
 
 {% block body %}
 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-<div class="jumbotron">
+<div class="jumbotron col-md-10">
         <p class="h1 font-weight-light">Tus compras <i style="color: orange;" class="fas fa-shopping-bag"></i></p>
         {% set misCompras = orden_repo.getMisCompras(app.user.id) %}
 

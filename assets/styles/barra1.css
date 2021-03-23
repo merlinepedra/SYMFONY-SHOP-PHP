@@ -1,6 +1,5 @@
 .navbar-up{
     background-color: orangered; 
-    opacity: 70%;
     padding: 10px;
 }
 
@@ -11,4 +10,8 @@
 
 .mispan a{
     color: white;
+}
+
+.dropdown-menu a{
+    color: darkslategray !important;
 }

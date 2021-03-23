@@ -17,6 +17,20 @@
     <body>
         {% include 'barra1.html.twig' %}
         {% include 'barra2.html.twig' %}
-        {% block body %}{% endblock %} 
+
+        <div class='container-fluid'>
+            <div class='row row-no-gutters'>
+                <ul class='listaDeElementos col-md-2 border miSideBar' style="padding: 0;">
+                    {% include 'carritoSection.html.twig' %}
+                <li class='h4 font-weight-light bg-dark' style="text-align: center; padding: 5px; color: white;">
+                    Categorías
+                </li>
+                {% for cat in category_repo.getRaices() %}      
+                    {{ render(controller('App\\Controller\\IndexController::createPanelResponse', {'categoria': cat})) }}          
+                {% endfor %}
+                </ul>
+                {% block body %}{% endblock %}
+            </div>
+        </div> 
     </body>
 </html>

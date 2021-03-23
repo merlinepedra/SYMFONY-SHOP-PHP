@@ -67,7 +67,6 @@ class ProductoRepository extends ServiceEntityRepository
             ;
     }
 
-
     /**
     * @return Producto[]
     */
@@ -94,6 +93,25 @@ class ProductoRepository extends ServiceEntityRepository
         //die;
         
         return $result;
+    }
+
+    public function getPath($product_id) : array
+    {
+        $product = $this->createQueryBuilder('p')
+        ->andWhere('p.id = :cat')
+        ->setParameter('cat', $product_id)
+        ->getQuery()
+        ->getResult()[0]; 
+
+        $path = [];
+        $cat = $product->getCategoria();
+        while($cat)
+        {
+            $path[] = $cat;
+            $cat = $cat->getPadre();
+        }
+
+        return array_reverse($path);
     }
 
     /*

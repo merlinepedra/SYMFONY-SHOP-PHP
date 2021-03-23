@@ -18,9 +18,23 @@
     color: orangered;
 }
 
-.losPagos td p{
-    max-width: 100px;
+#laX{
+    display: inline-flex;
+    -ms-transform: rotate(-10deg); 
+    transform: rotate(-10deg); 
+    -webkit-transform: rotate(-10deg); 
+}
+
+#cartel div{
+    display: inline-flex;
+}
+
+.losPagos{
     text-align: center;
+}
+
+.losPagos td{
+    max-width: 20px;
 }
 
 .losPagos table{
