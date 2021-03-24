@@ -3,36 +3,23 @@
     "app": {
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_carousel_js-no-986c26.js",
         "/tiendecita/public/build/app.js"
-      ],
-      "css": [
-        "/tiendecita/public/build/vendors-node_modules_bootstrap_js_dist_alert_js-node_modules_bootstrap_js_dist_carousel_js-no-986c26.css",
-        "/tiendecita/public/build/app.css"
       ]
     },
     "productoView": {
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/tiendecita/public/build/vendors-node_modules_core-js_modules_es_parse-int_js.js",
         "/tiendecita/public/build/productoView.js"
-      ],
-      "css": [
-        "/tiendecita/public/build/productoView.css"
       ]
     },
     "index": {
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
         "/tiendecita/public/build/index.js"
-      ],
-      "css": [
-        "/tiendecita/public/build/index.css"
       ]
     },
     "changeOrdenAmounts": {
-      "css": [
-        "/tiendecita/public/build/changeOrdenAmounts.css"
-      ],
       "js": [
         "/tiendecita/public/build/changeOrdenAmounts.js"
       ]
@@ -41,23 +28,14 @@
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
         "/tiendecita/public/build/easyCarousel.js"
-      ],
-      "css": [
-        "/tiendecita/public/build/easyCarousel.css"
       ]
     },
     "tusCompras": {
-      "css": [
-        "/tiendecita/public/build/tusCompras.css"
-      ],
       "js": [
         "/tiendecita/public/build/tusCompras.js"
       ]
     },
     "barra1": {
-      "css": [
-        "/tiendecita/public/build/barra1.css"
-      ],
       "js": [
         "/tiendecita/public/build/barra1.js"
       ]
@@ -66,9 +44,6 @@
       "js": [
         "/tiendecita/public/build/vendors-node_modules_jquery_dist_jquery_js.js",
         "/tiendecita/public/build/header.js"
-      ],
-      "css": [
-        "/tiendecita/public/build/header.css"
       ]
     }
   }

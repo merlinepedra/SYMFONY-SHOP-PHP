@@ -1,1 +1,0 @@
-import '../styles/barra1.css'

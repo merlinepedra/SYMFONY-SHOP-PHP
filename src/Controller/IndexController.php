@@ -37,7 +37,7 @@ class IndexController extends AbstractController
                 $id = $p->getId();
                 $precio = $p->getPrecioUnidad();
 
-                $nombre .= $nombre.' '.$nombre.' '.$nombre.' '.$nombre;
+                //$nombre .= $nombre.' '.$nombre.' '.$nombre.' '.$nombre;
                 $columnas .= "
                 <td>
                     <div class='container'>
@@ -92,7 +92,7 @@ class IndexController extends AbstractController
         $defaultData = ['cantidad' => 1];
         $form = $this->createFormBuilder($defaultData)
         ->add('cantidad', NumberType::class)
-        ->add('clasificacion', NumberType::class, array(
+        ->add('calificacion', NumberType::class, array(
             'mapped' => false,
             'required' => false,
         ))

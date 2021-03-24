@@ -3,14 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Bienvenido!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+
         {% block stylesheets %}
-            {{encore_entry_link_tags('app')}}
+        <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap-grid.min.css')}}">
+        <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap-reboot.min.css')}}">
+        <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/styles/app.css')}}">
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        <script src="{{asset('vendor/jquery/dist/jquery.min.js')}}" defer></script>
+        <script src="{{asset('vendor/popper.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/js/dist/alert.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/js/dist/collapse.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/js/dist/carousel.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/js/dist/dropdown.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/js/dist/modal.js')}}" defer></script>
+        <script src="{{asset('assets/app.js')}}" defer></script>
         {% endblock %}
     </head>
     {% include 'header.html.twig' %}

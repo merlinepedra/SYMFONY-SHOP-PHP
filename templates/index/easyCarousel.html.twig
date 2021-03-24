@@ -1,9 +1,9 @@
 {% block stylesheets %}
-    {{encore_entry_link_tags('easyCarousel')}}
+    <link rel="stylesheet" href="{{asset('assets/styles/easyCarousel.css')}}">
 {% endblock %}
 
 {% block javascripts %}
-    {{ encore_entry_script_tags('easyCarousel') }}
+    <script src="{{asset('assets/js/easyCarousel.js')}}" defer></script>
 {% endblock %}
 
 

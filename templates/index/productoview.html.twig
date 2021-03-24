@@ -4,12 +4,12 @@
 
 {% block stylesheets %}
         {{parent()}}
-        {{encore_entry_link_tags('productoView')}}
+        <link rel="stylesheet" href="{{asset('assets/styles/productoView.css')}}">
 {% endblock %}
 
 {% block javascripts %}
         {{parent()}}
-        {{ encore_entry_script_tags('productoView') }}
+        <script src="{{asset('assets/js/productoView.js')}}" defer></script>
 {% endblock %}
 
 {% block body %}
@@ -49,27 +49,23 @@
                                         <div style="float: left;">
                                         <span class="h6 font-weight-normal">Elige tu inicial</span>
                                         <i class="fa fa-info-circle" style="color: orangered;"></i>
-                                        <input type="checkbox" value="A">
+                                        <select>
+                                                {% for x in 'A'..'Z' %}
+                                                <option>{{x}}</option>
+                                                {% endfor %}
+                                        </select>
                                         </div>
-                                        <div class="clasificacion" style="float: right;">
-                                                <p class="h6 font-weight-normal">Clasificación:</p>
+                                        <div class="calificacion" style="float: right;">
+                                                <p class="h6 font-weight-normal">Calificación:</p>
                                                 {% for i in 1..5 %}
-                                                        <i class="fa fa-star"></i>
+                                                        <i data-index="{{i}}" class="fa fa-star"></i>
                                                 {% endfor %}
                                         </div>
                                 </li>
-                                <li class="list-group-item">
-                                        <p class="font-weight-light h6">Disponible desde:</p>
-                                        <span>
-                                                <i class="fa fa-clock-o"></i>
-                                        </span>
-                                        <span class='precio h5 font-weight-normal' style="width: 20%;">
-                                                {{ producto.Created|format_datetime('medium', 'short', '', 'UTC') }}
-                                        </span>                                
-                                </li>
-                                <li class="list-group-item">
+                                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
+                                <li class="list-group-item" id="formulario">
                                         {{ form_start(form, {'method': 'post'}) }}
-                                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
+                                        <span>Cantidad:</span>  
                                         {{ form_widget(form.cantidad, {
                                                 'attr': 
                                                 {
@@ -77,29 +73,70 @@
                                                         'name': form.cantidad.vars.name,
                                                         'id': form.cantidad.vars.id,
                                                         'class': 'form_control',
-                                                        'style': "margin: 10px;"
+                                                        'style': "
+                                                        margin: 10px;
+                                                        width: 60px;
+                                                        display: inline;"
                                                 },
                                                 'type': 'number'
                                         })}}
-                        
+                                        <button type="submit" id="form_agregar" name="form[agregar]" 
+                                        class="btn btn-lg btn-warning btn" 
+                                        style="margin: 10px; width: 50%; display: inline;">
+                                        Agregar al carrito <i class="fa fa-directions"></i> <i class="fa fa-shopping-cart"></i></button>
                                         {{ form_widget(form.agregar, {
                                                 'attr': 
                                                         {
                                                                 'class': 'btn btn-lg btn-warning',
-                                                                'style': "margin: 10px; width: 100%;"
+                                                                'style': "margin: 10px; width: 50%; display: none;"
                                                         },
-                                                'label': 'Agregar al carrito'
+                                                'label': 'Agregar al carrito <i class="fa fa-shopping-cart"></i>'
                                         }) }}
+                                        {{ form_widget(form.calificacion, {
+                                                'attr': {'style': 'display: none;'}, 
+                                                'type': 'number'}) }}
                                 {{ form_end(form) }}
-                
-                                {% else %}
-                                        Debes iniciar sesión para realizar compras.
-                                {% endif %}
                                 </li>
+                                <li class="list-group-item">
+                                <div class="container border">
+                                        <p class="h6 font-weight-light">
+                                                Descuentos para compras de más de una unidad</p>
+                                        <table class="table table-condensed" id="descuentos">
+                                                
+                                                <thead>
+                                                        <tr>
+                                                                <th style="color: orangered;">Cantidad</th>
+                                                                <th style="color: orangered;">Precio</th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                        <tr><td>2</td><td>12.8 $</td></tr>
+                                                </tbody>
+                                                </table>
+                                </div>
+                                
+                                </li>
+                                <li class="list-group-item">
+                                        <p class="descripcion">{{ producto.descripcion }}</p>
+                                </li>
+                                {% endif %}
                         </ul>
-                            
-                        <p class="descripcion">{{ producto.descripcion }}</p>
                 </div>
+        </div>
+
+        <div id="commet-footer" style="float: left;">
+                <span><span style="color: orangered;">0</span> Comentarios</span>
+                <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
+                <span><i style="color: orangered;" class="fa fa-pencil"></i> Comentar</span>
+                <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
+                <span><i style="color: orangered;" class="fa fa-comment"></i> Recomendar</span>
         </div>
 </div>
 

@@ -5,12 +5,12 @@
 
 {% block stylesheets %}
         {{parent()}}
-        {{encore_entry_link_tags('tusCompras')}}
+        <link rel="stylesheet" href="{{asset('assets/styles/tusCompras.css')}}">
 {% endblock %}
 
 {% block javascripts %}
         {{parent()}}
-        {{ encore_entry_script_tags('tusCompras') }}
+        <script src="{{asset('assets/js/tusCompras.js')}}" defer></script>
 {% endblock %}
 
 {% block body %}

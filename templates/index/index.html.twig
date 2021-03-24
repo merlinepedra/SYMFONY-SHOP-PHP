@@ -4,12 +4,12 @@
 
 {% block stylesheets %}
         {{parent()}}
-        {{encore_entry_link_tags('index')}}
+        <link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">
 {% endblock %}
 
 {% block javascripts %}
         {{parent()}}
-        {{ encore_entry_script_tags('index') }}
+        <script src="{{asset('assets/js/index.js')}}" defer></script>
 {% endblock %}
 
 {% block body %}
