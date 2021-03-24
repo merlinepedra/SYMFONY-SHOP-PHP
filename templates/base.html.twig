@@ -5,6 +5,8 @@
         <title>{% block title %}Bienvenido!{% endblock %}</title>
 
         {% block stylesheets %}
+        <link rel="stylesheet" href="{{asset('vendor/@fortawesome/fontawesome-free/css/v4-shims.css')}}">
+        <link rel="stylesheet" href="{{asset('vendor/@fortawesome/fontawesome-free/css/all.css')}}">
         <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap-grid.min.css')}}">
         <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap-reboot.min.css')}}">
         <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -13,12 +15,9 @@
 
         {% block javascripts %}
         <script src="{{asset('vendor/jquery/dist/jquery.min.js')}}" defer></script>
-        <script src="{{asset('vendor/popper.js')}}" defer></script>
-        <script src="{{asset('vendor/bootstrap/js/dist/alert.js')}}" defer></script>
-        <script src="{{asset('vendor/bootstrap/js/dist/collapse.js')}}" defer></script>
-        <script src="{{asset('vendor/bootstrap/js/dist/carousel.js')}}" defer></script>
-        <script src="{{asset('vendor/bootstrap/js/dist/dropdown.js')}}" defer></script>
-        <script src="{{asset('vendor/bootstrap/js/dist/modal.js')}}" defer></script>
+        <script src="{{asset('vendor/popper.js/dist/popper.min.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}" defer></script>
+        <script src="{{asset('vendor/bootstrap/dist/js/bootstrap.min.js')}}" defer></script>
         <script src="{{asset('assets/app.js')}}" defer></script>
         {% endblock %}
     </head>
