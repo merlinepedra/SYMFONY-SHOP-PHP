@@ -28,15 +28,21 @@
 
         <div class='container-fluid'>
             <div class='row row-no-gutters'>
-                <ul class='listaDeElementos col-md-2 border miSideBar' style="padding: 0;">
-                    {% include 'carritoSection.html.twig' %}
-                <li class='h4 font-weight-light bg-dark' style="text-align: center; padding: 5px; color: white;">
-                    Categorías
-                </li>
-                {% for cat in category_repo.getRaices() %}      
-                    {{ render(controller('App\\Controller\\IndexController::createPanelResponse', {'categoria': cat})) }}          
-                {% endfor %}
-                </ul>
+                <div class='col-md-2 border' style="padding: 0;">
+                    <div id="MainMenu">
+                        <div class="list-group panel">
+                            <a href="#" class="list-group-item" data-parent="#MainMenu">
+                                {% include 'carritoSection.html.twig' %}
+                            </a>
+                            <a href="#" class='h4 font-weight-light bg-dark list-group-item' data-parent="#MainMenu" style="text-align: center; padding: 5px; color: white;">
+                                Categorías
+                            </a>
+                            {% for cat in category_repo.getRaices() %}      
+                                {{ render(controller('App\\Controller\\IndexController::createPanelResponse', {'categoria': cat, 'parent': 'MainMenu'})) }}          
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
                 {% block body %}{% endblock %}
             </div>
         </div> 

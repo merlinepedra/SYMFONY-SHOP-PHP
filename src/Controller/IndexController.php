@@ -162,12 +162,12 @@ class IndexController extends AbstractController
         return $this->render("index/tusCompras.html.twig");
     }
 
-    public function createPanelResponse(Categoria $categoria) : Response
+    public function createPanelResponse(Categoria $categoria, $parent) : Response
     {
-        return new Response($this->createPanel($categoria));
+        return new Response($this->createPanel($categoria, $parent, 0));
     }
 
-    public function createPanel(Categoria $categoria) : string
+    public function createPanel(Categoria $categoria, $parent, $deep) : string
     {
         $manager = $this->getDoctrine()->getManager();
         $productoRepo = $manager->getRepository(Producto::class);
@@ -175,16 +175,13 @@ class IndexController extends AbstractController
         $subcategorias = $categoria->getSubcategorias();
         $categoriaName = $categoria->getNombre();
 
-        if(count($subcategorias) == 0 && count($products) == 0) 
-        {
-            return "";
-        }
+        if(count($subcategorias) == 0 && count($products) == 0) return "";
 
         $productsHTML = "";
         $subsHTML = "";
 
         foreach ($subcategorias as $sub) {
-            $subsHTML .= $this->createPanel($sub);
+            $subsHTML .= $this->createPanel($sub, $categoriaName, $deep + 1);
         }
 
         foreach ($products as $prod) {
@@ -194,32 +191,26 @@ class IndexController extends AbstractController
                 'productoid'=> $proId
             ));
             $productsHTML .= "
-            <li><a class='dropdown-item' 
-            href=$url>
-            $proName</a></li>
-            <li class='divider'></li>";
+            <a href='$url' class='list-group-item' data-parent='#$categoriaName'>
+            $proName</a>";
         }
 
-        // @Route("/productoView/{productoid}", name="productoView")
-
-        $inside = "
-        <div class='dropdown'>
-            <div class='dropdown-toggle' data-toggle='dropdown'>
-                <span style='padding-left: 10px; color: grey;'>
-                    $categoriaName <i class='fa fa-caret-down' style='color: orangered;'></i>
-                </span>
-            </div>
-            <ul class='dropdown-menu dropdown-menu-right'>
-                $subsHTML
-                $productsHTML
-            </ul>
-        </div>
-        ";
+        $class = '';
+        if($deep == 1) $class = 'list-group-submenu';
+        if($deep > 1) 
+        {
+            $d = $deep - 1;
+            $class = "list-group-submenu list-group-submenu-$d";
+        }
         
         $response = " 
-        <li class='listaDeElementos'>
-            $inside
-        </li>
+        <a href='#$categoriaName' class='list-group-item' data-toggle='collapse' 
+        data-parent='#$parent'>
+        $categoriaName <i class='fa fa-caret-down' style='color: orangered;'></i></a>
+        <div class='collapse $class' id='$categoriaName'>
+            $subsHTML
+            $productsHTML
+        </div>
         ";
         
         return $response;
