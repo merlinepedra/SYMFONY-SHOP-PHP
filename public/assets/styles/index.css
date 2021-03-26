@@ -1,7 +1,9 @@
 .other-box-index {
     float: left;
-    height: 170px;
-    width: 170px;
+    /*
+    height: 160px;
+    width: 160px;
+    */
     box-shadow: 3px 8px 6px #888888;
     clear: both;
 }
@@ -58,3 +60,91 @@ tbody tr:nth-child(odd) td {
     left: 5px;
     text-align: center;
 }
+
+
+
+
+
+
+
+  /*.Layer_8*/
+  .cuadraditos_index {
+      width: 4.304cm;
+      height: 4.304cm;
+      /*
+      height: 4.692cm;
+    background-image: url("images/Layer 8.png");
+    position: absolute;
+    left: 0.282cm;
+    top: 0.106cm;
+    z-index: 5;
+    */
+  }  
+
+
+/* Estilos pesados */
+/*.Rectangle_7_copy*/
+.novedades_fondo {
+    background-image: -moz-linear-gradient( 180deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+    /*
+    position: absolute;
+    left: 18.415cm;
+    top: 10.019cm;
+    width: 1.658cm;
+    height: 18.662cm;
+    z-index: 236;
+    */
+  }
+
+
+  /*.novedades*/
+  .novedades_texto {
+    font-size: 0.659cm;
+    font-family: "Verdana";
+    font-weight: bold;
+    text-align: right;
+    -moz-transform: matrix( 0, -1.30262564375489, 1.28373996945883, 0, 0, 0);
+    -webkit-transform: matrix( 0, -1.30262564375489, 1.28373996945883, 0, 0, 0);
+    /*
+    color: rgb( 255, 255, 255 );
+    position: absolute;
+    left: 18.9088888888889cm;
+    top: 10.795cm;
+    z-index: 241;
+    */
+    width: 0.67cm;
+    height: 4.586cm;
+  } 
+
+
+  /*.Rectangle_7_copy_2*/
+  .lo_mas_popular_fondo {
+    background-image: -moz-linear-gradient( 180deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    /*
+    position: absolute;
+    left: 18.627cm;
+    top: 29.457cm;
+    width: 1.27cm;
+    height: 9.313cm;
+    z-index: 210;
+    */
+  }
+
+
+  /*.Rectangle_7_copy_3*/
+  .mejor_valorados_fondo {
+    background-image: -moz-linear-gradient( 180deg, rgb( 116, 117, 118 ) 0%, rgb( 210, 212, 214 ) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb( 116, 117, 118 ) 0%, rgb( 210, 212, 214 ) 100%);
+    /*
+    position: absolute;
+    left: 18.627cm;
+    top: 39.758cm;
+    width: 1.27cm;
+    height: 9.454cm;
+    z-index: 194;
+    */
+  }
+  
+  

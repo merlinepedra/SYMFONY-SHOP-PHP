@@ -9,7 +9,8 @@ $('.categoriaCarteles').each( function(index, element ){
 
         $(this).append($span1, [])
         $(this).append($span2, [])
-        $(this).parent('div').addClass('bg-warning')
+        //$(this).parent('div').addClass('bg-warning')
+        $(this).parent('div').addClass('novedades_fondo')
     }
     if(index == 1)
     {
@@ -20,7 +21,8 @@ $('.categoriaCarteles').each( function(index, element ){
         $(this).append($span1, [])
         $(this).append($span2, [])
         $(this).append($span3, [])
-        $(this).parent('div').addClass('bg-dark')
+        //$(this).parent('div').addClass('bg-dark')
+        $(this).parent('div').addClass('lo_mas_popular_fondo')
     }
     if(index == 2)
     {
@@ -31,7 +33,8 @@ $('.categoriaCarteles').each( function(index, element ){
         $(this).append($span1, [])
         $(this).append($span2, [])
         $(this).append($span3, [])
-        $(this).parent('div').addClass('bg-secondary')
+        //$(this).parent('div').addClass('bg-secondary')
+        $(this).parent('div').addClass('mejor_valorados_fondo')
     }
 });
 

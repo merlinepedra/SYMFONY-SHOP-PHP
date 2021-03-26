@@ -28,8 +28,8 @@ class IndexController extends AbstractController
         for ($i=0; $i < 2; $i++) { 
             $columnas = "";
             $precios = "";
-            for ($j=0; $j < 4; $j++) { 
-                $index = 4*$i + $j;
+            for ($j=0; $j < 5; $j++) { 
+                $index = 5*$i + $j;
                 if($index > count($collection) - 1) continue;
                 $p = $collection[$index];
                 $nombre = $p->getNombre();
@@ -40,11 +40,8 @@ class IndexController extends AbstractController
                 //$nombre .= $nombre.' '.$nombre.' '.$nombre.' '.$nombre;
                 $columnas .= "
                 <td>
-                    <div class='container'>
-                        <div class='other-box-index' data-color='$color'></div>
+                        <div class='other-box-index cuadraditos_index' data-color='$color'></div>
                         <p><a class='pname' href='productoView/$id'>$nombre</a></p>
-                        
-                    </div>
                 </td>";
                 $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
             }
@@ -61,9 +58,9 @@ class IndexController extends AbstractController
         $productoRepo = $manager->getRepository(Producto::class);
         $categoriaRepo = $manager->getRepository(Categoria::class);
 
-        $novedades = $productoRepo->getUploadSince(10, 8);
-        $populares = $productoRepo->getMostPopular(8);
-        $valorados = $productoRepo->getMostExpensive(8);
+        $novedades = $productoRepo->getUploadSince(10, 10);
+        $populares = $productoRepo->getMostPopular(10);
+        $valorados = $productoRepo->getMostExpensive(10);
         $ventas = [];
 
         for ($i=0; $i < count($populares); $i++) { 
