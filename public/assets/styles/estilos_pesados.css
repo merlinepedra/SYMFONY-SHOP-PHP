@@ -1,0 +1,197 @@
+/*.Rounded_Rectangle_3_copy*/
+.categorias_cartel {
+    background-image: -moz-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    /*
+    position: absolute;
+    left: 10.336cm;
+    top: 13.406cm;
+    z-index: 65;
+    */
+    height: 1.094cm;
+    width: 7.973cm;
+  }
+
+  .Categorías {
+    font-size: 0.635cm;
+    font-family: "Verdana";
+    color: rgb( 255, 255, 255 );
+    /*
+    text-align: right;
+    position: absolute;
+    left: 12.4530555555556cm;
+    top: 13.6525cm;
+    z-index: 66;
+    */
+    width: 3.387cm;
+    height: 0.67cm;
+  }
+
+/*.Audio__TV_y_reproductores_Bebés_y__niños_Bellez*/
+.sidebar_texto {
+  font-size: 0.423cm;
+  font-family: "Verdana";
+  color: rgb( 0, 0, 0 );
+  text-align: left;
+  /*
+  line-height: 2.501;
+  position: absolute;
+  left: 10.5480555555556cm;
+  top: 14.8166666666667cm;
+  z-index: 67;
+  width: 6.809cm;
+  height: 24.765cm;
+  */
+}
+
+/*.________________________*/
+.sidebar_carets {
+  font-size: 0.494cm;
+  color: rgb( 237, 109, 37 );
+  /*
+  font-family: "Wingdings 3";
+  line-height: 2.142;
+  text-align: left;
+  position: absolute;
+  left: 17.78cm;
+  top: 15.0283333333333cm;
+  z-index: 68;
+  */
+  width: 0.388cm;
+  height: 24.518cm;
+}
+
+.Rounded_Rectangle_3 {
+  border-style: solid;
+  border-width: 0.03527777777778cm;
+  border-color: rgb( 224, 224, 224 );
+  background-image: -moz-linear-gradient( 90deg, rgb( 242, 245, 246 ) 0%, rgb( 231, 231, 231 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 242, 245, 246 ) 0%, rgb( 231, 231, 231 ) 100%);
+  /*
+  position: absolute;
+  left: 10.231cm;
+  top: 14.358cm;
+  z-index: 64;
+  */
+  width: 8.184cm;
+  height: 25.647cm;
+}
+
+
+
+/*.Estás_en:_Inicio___Relojes_y_joyas___Colgantes_*/
+.estás_en {
+  font-size: 0.423cm;
+  font-family: "Verdana";
+  text-align: left;
+  /*
+  color: rgb( 255, 255, 255 );
+  position: absolute;
+  left: 18.9794444444444cm;
+  top: 7.90222222222222cm;
+  z-index: 90;
+  */
+  width: 12.559cm;
+  height: 0.423cm;
+}
+
+
+
+
+/*.Rounded_Rectangle_3_copy_37*/
+.agregar_al_carrito_boton {
+  border-style: solid;
+  border-width: 0.03527777777778cm;
+  border-color: rgb( 201, 93, 0 );
+  background-image: -moz-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+  width: 8.361cm;
+  height: 1.446cm;
+  /*
+  position: absolute;
+  left: 34.043cm;
+  top: 15.663cm;
+  z-index: 94;
+  */
+}
+
+/*.Agregar_a_carrito_Ú*/
+.agregar_al_carrito_texto {
+  font-size: 0.494cm;
+  font-family: "Verdana";
+  color: rgb( 251, 251, 251 );
+  line-height: 1.715;
+  text-align: left;
+  /*
+  position: absolute;
+  left: 35.2777777777778cm;
+  top: 16.2277777777778cm;
+  z-index: 95;
+  */
+  width: 4.868cm;
+  height: 0.459cm;
+}
+
+._10 {
+  font-size: 0.423cm;
+  font-family: "Verdana";
+  color: rgb( 176, 82, 13 );
+  line-height: 2.002;
+  text-align: left;
+  /*
+  position: absolute;
+  left: 32.3497222222222cm;
+  top: 16.2983333333333cm;
+  width: 0.494cm;
+  height: 0.317cm;
+  z-index: 96;
+  */
+}
+
+._copy {
+  font-size: 0.635cm;
+  font-family: "Wingdings 3";
+  color: rgb( 237, 109, 37 );
+  line-height: 1.334;
+  text-align: left;
+  -moz-transform: matrix( 1, 0, 0, -1, 0, 0);
+  -webkit-transform: matrix( 1, 0, 0, -1, 0, 0);
+  /*
+  position: absolute;
+  left: 33.1963888888889cm;
+  top: 16.0161111111111cm;
+  z-index: 98;
+  */
+  height: 0.247cm;
+  width: 0.494cm;
+}
+
+.Cantidad {
+  font-size: 0.423cm;
+  font-family: "Verdana";
+  color: rgb( 0, 0, 0 );
+  line-height: 2.002;
+  text-align: left;
+  /*
+  position: absolute;
+  left: 29.8802777777778cm;
+  top: 16.2983333333333cm;
+  z-index: 99;
+  */
+  width: 2.011cm;
+  height: 0.353cm;
+}
+
+.Pagos_seguros {
+  font-size: 0.564cm;
+  font-family: "Verdana";
+  /*
+  text-align: left;
+  position: absolute;
+  left: 38.0647222222222cm;
+  top: 62.7238888888889cm;
+  z-index: 291;
+  */
+  width: 4.198cm;
+  height: 0.564cm;
+}

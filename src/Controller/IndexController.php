@@ -191,7 +191,7 @@ class IndexController extends AbstractController
                 'productoid'=> $proId
             ));
             $productsHTML .= "
-            <a href='$url' class='list-group-item' data-parent='#$categoriaName'>
+            <a href='$url' class='list-group-item sidebar_texto' data-parent='#$categoriaName'>
             $proName</a>";
         }
 
@@ -204,9 +204,9 @@ class IndexController extends AbstractController
         }
         
         $response = " 
-        <a href='#$categoriaName' class='list-group-item' data-toggle='collapse' 
+        <a href='#$categoriaName' class='list-group-item sidebar_texto' data-toggle='collapse' 
         data-parent='#$parent'>
-        $categoriaName <i class='fa fa-caret-down' style='color: orangered;'></i></a>
+        $categoriaName <i class='fa fa-caret-down sidebar_carets'></i></a>
         <div class='collapse $class' id='$categoriaName'>
             $subsHTML
             $productsHTML

@@ -17,7 +17,7 @@
 
 <div class="col-md-10">
         <div class="path">
-                <span style="color: white;">Estás en: </span>
+                <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
                 <span>Inicio</span>
                 <i class="fa fa-caret-right"></i>
                 {% for x in products_repo.getPath(producto.id) %}
@@ -65,7 +65,7 @@
                                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
                                 <li class="list-group-item" id="formulario">
                                         {{ form_start(form, {'method': 'post'}) }}
-                                        <span>Cantidad:</span>  
+                                        <span class="Cantidad">Cantidad:</span>  
                                         {{ form_widget(form.cantidad, {
                                                 'attr': 
                                                 {
@@ -81,9 +81,9 @@
                                                 'type': 'number'
                                         })}}
                                         <button type="submit" id="form_agregar" name="form[agregar]" 
-                                        class="btn btn-lg btn-warning btn" 
+                                        class="btn btn-lg btn agregar_al_carrito_boton" 
                                         style="margin: 10px; width: 50%; display: inline;">
-                                        Agregar al carrito <i class="fa fa-directions"></i> <i class="fa fa-shopping-cart"></i></button>
+                                        <span class="agregar_al_carrito_texto">Agregar al carrito <i class="fa fa-directions"></i></span> <img src="{{ asset('exact_images/carrito.png') }}"></button>
                                         {{ form_widget(form.agregar, {
                                                 'attr': 
                                                         {

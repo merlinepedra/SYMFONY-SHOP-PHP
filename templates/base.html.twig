@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap-reboot.min.css')}}">
         <link rel="stylesheet" href="{{asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/styles/app.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/styles/estilos_pesados.css')}}">
         {% endblock %}
 
         {% block javascripts %}
@@ -34,8 +35,8 @@
                             <a href="#" class="list-group-item" data-parent="#MainMenu">
                                 {% include 'carritoSection.html.twig' %}
                             </a>
-                            <a href="#" class='h4 font-weight-light bg-dark list-group-item' data-parent="#MainMenu" style="text-align: center; padding: 5px; color: white;">
-                                Categorías
+                            <a href="#" class='list-group-item categorias_cartel' data-parent="#MainMenu" style="text-align: center; padding: 5px; color: white;">
+                                <span class="Categorías">Categorías</span>
                             </a>
                             {% for cat in category_repo.getRaices() %}      
                                 {{ render(controller('App\\Controller\\IndexController::createPanelResponse', {'categoria': cat, 'parent': 'MainMenu'})) }}          
@@ -47,4 +48,10 @@
             </div>
         </div> 
     </body>
+    <footer>
+        <div>
+            <p class="Pagos_seguros">Pagos seguros</p>
+            <div></div>
+        </div>
+    </footer>
 </html>
