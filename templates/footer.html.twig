@@ -1,0 +1,72 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/styles/footer.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <link rel="stylesheet" href="{{asset('assets/js/footer.js')}}">
+{% endblock %}
+
+<footer>
+    <div class="container">
+        <p id="Xatem_es_el_Multiprecio">
+            <span style="font-weight: bold; color: black;">
+                <span style="color: rgb( 237, 109, 37 );">X
+                </span>atem
+            </span> 
+            es el Multiprecio o todo a cien más grande de Internet!</p>
+        <div class="row">
+            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo <span class="selected_words">consequat</span>. Duis autem vel eum iriure dolor in hendrerit in <span class="selected_words">vulputate</span> velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            </div>
+            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+                Lorem <span class="selected_words">ipsum dolor sit amet</span>, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <span class="selected_words">accumsan</span> et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p id="¿Por_que_comprar_en_Xatem_">¿Por que comprar en 
+            <span style="font-weight: bold; color: black;">
+            <span style="color: rgb( 237, 109, 37 );">X
+            </span>atem
+        </span> ?</p>
+
+        <div class="row">
+            {% for i in 1..6 %}
+            <div class="col-md-2">
+                <span><img src="{{ asset('exact_images/bolita.png') }}"></span>
+                <span class="Lorem_ipsum__cortico">Lorem ipsum  dolor sit amet</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="tercer_bloque_footer" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="third_bloque_texto" style="text-align: left;">
+                    Búsquedas recientes</p>
+            </div>
+            <div class="col-md-4">
+                <p class="third_bloque_texto" style="text-align: center;">
+                    Búsquedas populares</p>
+            </div>
+            <div class="col-md-4">
+                <p class="third_bloque_texto" style="text-align: right;">
+                    Etiquetas populares</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <p>Lo <span style="color: #ed6d25;">+</span> comprado</p>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</footer>
