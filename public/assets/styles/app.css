@@ -31,3 +31,19 @@ ul.listaDeElementos{
 {
     width: 100%;
 }
+
+.path
+{
+    padding:7px; 
+    margin:10px; 
+    background-color: rgb(155, 154, 154);
+    width: 100%;
+}
+
+.path i{
+    color:white;
+}
+
+.path span{
+    color: black;
+}

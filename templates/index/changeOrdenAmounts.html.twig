@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="col-md-10">
+
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <div class="jumbotron">
         <p class="h1 font-weight-light">Tu carrito<i style="color: orange;" class="fas fa-shopping-cart"></i></p>
@@ -70,5 +70,5 @@
                 <p class="h5 font-weight-lighter">No podemos identificarte si no <a href="{{url('app_login')}}">inicias sesión</a>.</p>
         </div>
         {% endif %}
-</div>
+
 {% endblock %}

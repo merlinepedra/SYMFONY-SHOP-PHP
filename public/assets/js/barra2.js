@@ -1,0 +1,1 @@
+$('.barra2_fondo .nav-link').addClass('barra2_texto')

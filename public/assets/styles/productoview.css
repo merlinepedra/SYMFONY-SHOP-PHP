@@ -22,22 +22,6 @@
     box-shadow: 3px 5px 4px #888888;
 }
 
-.path
-{
-    padding:7px; 
-    margin:10px; 
-    background-color: rgb(155, 154, 154);
-    width: 100%;
-}
-
-.path i{
-    color:white;
-}
-
-.path span{
-    color: black;
-}
-
 .fa-star:hover{
     color: orangered;
 }

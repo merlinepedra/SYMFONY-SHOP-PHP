@@ -15,17 +15,6 @@
 {% block body %}
 {% if producto %}
 
-<div class="col-md-10">
-        <div class="path">
-                <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
-                <span>Inicio</span>
-                <i class="fa fa-caret-right"></i>
-                {% for x in products_repo.getPath(producto.id) %}
-                        <span>{{x}}</span>
-                        <i class="fa fa-caret-right"></i>
-                {% endfor %}
-        </div>
-
         <div class="border-bottom" style="padding-bottom: 10px; margin-bottom: 15px;">
                 <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
                 <span style="margin: 100px;">(Referencia: {{producto.id}})</span>
@@ -138,7 +127,7 @@
                 <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
                 <span><i style="color: orangered;" class="fa fa-comment"></i> Recomendar</span>
         </div>
-</div>
+
 
 {% else %}
         <h2>Ese producto no existe.</h2>

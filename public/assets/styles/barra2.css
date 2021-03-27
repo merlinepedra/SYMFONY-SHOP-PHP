@@ -1,0 +1,33 @@
+/*._____Todo_el_catálogo_____Envios_y_devoluciones*/
+.barra2_texto {
+    font-size: 0.423cm;
+    font-family: "Verdana";
+    height: 0.459cm;
+    /*
+    width: 12.524cm;
+    color: rgb( 237, 110, 38 );
+    text-align: right;
+    position: absolute;
+    left: 20.5669444444444cm;
+    top: 6.80861111111111cm;
+    z-index: 184;
+    */
+  }
+
+
+
+  /*.Rectangle_3*/
+  .barra2_fondo   {
+    background-image: -moz-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    height: 1.199cm;
+    /*
+    width: 27.587cm;
+    position: absolute;
+    left: 18.38cm;
+    top: 6.35cm;
+    z-index: 183;
+    */
+  }
+  
+  

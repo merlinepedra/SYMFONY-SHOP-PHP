@@ -44,14 +44,24 @@
                         </div>
                     </div>
                 </div>
-                {% block body %}{% endblock %}
+                <div class="col-md-10">
+                    {#
+                        <div class="path estás_en">
+                            <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
+                            <span>Inicio</span>
+                            {% if producto %}
+                            <i class="fa fa-caret-right"></i>
+                            {% for x in products_repo.getPath(producto.id) %}
+                                    <span>{{x}}</span>
+                                    <i class="fa fa-caret-right"></i>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    #}
+                    {% block body %}{% endblock %}
+                </div>
             </div>
         </div> 
     </body>
-    <footer>
-        <div>
-            <p class="Pagos_seguros">Pagos seguros</p>
-            <div></div>
-        </div>
-    </footer>
+    {% include 'footer.html.twig' %}
 </html>

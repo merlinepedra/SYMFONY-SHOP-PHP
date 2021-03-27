@@ -16,7 +16,6 @@
 
 {% set conjuntos = [novedades, populares, valorados] %}
 
-<div class="col-md-10">
 <ul class='listaDeElementos' style="padding-left: 10px;">
 {% for key,array in conjuntos%}
         <li class='listaDeElementos container-fluid'>
@@ -43,5 +42,4 @@
         </li>
 {% endfor %}
 </ul>
-</div>
 {% endblock %}
