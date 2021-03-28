@@ -8,6 +8,17 @@
   color: #ed6d25;
 }
 
+.container{
+  margin-top: 30px;
+}
+
+.list-group-item{
+  /*height: 20px;*/
+  padding: 0px;
+  background-color: rgb( 240, 238, 238 );
+  border: none;
+}
+
 
 
 
@@ -26,9 +37,9 @@
     left: 28.5044444444444cm;
     top: 43.3916666666667cm;
     z-index: 255;
-    */
     width: 17.216cm;
     height: 3.457cm;
+    */
   } 
   
   #¿Por_que_comprar_en_Xatem_ {
@@ -80,9 +91,10 @@
 
   /*.Lo___comprado*/
   .caja_gris_carteles {
-    font-size: 0.564cm;
+    font-size: 0.434cm;
     font-family: "Verdana";
     /*
+    font-size: 0.564cm;
     text-align: center;
     position: absolute;
     width: 4.516cm;
@@ -96,11 +108,11 @@
   /*._4Impuestos_4Formas_de_pago_4Entrega_y_envío_4Ga*/
   .caja_gris_plecas {
     font-size: 0.388cm;
-    font-family: "Webdings";
     color: rgb( 0, 0, 0 );
-    line-height: 2.183;
     text-align: justifyLeft;
     /*
+    line-height: 2.183;
+    font-family: "Webdings";
     width: 5.362cm;
     position: absolute;
     left: 16.5805555555556cm;
@@ -126,9 +138,12 @@
   
   /*.Los_precios_de_venta_no_incluyen_el_I_V_A_ni_la*/
   .precios_venta_footer {
+    padding: 20px;
+    border-bottom: 2px solid rgb( 240, 238, 238 );;
+
     font-family: "Verdana";
     color: rgb( 84, 83, 83 );
-    text-align: justifyLeft;
+    text-align: center;
     /*
     position: absolute;
     left: 22.4366666666667cm;
@@ -145,7 +160,7 @@
     font-family: "Verdana";
     color: rgb( 84, 83, 83 );
     line-height: 2.399;
-    text-align: justifyLeft;
+    text-align: center;
     /*
     width: 10.16cm;
     height: 0.353cm;
@@ -155,4 +170,28 @@
     z-index: 333;
     */
   }
+  
+
+  /*.Manguera_¦_Reloj_¦_Regadera_¦_Cepillo_¦_Pasta__*/
+  .nube_manguera {
+    font-family: "Verdana";
+    color: rgb( 109, 109, 109 );
+    line-height: 1.715;
+    text-align: justifyCenter;
+    /*
+    font-size: 0.494cm;
+    position: absolute;
+    left: 22.225cm;
+    top: 62.5122222222222cm;
+    width: 10.195cm;
+    height: 3.775cm;
+    z-index: 379;
+    */
+  }
+
+  /*
+  .nube_manguera:nth-child(2){
+    font-size: 0.47cm;
+  }
+  */
   

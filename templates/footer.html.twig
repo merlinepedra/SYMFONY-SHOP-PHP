@@ -3,7 +3,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    <link rel="stylesheet" href="{{asset('assets/js/footer.js')}}">
+    <script src="{{asset('assets/js/footer.js')}}" defer></script>
 {% endblock %}
 
 <footer>
@@ -57,11 +57,12 @@
     </div>
 
     <div class="container bloque_gris">
+        
         <div class="row">
             <div class="col-md-2" id="lo_mas_comprado">
                 <p class="caja_gris_carteles">Lo <span style="color: #ed6d25;">+</span> comprado</p>
 
-                <ul class="list-group caja_gris_plecas">
+                <ul class="list-group  caja_gris_plecas">
                     <li class="list-group-item">
                         <i class="fa fa-caret-right"></i>
                         Manguera
@@ -95,7 +96,7 @@
             <div class="col-md-3">
                 <p class="caja_gris_carteles">Condiciones generales</p>
 
-                <ul class="list-group caja_gris_plecas">
+                <ul class="list-group  caja_gris_plecas">
                     <li class="list-group-item">
                         <i class="fa fa-caret-right"></i>
                         Impuestos
@@ -125,7 +126,7 @@
             <div class="col-md-2">
                 <p class="caja_gris_carteles">Venta al mayor</p>
 
-                <ul class="list-group caja_gris_plecas">
+                <ul class="list-group  caja_gris_plecas">
                     <li class="list-group-item">
                         <i class="fa fa-caret-right"></i>
                         Venta al mayor - B2B
@@ -155,7 +156,7 @@
             <div class="col-md-2">
                 <p class="caja_gris_carteles">Atencion al cliente</p>
 
-                <ul class="list-group caja_gris_plecas">
+                <ul class="list-group  caja_gris_plecas">
                     <li class="list-group-item">
                         <i class="fa fa-caret-right"></i>
                         Sobre nosotros
@@ -197,9 +198,9 @@
                             La que sea
                         </li>
                         <li class="list-group-item">
-                            <img src="{{ asset('exact_images/twiter.png') }}">
+                            <img src="{{ asset('exact_images/twitter.png') }}">
                             <i class="fa fa-caret-right"></i>
-                            Twiter
+                            Twitter
                         </li>
                     </ul>
                 </div>
@@ -216,6 +217,9 @@
         </div>
     </div>
 
-    <p class="precios_venta_footer">Los precios de venta no incluyen el I.V.A ni la entrega</p>
+    <div class="container">
+        <p class="precios_venta_footer">Los precios de venta no incluyen el I.V.A ni la entrega</p>
+    </div>
+
     <p class="Copyright">Copyright © 2013 Xatem. Todos los derechos reservados</p>
 </footer>
