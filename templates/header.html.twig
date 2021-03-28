@@ -10,19 +10,16 @@
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4" style="padding-left: 20px; padding-right: 10px;">
-                {#<img src="{{ asset('images/xatem.png') }}" style="width: 100%;">#}
-                <div class="font-weight-bold" id="cartel" style="font-size: 100px; margin-bottom: 0px;">
-                    <div id="laX">X</div><div>atem</div>
-                </div>
-                <p class="h5 font-weight-lighter" style="color: grey; width: 100%;">
-                    Todo lo que buscas... y mucho más!
-                </p>
-                <p style="color: orangered; opacity: 80%;">
-                    <i class="fa fa-envelope"></i> 
+            <div class="col-md-4" style="padding-left: 30px; padding-right: 10px;">
+                <img style="width: 95%; height: 40%; margin-top: 25px; margin-bottom: 10px;" src="{{ asset('exact_images/xatem.png') }}">
+                <p class="Todo_lo_que_buscas h5">Todo lo que buscas... y mucho más!</p>
+                <p class="xatem_mail_hotmail_com">
+                    {#<i class="fa fa-envelope"></i>#} 
+                    <img src="{{ asset('exact_images/envelope_header.png') }}">
                     xatem-mail@hotmail.com
                     <br>
-                    <i class="fa fa-phone"></i>
+                    <img src="{{ asset('exact_images/telefono_header.png') }}">
+                    {#<i class="fa fa-phone"></i>#}
                     555 222 444 21
                 </p>
             </div>
@@ -52,7 +49,10 @@
                                     <p>PyPal</p>
                                 </td>
                                 <td>
-                                    <img src="{{ asset('exact_images/visa_48.png') }}">
+                                    <figure>
+                                        <img style="position: absolute;" src="{{ asset('exact_images/mastercard_48.png') }}">
+                                        <img style="position: relative; bottom: 8px;" src="{{ asset('exact_images/visa_48.png') }}">
+                                    </figure>
                                     <p>Tarjeta de crédito</p>
                                 </td>
                                 <td>

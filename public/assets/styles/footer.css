@@ -3,6 +3,12 @@
 }
 
 
+#lo_mas_comprado i
+{
+  color: #ed6d25;
+}
+
+
 
 
 
@@ -71,6 +77,82 @@
     z-index: 294;
     */
   }
+
+  /*.Lo___comprado*/
+  .caja_gris_carteles {
+    font-size: 0.564cm;
+    font-family: "Verdana";
+    /*
+    text-align: center;
+    position: absolute;
+    width: 4.516cm;
+    left: 11.1477777777778cm;
+    height: 0.6cm;
+    top: 68.1213888888889cm;
+    z-index: 339;
+    */
+  }
   
+  /*._4Impuestos_4Formas_de_pago_4Entrega_y_envío_4Ga*/
+  .caja_gris_plecas {
+    font-size: 0.388cm;
+    font-family: "Webdings";
+    color: rgb( 0, 0, 0 );
+    line-height: 2.183;
+    text-align: justifyLeft;
+    /*
+    width: 5.362cm;
+    position: absolute;
+    left: 16.5805555555556cm;
+    top: 69.215cm;
+    height: 4.621cm;
+    z-index: 342;
+    */
+  }
+
+
+  /*.Rectangle_12*/
+  .bloque_gris {
+    background-color: rgb( 240, 238, 238 );
+    height: 7.761cm;
+    width: 35.595cm;
+    /*
+    position: absolute;
+    left: 10.372cm;
+    top: 67.557cm;
+    z-index: 331;
+    */
+  }
   
+  /*.Los_precios_de_venta_no_incluyen_el_I_V_A_ni_la*/
+  .precios_venta_footer {
+    font-family: "Verdana";
+    color: rgb( 84, 83, 83 );
+    text-align: justifyLeft;
+    /*
+    position: absolute;
+    left: 22.4366666666667cm;
+    top: 75.7061111111111cm;
+    z-index: 332;
+    height: 0.423cm;
+    width: 11.395cm;
+    */
+  }
+  
+  /*.Copyright_©_2013_Xatem__Todos_los_derechos_rese*/
+  .Copyright {
+    font-size: 0.353cm;
+    font-family: "Verdana";
+    color: rgb( 84, 83, 83 );
+    line-height: 2.399;
+    text-align: justifyLeft;
+    /*
+    width: 10.16cm;
+    height: 0.353cm;
+    position: absolute;
+    left: 23.0716666666667cm;
+    top: 77.7169444444444cm;
+    z-index: 333;
+    */
+  }
   

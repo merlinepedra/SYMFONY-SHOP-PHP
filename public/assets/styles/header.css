@@ -8,7 +8,7 @@
 
 .miul img
 {
-    width: 25px; height: 25px;
+    width: 30px; height: 30px;
 }
 
 .miul li{
@@ -86,13 +86,14 @@ z-index: 144;
   
 /*.Descuentos_por_cantidades_Venta_al_por_mayor_B2*/
 .descuentos_texto {
-    font-size: 0.494cm;
     font-family: "Verdana";
     color: rgb( 15, 16, 17 );
-    line-height: 2.571;
+    font-size: 0.424cm;
+    /*
+    font-size: 0.494cm;
     height: 3.034cm;
     width: 6.667cm;
-    /*
+    line-height: 2.571;
     text-align: justifyLeft;
     position: absolute;
     left: 25.2588888888889cm;
@@ -100,3 +101,36 @@ z-index: 144;
     z-index: 142;
     */
   }  
+  
+  /*.Todo_lo_que_buscas____y_mucho_mas_*/
+  .Todo_lo_que_buscas {
+    font-family: "Arial";
+    color: rgb( 179, 169, 162 );
+    -moz-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
+    /*
+    font-size: 0.847cm;
+    -webkit-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
+    position: absolute;
+    left: 12.1002777777778cm;
+    top: 2.57527777777778cm;
+    width: 9.878cm;
+    height: 0.67cm;
+    z-index: 135;
+    */
+  }
+
+  .xatem_mail_hotmail_com {
+    font-family: "Verdana";
+    color: rgb( 237, 110, 38 );
+    /*
+    font-size: 0.423cm;
+    position: absolute;
+    left: 12.9469444444444cm;
+    top: 3.4925cm;
+    width: 5.468cm;
+    height: 0.423cm;
+    z-index: 138;
+    */
+  }
+  
+  

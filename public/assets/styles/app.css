@@ -47,3 +47,22 @@ ul.listaDeElementos{
 .path span{
     color: black;
 }
+
+
+
+
+
+
+  /*.Rectangle_3*/
+  .barra2_fondo   {
+    background-image: -moz-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
+    height: 1.199cm;
+    /*
+    width: 27.587cm;
+    position: absolute;
+    left: 18.38cm;
+    top: 6.35cm;
+    z-index: 183;
+    */
+  }

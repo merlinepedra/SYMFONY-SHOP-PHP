@@ -25,11 +25,11 @@
     {% include 'header.html.twig' %}
     <body>
         {% include 'barra1.html.twig' %}
-        {% include 'barra2.html.twig' %}
 
         <div class='container-fluid'>
             <div class='row row-no-gutters'>
                 <div class='col-md-2 border' style="padding: 0;">
+                    {% include 'minibarra.html.twig' %}
                     <div id="MainMenu">
                         <div class="list-group panel">
                             <a href="#" class="list-group-item" data-parent="#MainMenu">
@@ -44,7 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-10" style="padding-left: 0px; padding-right: 0px;">
+                    {% include 'barra2.html.twig' %}
                     {#
                         <div class="path estás_en">
                             <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
