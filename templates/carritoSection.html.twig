@@ -1,8 +1,26 @@
-<div style="padding: 20px; ">
-    <i class="fas fa-shopping-cart fa-3x" style="opacity: 80%; color: orangered;"></i>
-    <a class="btn btn-lg btn-primary" 
-    style="width: 100%; background-color: orange; border-width: 0px; 
-    margin-bottom: 7px; margin-top: 7px;" href="{{url('changeOrdenAmounts')}}">
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/styles/carritoSection.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('assets/js/carritoSection.js')}}" defer></script>
+{% endblock %}
+
+<div style="padding: 5px;" class="border">
+    
+    <div class="other-box-index" style="width: 50px; height: 50px;
+    margin-right: 20px; margin-bottom: 5px;
+    color: {{ selected_product.fotos[0] }};"></div>
+    <p id="cuadro_carrito_texto">{{ selected_product.nombre }}</p>
+    <br>
+    <div id="Rectangle_10">
+        <span id="_1_x_0000_00_€"><span style="color: rgb( 237, 110, 38 ) !important;">1</span> x 0000.00 $</span>
+        <img style="float: right; display: inline;" src="{{ asset('exact_images/Shape22.png') }}">
+    </div>
+    
+    <a class="btn btn-lg btn-primary Ver_carrito" id="ver_carrito_boton"
+    style="width: 100%; margin-bottom: 7px; margin-top: 7px;" 
+    href="{{url('changeOrdenAmounts')}}">
     Ver carrito
     </a>
 </div>

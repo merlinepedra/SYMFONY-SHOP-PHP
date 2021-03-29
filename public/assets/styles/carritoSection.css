@@ -1,0 +1,80 @@
+/*.Reloj_de_pared_melodía_ave*/
+#cuadro_carrito_texto {
+    font-size: 0.423cm;
+    font-family: "Verdana";
+    /*
+    line-height: 1.501;
+    text-align: left;
+    position: absolute;
+    left: 12.7705555555556cm;
+    top: 7.69055555555555cm;
+    width: 4.868cm;
+    height: 0.988cm;
+    z-index: 41;
+    */
+  }
+
+  /*.Rounded_Rectangle_3_copy_36*/
+  #ver_carrito_boton {
+    border-style: solid;
+    border-width: 0.03527777777778cm;
+    border-color: rgb( 204, 204, 204 );
+    background-image: -moz-linear-gradient( 90deg, rgb( 255, 153, 30 ) 23.584%, rgb( 255, 215, 77 ) 76.758%);
+    background-image: -webkit-linear-gradient( 90deg, rgb( 255, 153, 30 ) 23.584%, rgb( 255, 215, 77 ) 76.758%);
+    /*
+    position: absolute;
+    left: 11.712cm;
+    top: 11.747cm;
+    width: 5.362cm;
+    height: 1.305cm;
+    z-index: 30;
+    */
+  }
+
+  #Rectangle_10 {
+    background-color: rgb( 235, 235, 235 );
+    /*
+    position: absolute;
+    left: 10.619cm;
+    top: 9.525cm;
+    width: 7.056cm;
+    height: 0.67cm;
+    z-index: 37;
+    */
+  }
+  
+
+  #_1_x_0000_00_€ {
+    font-size: 0.423cm;
+    font-family: "Verdana";
+    color: black;
+    text-align: left;
+    /*
+    line-height: 2.002;
+    position: absolute;
+    left: 10.8655555555556cm;
+    top: 9.70138888888889cm;
+    width: 2.963cm;
+    height: 0.318cm;
+    z-index: 38;
+    */
+  }
+  
+
+  .Ver_carrito {
+    font-size: 0.494cm;
+    font-family: "Verdana";
+    color: rgb( 255, 255, 255 );
+    text-shadow: 0.018cm 0.031cm 0.03527777777778cm rgb( 0, 0, 0 );
+    /*
+    position: absolute;
+    left: 13.0527777777778cm;
+    top: 12.2061111111111cm;
+    width: 2.716cm;
+    height: 0.459cm;
+    z-index: 31;
+    */
+  }
+  
+  
+  
