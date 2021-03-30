@@ -8,10 +8,14 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bara1_fondo">
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
-        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><img src="{{ asset('exact_images/buscador.png') }}"></button>
-    </form>
+    {#
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><img src="{{ asset('exact_images/buscador.png') }}"></button>
+        </form>
+    #}
+
+    <input id="buscador_input" class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
 
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
     <div class="mispan">

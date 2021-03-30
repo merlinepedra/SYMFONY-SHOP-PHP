@@ -46,19 +46,7 @@
                 </div>
                 <div class="col-md-10" style="padding-left: 0px; padding-right: 0px;">
                     {% include 'barra2.html.twig' %}
-                    {#
-                        <div class="path estás_en">
-                            <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
-                            <span>Inicio</span>
-                            {% if producto %}
-                            <i class="fa fa-caret-right"></i>
-                            {% for x in products_repo.getPath(producto.id) %}
-                                    <span>{{x}}</span>
-                                    <i class="fa fa-caret-right"></i>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                    #}
+                    {% include 'barra10.html.twig' %}
                     {% block body %}{% endblock %}
                 </div>
             </div>

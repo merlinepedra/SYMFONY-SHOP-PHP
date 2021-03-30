@@ -1,0 +1,31 @@
+.path
+{
+    padding:7px; 
+    margin:10px; 
+    background-color: rgb( 206, 206, 205 );
+    width: 100%;
+}
+
+.path i{
+    color:white;
+}
+
+.path span{
+    color: black;
+}
+
+/*.Estás_en:_Inicio___Relojes_y_joyas___Colgantes_*/
+.estás_en {
+    font-size: 0.423cm;
+    font-family: "Verdana";
+    /*
+    text-align: left;
+    color: rgb( 255, 255, 255 );
+    position: absolute;
+    left: 18.9794444444444cm;
+    top: 7.90222222222222cm;
+    z-index: 90;
+    width: 12.559cm;
+    height: 0.423cm;
+    */
+  }

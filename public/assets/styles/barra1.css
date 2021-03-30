@@ -24,4 +24,25 @@
     z-index: 172;
     */
   }
-  
+#buscador_input
+{
+    width: 20%;
+}
+#buscador_input::-webkit-input-placeholder
+{
+    background-image: url("../../exact_images/buscador.png");
+    background-position: 100% 100%;
+    background-size: 10%;
+    background-repeat: no-repeat; 
+    /*
+    color: transparent;
+    text-indent: -9999px;
+    */
+}  
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}

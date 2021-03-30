@@ -1,0 +1,49 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/styles/barra10.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('assets/js/barra10.js')}}" defer></script>
+{% endblock %}
+
+{% set current_url = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) | split('/') %}
+{% set url_length = current_url|length %}
+                    
+                    
+{% if current_url|last == 'index' %}
+    <div>
+        <div class="path estás_en">
+            <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
+            <span>Inicio</span>
+        </div>
+        <div id="visualizacion_listado" style="padding-right: 10px;">
+            <ul style="list-style: none;">
+                    <li>
+                            <img src="{{ asset('exact_images/Icono_Lista.png') }}">
+                            <img src="{{ asset('exact_images/Icono_Rejilla.png') }}">
+                    </li>
+                    <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
+                            <select>
+                                    <option>Baratos arriba</option>
+                                    <option>Caros arriba</option>
+                            </select>
+                    </li>
+                    <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
+                            Mostrar: <input style="display: inline;" type="number" min="1" class="form-control"></li>
+            </ul>
+        </div>
+</div>
+{% endif %}
+
+{% if current_url|slice(0, url_length -1)|last == 'productoView' %}
+    <div class="path estás_en">
+        <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
+        <span>Inicio</span>
+        
+        <i class="fa fa-caret-right"></i>
+        {% for x in products_repo.getPath(producto.id) %}
+                <span>{{x}}</span>
+                <i class="fa fa-caret-right"></i>
+        {% endfor %}
+    </div>
+{% endif %}

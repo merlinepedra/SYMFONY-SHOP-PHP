@@ -16,25 +16,6 @@
 
 {% set conjuntos = [novedades, populares, valorados] %}
 
-<div>
-        <div id="visualizacion_listado" style="padding-top: 25px; padding-right: 10px;">
-                <ul style="list-style: none;">
-                        <li>
-                                <img src="{{ asset('exact_images/Icono_Lista.png') }}">
-                                <img src="{{ asset('exact_images/Icono_Rejilla.png') }}">
-                        </li>
-                        <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
-                                <select>
-                                        <option>Baratos arriba</option>
-                                        <option>Caros arriba</option>
-                                </select>
-                        </li>
-                        <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
-                                Mostrar: <input style="display: inline;" type="number" min="1" class="form-control"></li>
-                </ul>
-        </div>
-</div>
-
 <ul class='listaDeElementos' style="padding-left: 10px;">
 {% for key,array in conjuntos%}
         <li class='listaDeElementos container-fluid'>
