@@ -1,7 +1,31 @@
+#visualizacion_listado input{
+    width: 20px;
+    height: 25px;
+  }
+  
+  #visualizacion_listado ul li{
+    border: none;
+    display: inline;
+    float: right;
+    /*
+    */
+  }  
+  
+  #visualizacion_listado ul
+  {
+    /*
+    float: right;
+    margin-bottom: 50px; 
+    */
+    margin-top: 10px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #b6b1b1;
+  }
+
 .path
 {
     padding:7px; 
-    margin:10px; 
+    margin-top:4px;
     background-color: rgb( 206, 206, 205 );
     width: 100%;
 }

@@ -14,16 +14,13 @@
 
 {% block body %}
 
-{% set conjuntos = [novedades, populares, valorados] %}
-
 <ul class='listaDeElementos' style="padding-left: 10px;">
-{% for key,array in conjuntos%}
+        {% if novedades %}
         <li class='listaDeElementos container-fluid'>
         <div class="row border" style="margin-bottom: 20px;">
                 <div class="col-md-0 texto-vertical">
-                        <span class="h5 font-weight-normal categoriaCarteles">
-                        {#<span class="novedades_texto categoriaCarteles"></span>#}
-                                {{key}}
+                        <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
+                                
                         </span>
                         <a class="h6 font-weight-light ver-mas">
                                 ver
@@ -34,12 +31,58 @@
                 <div class="col-md-10">
                         <table class="table">
                                 <tbody>
-                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': array})) }}
+                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades})) }}
                                 </tbody>
                         </table>  
                 </div>
         </div>
         </li>
-{% endfor %}
+        {% endif %}
+        {% if populares %}
+        <li class='listaDeElementos container-fluid'>
+                <div class="row border" style="margin-bottom: 20px;">
+                        <div class="col-md-0 texto-vertical">
+                                <span class="h5 font-weight-normal categoriaCarteles" id="populares_section">
+                                        
+                                </span>
+                                <a class="h6 font-weight-light ver-mas">
+                                        ver
+                                        <br>
+                                        <i class="fas fa-plus"></i>
+                                </a>
+                        </div>
+                        <div class="col-md-10">
+                                <table class="table">
+                                        <tbody>
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares})) }}
+                                        </tbody>
+                                </table>  
+                        </div>
+                </div>
+        </li>
+        {% endif %}
+        {% if valorados %}
+        <li class='listaDeElementos container-fluid'>
+                <div class="row border" style="margin-bottom: 20px;">
+                        <div class="col-md-0 texto-vertical">
+                                <span class="h5 font-weight-normal categoriaCarteles" id="valorados_section">
+                                        
+                                </span>
+                                <a class="h6 font-weight-light ver-mas">
+                                        ver
+                                        <br>
+                                        <i class="fas fa-plus"></i>
+                                </a>
+                        </div>
+                        <div class="col-md-10">
+                                <table class="table">
+                                        <tbody>
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados})) }}
+                                        </tbody>
+                                </table>  
+                        </div>
+                </div>
+        </li>
+        {% endif %}
 </ul>
 {% endblock %}

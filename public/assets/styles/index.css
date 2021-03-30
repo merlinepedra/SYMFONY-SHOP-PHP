@@ -147,27 +147,4 @@ tbody tr:nth-child(odd) td {
     z-index: 194;
     */
   }
-
-#visualizacion_listado input{
-  width: 20px;
-  height: 25px;
-}
-
-#visualizacion_listado ul li{
-  border: none;
-  display: inline;
-  float: right;
-  /*
-  */
-}  
-
-#visualizacion_listado ul
-{
-  /*
-  margin-bottom: 50px; 
-  float: right;
-  */
-  padding-bottom: 40px;
-  border-bottom: 1px solid #b6b1b1;
-}
   

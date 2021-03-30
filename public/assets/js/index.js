@@ -1,7 +1,7 @@
 //import '../styles/index.css'
 
 $('.categoriaCarteles').each( function(index, element ){
-    if(index == 0)
+    if($(this).attr('id') == 'novedades_section')
     {
         $( this ).text('')
         var $span1 = $(`<span style="color: white;">n</span>`)
@@ -12,7 +12,7 @@ $('.categoriaCarteles').each( function(index, element ){
         //$(this).parent('div').addClass('bg-warning')
         $(this).parent('div').addClass('novedades_fondo')
     }
-    if(index == 1)
+    if($(this).attr('id') == 'populares_section')
     {
         $( this ).text('')
         var $span1 = $(`<span style="color: white;">lo </span>`)
@@ -24,7 +24,7 @@ $('.categoriaCarteles').each( function(index, element ){
         //$(this).parent('div').addClass('bg-dark')
         $(this).parent('div').addClass('lo_mas_popular_fondo')
     }
-    if(index == 2)
+    if($(this).attr('id') == 'valorados_section')
     {
         $( this ).text('')
         var $span1 = $(`<span style="color: black;">mejor </span>`)
