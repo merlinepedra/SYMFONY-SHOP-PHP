@@ -1,0 +1,9 @@
+#barra_inferior li{
+    display: inline;
+    border: none;
+}
+
+.mi-divider
+{
+    border-right: 2px solid #c1bdbd;
+}

@@ -30,7 +30,34 @@ ul.listaDeElementos{
 #MainMenu .list-group-item
 {
     width: 100%;
+    border-bottom: none;
+    border-top: none;
+    padding: 5px;
 }
+
+/*._28_05_€*/
+.precio {
+    color: black;
+    text-shadow: 0px 3px 2px white, 0px 4px 2px rgb( 117, 117, 117 );
+
+    font-family: "Verdana";
+    font-weight: bold;
+    -moz-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
+    -webkit-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
+    /*
+    color: rgb( 117, 117, 117 );
+    line-height: 1.091;
+    font-size: 0.776cm;
+    text-align: justifyCenter;
+    text-shadow: 0.035cm 0.061cm 0.17638888888889cm rgb( 0, 0, 0 );
+    position: absolute;
+    left: 29.8097222222222cm;
+    top: 12.5941666666667cm;
+    width: 4.551cm;
+    height: 1.235cm;
+    z-index: 108;
+    */
+  }
 
 
 

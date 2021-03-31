@@ -27,9 +27,16 @@
         {% include 'barra1.html.twig' %}
 
         <div class='container-fluid'>
-            <div class='row row-no-gutters border'>
+            <div class='row row-no-gutters'>
                 <div class='col-md-2' style="padding: 0;">
                     {% include 'minibarra.html.twig' %}
+                </div>
+                <div class="col-md-10" style="padding-left: 1px; padding-right: 0px;">
+                    {% include 'barra2.html.twig' %}
+                </div>
+            </div>
+            <div class='row row-no-gutters border'>
+                <div class='col-md-2' style="padding: 0;">                
                     <div id="MainMenu">
                         <div class="list-group panel">
                             
@@ -44,12 +51,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-10" style="padding-left: 2px; padding-right: 0px;">
-                    {% include 'barra2.html.twig' %}
+                <div class="col-md-10" style="padding-left: 15px; padding-right: 0px;">
                     {% include 'barra10.html.twig' %}
                     {% block body %}{% endblock %}
                 </div>
             </div>
+            <div></div>
+            {% include 'barra_inferior.html.twig' %}
         </div> 
     </body>
     {% include 'footer.html.twig' %}

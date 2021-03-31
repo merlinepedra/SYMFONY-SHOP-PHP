@@ -38,14 +38,23 @@ class IndexController extends AbstractController
                 $precio = $p->getPrecioUnidad();
 
                 //$nombre .= $nombre.' '.$nombre.' '.$nombre.' '.$nombre;
+                /*
                 $columnas .= "
                 <td>
                         <div class='other-box-index cuadraditos_index' data-color='$color'></div>
                         <p><a class='pname' href='productoView/$id'>$nombre</a></p>
                 </td>";
+                */
+                $columnas .= "
+                <td>
+                        <div class='other-box-index cuadraditos_index' data-color='$color'></div>
+                        <p><a class='pname' href='productoView/$id'>$nombre</a></p>
+                        <span class='precio h3 font-weight-bolder'>$precio.00 $</span>
+                </td>";
                 $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
             }
-            $response .= "<tr>$columnas</tr><tr>$precios</tr>";
+            //$response .= "<tr>$columnas</tr><tr>$precios</tr>";
+            $response .= "<tr>$columnas</tr>";
         }
         return new Response($response);
     }

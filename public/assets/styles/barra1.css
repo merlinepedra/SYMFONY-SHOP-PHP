@@ -46,3 +46,20 @@ input[type=number]::-webkit-outer-spin-button
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+/*.Nueva_cuenta_____Iniciar_seción*/
+.nueva_cuenta {
+    font-size: 0.423cm;
+    font-family: "Verdana";
+    color: rgb( 255, 255, 255 );
+    /*
+    position: absolute;
+    left: 38.8761111111111cm;
+    top: 5.46805555555556cm;
+    width: 6.456cm;
+    height: 0.459cm;
+    z-index: 179;
+    */
+  }
+  

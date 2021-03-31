@@ -19,25 +19,18 @@ tbody tr:nth-child(odd) td {
   border-top: none;
 }
 
+.table{
+  text-align: center;
+}
+
 .pname{
     margin-top: 10px;
     text-align: center;
+    font-weight: normal;
 }
 
 
-.precio{
-    color: black;
-    padding-left: 50px;
-    /*
-    -webkit-text-stroke: 10px white;
-    text-shadow:
-        3px 3px 0 black,
-      -1px -1px 0 black,  
-       1px -1px 0 black,
-       -1px 1px 0 black,
-        1px 1px 0 black
-    */
-}
+
 
 .texto-vertical {
     writing-mode: vertical-lr;

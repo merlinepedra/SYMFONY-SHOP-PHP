@@ -146,22 +146,6 @@
   width: 0.494cm;
 }
 
-.Cantidad {
-  font-size: 0.423cm;
-  font-family: "Verdana";
-  color: rgb( 0, 0, 0 );
-  line-height: 2.002;
-  text-align: left;
-  /*
-  position: absolute;
-  left: 29.8802777777778cm;
-  top: 16.2983333333333cm;
-  z-index: 99;
-  */
-  width: 2.011cm;
-  height: 0.353cm;
-}
-
 .Pagos_seguros {
   font-size: 0.564cm;
   font-family: "Verdana";

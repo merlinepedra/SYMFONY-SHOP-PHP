@@ -42,6 +42,58 @@
     z-index: 37;
     */
   }
+
+  #_1 {
+    font-size: 0.494cm;
+    font-family: "Verdana";
+    color: rgb( 255, 129, 59 ) !important;
+    font-weight: bold;
+    /*
+    line-height: 1.715;
+    text-align: center;
+    position: absolute;
+    left: 12.3825cm;
+    top: 11.0772222222222cm;
+    width: 0.282cm;
+    height: 0.353cm;
+    z-index: 300;
+    */
+  }
+  
+  #_0000_00_€ {
+    font-size: 0.494cm;
+    font-family: "Verdana";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    /*
+    text-align: center;
+    position: absolute;
+    left: 14.9225cm;
+    top: 11.1125cm;
+    width: 2.787cm;
+    height: 0.353cm;
+    z-index: 302;
+    */
+  }
+  
+
+  /*.Cantidad*/
+  .cantidad_texto {
+    font-size: 0.388cm;
+    font-family: "Verdana";
+    color: rgb( 168, 167, 166 );
+    /*
+    line-height: 2.183;
+    text-align: right;
+    position: absolute;
+    left: 11.5711111111111cm;
+    top: 10.4775cm;
+    width: 1.693cm;
+    height: 0.317cm;
+    z-index: 299;
+    */
+  }
+  
   
 
   #_1_x_0000_00_€ {
@@ -64,7 +116,7 @@
   .Ver_carrito {
     font-size: 0.494cm;
     font-family: "Verdana";
-    color: rgb( 255, 255, 255 );
+    color: rgb( 255, 255, 255 ) !important;
     text-shadow: 0.018cm 0.031cm 0.03527777777778cm rgb( 0, 0, 0 );
     /*
     position: absolute;

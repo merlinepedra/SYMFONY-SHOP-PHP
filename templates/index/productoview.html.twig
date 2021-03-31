@@ -15,7 +15,7 @@
 {% block body %}
 {% if producto %}
 
-        <div class="border-bottom" style="padding-bottom: 10px; margin-bottom: 15px;">
+        <div class="border-bottom" style="padding-bottom: 10px; margin-bottom: 15px; margin-top: 30px;">
                 <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
                 <span style="margin: 100px;">(Referencia: {{producto.id}})</span>
         </div>
@@ -28,15 +28,15 @@
                         <ul class="list-group">
                                 <li class="list-group-item">
                                         <div style="float: left;">
-                                                <p class="font-weight-light h6">Precio:</p>
-                                                <p class='precio h5 font-weight-bolder' style="text-decoration: line-through; color: grey;">{{ producto.preciounidad + 20 }}.00 $</p>
+                                                <p class="carteles_producto_texto">Precio:</p>
+                                                <p class='h5 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
                                                 <p class='precio h2 font-weight-bolder'>{{ producto.preciounidad }}.00 $</p>
                                         </div> 
-                                        <div style="float: right;">Redes sociales</div>
+                                        <div style="float: right;"><img src="{{ asset('exact_images/redes_sociales.png') }}"></div>
                                 </li>
                                 <li class="list-group-item">
                                         <div style="float: left;">
-                                        <span class="h6 font-weight-normal">Elige tu inicial</span>
+                                        <span class="carteles_producto_texto">Elige tu inicial</span>
                                         <i class="fa fa-info-circle" style="color: orangered;"></i>
                                         <select>
                                                 {% for x in 'A'..'Z' %}
@@ -45,16 +45,16 @@
                                         </select>
                                         </div>
                                         <div class="calificacion" style="float: right;">
-                                                <p class="h6 font-weight-normal">Calificación:</p>
+                                                <p class="carteles_producto_texto">Calificación:</p>
                                                 {% for i in 1..5 %}
-                                                        <i data-index="{{i}}" class="fa fa-star"></i>
+                                                        <img data-index="{{i}}" src="{{ asset('exact_images/carrito.png') }}">
                                                 {% endfor %}
                                         </div>
                                 </li>
                                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
                                 <li class="list-group-item" id="formulario">
                                         {{ form_start(form, {'method': 'post'}) }}
-                                        <span class="Cantidad">Cantidad:</span>  
+                                        <span class="carteles_producto_texto">Cantidad:</span>  
                                         {{ form_widget(form.cantidad, {
                                                 'attr': 
                                                 {
@@ -88,14 +88,14 @@
                                 </li>
                                 <li class="list-group-item">
                                 <div class="container border">
-                                        <p class="h6 font-weight-light">
+                                        <p class="encabezado_texto">
                                                 Descuentos para compras de más de una unidad</p>
                                         <table class="table table-condensed" id="descuentos">
                                                 
                                                 <thead>
                                                         <tr>
-                                                                <th style="color: orangered;">Cantidad</th>
-                                                                <th style="color: orangered;">Precio</th>
+                                                                <th class="descuentos_header_texto">Cantidad</th>
+                                                                <th class="descuentos_header_texto">Precio</th>
                                                         </tr>
                                                 </thead>
                                                 <tbody>
@@ -113,19 +113,45 @@
                                 
                                 </li>
                                 <li class="list-group-item">
-                                        <p class="descripcion">{{ producto.descripcion }}</p>
+                                        <p class="descripcion descripcion_texto">{{ producto.descripcion }}</p>
                                 </li>
                                 {% endif %}
                         </ul>
                 </div>
+                <div style="float: left; padding-left: 10px;">
+                        <span><span style="color: orangered;">0</span> Comentarios</span>
+                        <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
+                        <span><i style="color: orangered;" class="fa fa-pencil"></i> Comentar</span>
+                        <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
+                        <span><i style="color: orangered;" class="fa fa-comment"></i> Recomendar</span>
+                </div>
         </div>
 
-        <div id="commet-footer" style="float: left;">
-                <span><span style="color: orangered;">0</span> Comentarios</span>
-                <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                <span><i style="color: orangered;" class="fa fa-pencil"></i> Comentar</span>
-                <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                <span><i style="color: orangered;" class="fa fa-comment"></i> Recomendar</span>
+        <div class="container">
+                <p id="Productos_similares">Productos similares</p>
+                <table id="similares_table">
+                        <tbody>
+                                {% set colores = ['brown', 'khaki', 'red', 'blue', 'green'] %}
+                                <tr>
+                                {#
+                                        {% for color in colores %}
+                                        <td>
+                                                <div class="similares_box" style="color: {{color}};"></div>
+                                                <p>Reloj Orient B-678542-D Cro. Acero 200m</p>
+                                                <p class="precio h3">0000.0 $</p>
+                                        </td>
+                                        {% endfor %}
+                                #}
+                                
+
+                                {% for i in 1..5 %}
+                                <td>
+                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
+                                </td>
+                                {% endfor %}
+                                </tr>
+                        </tbody>
+                </table>
         </div>
 
 
