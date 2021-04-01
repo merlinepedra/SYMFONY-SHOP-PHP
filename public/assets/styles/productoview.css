@@ -4,19 +4,20 @@
     width: 70px;
 }
 
-#similares_table
+.similares_table
 {
     text-align: center;
+    width: 100%;
 }
 
-#similares_table td
+.similares_table td
 {
     border: none;
     margin-right: 20px;
 }
 
 .list-group-item{
-    /*border: none;*/
+    border: none;
 }
 
 .list-group{
@@ -32,11 +33,14 @@
 /*._12_36_€_11_73_€_11_10_€_10_47_€_9_84_€_9_21_€*/
 #descuentos tbody td
  {
+   padding: 0px !important;
+
+
     font-size: 0.423cm;
     font-family: "Verdana";
     color: #6d6966;
-    line-height: 2.002;
     /*
+    line-height: 2.002;
     text-align: right;
     position: absolute;
     left: 37.7119444444444cm;
@@ -51,30 +55,15 @@
 #descuentos 
 { 
     text-align: center;
+    width: 100%;
 }
 
-.precio .h2
-{ 
-    box-shadow: 3px 5px 4px #888888;
-}
-
-.calificacion img:hover{
-    background-image: url('../../exact_images/estrella_naranja.png');
-}
-
-.calificacion img{
+.calificacion figure{
     display: inline; 
     /*
     color:grey; 
     text-shadow: 2px 5px 2px #99978888;
     */
-}
-
-.badge{
-    vertical-align: top;
-    color: white; 
-    background-color:  orangered; 
-    box-shadow: 3px 5px 4px #888888;
 }
 
 
@@ -120,11 +109,11 @@
 
   /*.Descuentos_para_compras_de_más_de_1_unidad*/
   #encabezado_texto {
-    font-size: 0.423cm;
+    font-size: 0.403cm;
     font-family: "Verdana";
     color: rgb( 128, 128, 128 );
-    line-height: 2.002;
     /*
+    line-height: 2.002;
     text-align: left;
     position: absolute;
     left: 32.6672222222222cm;
@@ -150,15 +139,15 @@
   } 
   
   ._32_05_€ {
-    font-size: 0.776cm;
     font-family: "Verdana";
     color: rgb( 117, 117, 117 );
     font-weight: bold;
     text-decoration: line-through;
+    /*
     line-height: 1.091;
+    font-size: 0.776cm;
     -moz-transform: matrix( 0.90153677293732, 0, 0, 0.90671941214752, 0, 0);
     -webkit-transform: matrix( 0.90153677293732, 0, 0, 0.90671941214752, 0, 0);
-    /*
     text-align: justifyCenter;
     position: absolute;
     left: 29.8802777777778cm;
@@ -185,4 +174,38 @@
     z-index: 130;
     */
   }
+
+/*.Agregar_a_carrito_Ú*/
+.agregar_al_carrito_texto {
+  font-size: 0.494cm;
+  font-family: "Verdana";
+  color: rgb( 251, 251, 251 );
+  line-height: 1.715;
+  text-align: left;
+  /*
+  position: absolute;
+  left: 35.2777777777778cm;
+  top: 16.2277777777778cm;
+  z-index: 95;
+  width: 4.868cm;
+  height: 0.459cm;
+  */
+}
+
+/*.Rounded_Rectangle_3_copy_37*/
+.agregar_al_carrito_boton {
+  border-style: solid;
+  border-width: 0.03527777777778cm;
+  border-color: rgb( 201, 93, 0 );
+  background-image: -moz-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
+  height: 1.446cm;
+  width: 8.361cm;
+  /*
+  position: absolute;
+  left: 34.043cm;
+  top: 15.663cm;
+  z-index: 94;
+  */
+}
   

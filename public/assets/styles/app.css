@@ -42,9 +42,9 @@ ul.listaDeElementos{
 
     font-family: "Verdana";
     font-weight: bold;
+    /*
     -moz-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
     -webkit-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
-    /*
     color: rgb( 117, 117, 117 );
     line-height: 1.091;
     font-size: 0.776cm;

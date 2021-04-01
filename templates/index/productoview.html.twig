@@ -20,7 +20,7 @@
                 <span style="margin: 100px;">(Referencia: {{producto.id}})</span>
         </div>
 
-        <div class="row">
+        <div class="row" style="border-bottom: 1px solid #e1e1e1; padding-bottom: 15px;">
                 <div class="col-md-3">
                         {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %} 
                 </div>
@@ -29,25 +29,28 @@
                                 <li class="list-group-item">
                                         <div style="float: left;">
                                                 <p class="carteles_producto_texto">Precio:</p>
-                                                <p class='h5 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
-                                                <p class='precio h2 font-weight-bolder'>{{ producto.preciounidad }}.00 $</p>
+                                                <p class='h4 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
+                                                <p class='precio h2'>{{ producto.preciounidad }}.00 $</p>
                                         </div> 
                                         <div style="float: right;"><img src="{{ asset('exact_images/redes_sociales.png') }}"></div>
                                 </li>
                                 <li class="list-group-item">
                                         <div style="float: left;">
-                                        <span class="carteles_producto_texto">Elige tu inicial</span>
-                                        <i class="fa fa-info-circle" style="color: orangered;"></i>
-                                        <select>
-                                                {% for x in 'A'..'Z' %}
-                                                <option>{{x}}</option>
-                                                {% endfor %}
-                                        </select>
+                                                <span class="carteles_producto_texto">Elige tu inicial</span>
+                                                <img src="{{ asset('exact_images/help.png') }}">
+                                                <select>
+                                                        {% for x in 'A'..'Z' %}
+                                                        <option>{{x}}</option>
+                                                        {% endfor %}
+                                                </select>
                                         </div>
                                         <div class="calificacion" style="float: right;">
                                                 <p class="carteles_producto_texto">Calificación:</p>
                                                 {% for i in 1..5 %}
-                                                        <img data-index="{{i}}" src="{{ asset('exact_images/carrito.png') }}">
+                                                        <figure>
+                                                                <img class="gris_star" style="display: inline;" data-index="{{i}}" src="{{ asset('exact_images/estrella_gris.png') }}">
+                                                                <img class="orange_star" style="display: none;" data-index="{{i}}" src="{{ asset('exact_images/estrella_naranja.png') }}">
+                                                        </figure>
                                                 {% endfor %}
                                         </div>
                                 </li>
@@ -71,8 +74,8 @@
                                         })}}
                                         <button type="submit" id="form_agregar" name="form[agregar]" 
                                         class="btn btn-lg btn agregar_al_carrito_boton" 
-                                        style="margin: 10px; width: 50%; display: inline;">
-                                        <span class="agregar_al_carrito_texto">Agregar al carrito <i class="fa fa-directions"></i></span> <img src="{{ asset('exact_images/carrito.png') }}"></button>
+                                        style="margin: 10px; display: inline;">
+                                        <span class="agregar_al_carrito_texto">Agregar al carrito <img src="{{ asset('exact_images/flecha_boton.png') }}"></span> <img src="{{ asset('exact_images/carrito.png') }}"></button>
                                         {{ form_widget(form.agregar, {
                                                 'attr': 
                                                         {
@@ -86,50 +89,50 @@
                                                 'type': 'number'}) }}
                                 {{ form_end(form) }}
                                 </li>
-                                <li class="list-group-item">
-                                <div class="container border">
-                                        <p class="encabezado_texto">
-                                                Descuentos para compras de más de una unidad</p>
-                                        <table class="table table-condensed" id="descuentos">
-                                                
-                                                <thead>
-                                                        <tr>
-                                                                <th class="descuentos_header_texto">Cantidad</th>
-                                                                <th class="descuentos_header_texto">Precio</th>
-                                                        </tr>
-                                                </thead>
-                                                <tbody>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                        <tr><td>2</td><td>12.8 $</td></tr>
-                                                </tbody>
-                                                </table>
-                                </div>
-                                
-                                </li>
-                                <li class="list-group-item">
-                                        <p class="descripcion descripcion_texto">{{ producto.descripcion }}</p>
-                                </li>
                                 {% endif %}
+                                <li class="list-group-item">
+                                        <div class="container border" style="width: 63%;">
+                                                <p id="encabezado_texto">
+                                                        Descuentos para compras de más de 1 unidad</p>
+                                                <table id="descuentos">
+                                                        
+                                                        <thead>
+                                                                <tr>
+                                                                        <th class="descuentos_header_texto">Cantidad</th>
+                                                                        <th class="descuentos_header_texto">Precio</th>
+                                                                </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                                <tr><td>2</td><td>12.8 $</td></tr>
+                                                        </tbody>
+                                                        </table>
+                                        </div>
+                                        
+                                        </li>
+                                        <li class="list-group-item">
+                                                <p class="descripcion descripcion_texto">{{ producto.descripcion }}</p>
+                                        </li>
                         </ul>
                 </div>
                 <div style="float: left; padding-left: 10px;">
-                        <span><span style="color: orangered;">0</span> Comentarios</span>
+                        <span><span style="font-weight:500; color: #ff8038;">0</span> Comentarios</span>
                         <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                        <span><i style="color: orangered;" class="fa fa-pencil"></i> Comentar</span>
+                        <span><img src="{{ asset('exact_images/lapiz.png') }}"> Comentar</span>
                         <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                        <span><i style="color: orangered;" class="fa fa-comment"></i> Recomendar</span>
+                        <span><img src="{{ asset('exact_images/comentario.png') }}"> Recomendar</span>
                 </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="padding-left: 0px !important; padding-bottom: 20px !important;">
                 <p id="Productos_similares">Productos similares</p>
-                <table id="similares_table">
+                <table class="similares_table">
                         <tbody>
                                 {% set colores = ['brown', 'khaki', 'red', 'blue', 'green'] %}
                                 <tr>

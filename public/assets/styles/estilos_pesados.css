@@ -78,39 +78,6 @@
 }
 
 
-/*.Rounded_Rectangle_3_copy_37*/
-.agregar_al_carrito_boton {
-  border-style: solid;
-  border-width: 0.03527777777778cm;
-  border-color: rgb( 201, 93, 0 );
-  background-image: -moz-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
-  width: 8.361cm;
-  height: 1.446cm;
-  /*
-  position: absolute;
-  left: 34.043cm;
-  top: 15.663cm;
-  z-index: 94;
-  */
-}
-
-/*.Agregar_a_carrito_Ú*/
-.agregar_al_carrito_texto {
-  font-size: 0.494cm;
-  font-family: "Verdana";
-  color: rgb( 251, 251, 251 );
-  line-height: 1.715;
-  text-align: left;
-  /*
-  position: absolute;
-  left: 35.2777777777778cm;
-  top: 16.2277777777778cm;
-  z-index: 95;
-  */
-  width: 4.868cm;
-  height: 0.459cm;
-}
 
 ._10 {
   font-size: 0.423cm;

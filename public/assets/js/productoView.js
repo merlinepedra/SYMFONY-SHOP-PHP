@@ -8,13 +8,22 @@ $('.other-box').css("background-color", firstColor)
 $('.calificacion img').click(function(){
     var value = parseInt($(this).data('index'))
     $('#form_calificacion').val(value)
-    $('.calificacion img').each(function(index, element){
-        /*
-        if(index < value) $(this).css('color', 'orangered')
-        else $(this).css('color', 'grey')
-        */
 
-        if(index < value) $(this).css('background-image', "url('../../exact_images/estrella_naranja.png')")
-        else $(this).css('background-image', "url('../../exact_images/estrella_gris.png')")
+    
+    $('.calificacion .gris_star').each(function(index, element){
+        if(index < value) $(this).css('display', 'none')
+        else $(this).css('display', 'inline')
     })
+
+    $('.calificacion .orange_star').each(function(index, element){
+        if(index < value) $(this).css('display', 'inline')
+        else $(this).css('display', 'none')
+    })
+})
+
+$('.calificacion .gris_star').hover(function(){
+    /*
+    $(this).css('display', 'none')
+    $(this).next('.orange_star').css('display', 'inline')
+    */
 })
