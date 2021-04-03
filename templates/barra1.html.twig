@@ -19,7 +19,8 @@
 
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
     <div class="mispan">
-        <i class="fa fa-user" style="color: white;"></i><a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">Nueva cuenta</a>
+        {#<img src="{{ asset('exact_images/user.png') }}">#}
+        <i class="fa fa-user fa-2x" style="color: white;"></i><a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">Nueva cuenta</a>
         <span style="border-right: 2px solid black; width: 5px;"></span>
         <a class="nav-link nueva_cuenta" href="{{url('app_login')}}">Iniciar sesión</a>
     </div>

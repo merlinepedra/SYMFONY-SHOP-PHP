@@ -15,9 +15,9 @@
     float: right;
     margin-bottom: 50px; 
     */
+    border-bottom: 1px solid rgb( 224, 224, 224 );
     margin-top: 10px;
     padding-bottom: 40px;
-    border-bottom: 1px solid #b6b1b1;
   }
 
 .path

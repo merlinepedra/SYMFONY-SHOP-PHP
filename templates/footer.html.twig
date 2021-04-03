@@ -6,24 +6,24 @@
     <script src="{{asset('assets/js/footer.js')}}" defer></script>
 {% endblock %}
 
-<footer>
-    <div class="container">
+<footer style="align-items: center;">
+    <div class="container-fluid">
         <p id="Xatem_es_el_Multiprecio">
             <span style="font-weight: bold; color: black;">
                 <span style="color: rgb( 237, 109, 37 );">X</span>atem
             </span> 
             es el Multiprecio o todo a cien más grande de Internet!</p>
         <div class="row">
-            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+            <div class="col-md-6  col-xs-9 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo <span class="selected_words">consequat</span>. Duis autem vel eum iriure dolor in hendrerit in <span class="selected_words">vulputate</span> velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
             </div>
-            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+            <div class="col-md-6  col-xs-9 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
                 Lorem <span class="selected_words">ipsum dolor sit amet</span>, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <span class="selected_words">accumsan</span> et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <p id="¿Por_que_comprar_en_Xatem_">¿Por que comprar en 
             <span style="font-weight: bold; color: black;">
             <span style="color: rgb( 237, 109, 37 );">X</span>atem
@@ -31,7 +31,7 @@
 
         <div class="row">
             {% for i in 1..6 %}
-            <div class="col-md-2">
+            <div class="col-md-2  col-xs-3">
                 <span><img src="{{ asset('exact_images/bolita.png') }}"></span>
                 <span class="Lorem_ipsum__cortico">Lorem ipsum  dolor sit amet</span>
             </div>
@@ -39,27 +39,27 @@
         </div>
     </div>
 
-    <div id="tercer_bloque_footer" class="container">
+    <div id="tercer_bloque_footer" class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4  col-xs-6">
                 <p class="third_bloque_texto" style="text-align: left;">
                     Búsquedas recientes</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4  col-xs-6">
                 <p class="third_bloque_texto" style="text-align: center;">
                     Búsquedas populares</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-6">
                 <p class="third_bloque_texto" style="text-align: right;">
                     Etiquetas populares</p>
             </div>
         </div>
     </div>
 
-    <div class="container bloque_gris">
+    <div class="container-fluid bloque_gris">
         
         <div class="row">
-            <div class="col-md-2" id="lo_mas_comprado">
+            <div class="col-md-2  col-xs-3" id="lo_mas_comprado">
                 <p class="caja_gris_carteles">Lo <span style="color: #ed6d25;">+</span> comprado</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -93,7 +93,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <p class="caja_gris_carteles">Condiciones generales</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -123,7 +123,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2  col-xs-3">
                 <p class="caja_gris_carteles">Venta al mayor</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -153,7 +153,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2  col-xs-3">
                 <p class="caja_gris_carteles">Atencion al cliente</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -183,7 +183,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <div>
                     <p class="caja_gris_carteles">Redes sociales</p>
                     <ul class="list-group">
@@ -217,7 +217,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <p class="precios_venta_footer">Los precios de venta no incluyen el I.V.A ni la entrega</p>
     </div>
 
