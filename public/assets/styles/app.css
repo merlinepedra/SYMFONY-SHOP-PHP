@@ -76,3 +76,10 @@ ul.listaDeElementos{
     z-index: 183;
     */
   }
+
+
+
+/*Responsive*/
+* {
+    box-sizing: border-box;
+}

@@ -4,18 +4,22 @@
     box-shadow: 0px 0px 10px 5px #888888;
     /* shadow: x y difuminado desbordado*/
     list-style-type: none;
+    text-align: left;
 }
 
 .miul img
 {
+    /*
     width: 30px; height: 30px;
+    */
+    width: 8%;
 }
 
 .miul li{
     margin: 0px;
-    padding-left: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     box-shadow: 0px 15px 10px -10px #888888;
 }
 
@@ -32,10 +36,13 @@
 
 .losPagos{
     text-align: center;
+    padding: 0px 3px;
 }
 
 .losPagos td{
     max-width: 20px;
+    border-top: none;
+    padding: 3px;
 }
 
 .losPagos table{
@@ -44,93 +51,47 @@
 }
 
 .losPagos td img{
+    width: 65%;
+    /*
     width: 80px;
     height: 60px;
+    */
 }
-
-
 
 /*Los estilos pesados*/
 
 /*.Transferencia_bancaria*/
 .losPagos td p {
-    font-size: 0.388cm;
     font-family: "Verdana";
     color: rgb( 10, 9, 10 );
-    /*
-    text-align: center;
-    position: absolute;
-    left: 42.1569444444444cm;
-    top: 2.57527777777778cm;
-    z-index: 149;
-    */
-    width: 2.575cm;
-    height: 0.776cm;
+    font-size: 100%;
   }  
 
 
 .¡Paga_como_quieras_ {
-font-size: 0.847cm;
+font-size: 200%;
 font-family: "Verdana";
 color: rgb( 149, 64, 2 );
-/*
-height: 0.811cm;
-width: 8.467cm;
-text-align: left;
-position: absolute;
-left: 35.1366666666667cm;
-top: 3.77472222222222cm;
-z-index: 144;
-*/
 }
   
 /*.Descuentos_por_cantidades_Venta_al_por_mayor_B2*/
 .descuentos_texto {
     font-family: "Verdana";
-    color: rgb( 15, 16, 17 );
-    font-size: 0.424cm;
-    /*
-    font-size: 0.494cm;
-    height: 3.034cm;
-    width: 6.667cm;
-    line-height: 2.571;
-    text-align: justifyLeft;
-    position: absolute;
-    left: 25.2588888888889cm;
-    top: 0.98777777777778cm;
-    z-index: 142;
-    */
+    color: rgb(9, 17, 26);
+    font-size: 100%;
   }  
   
   /*.Todo_lo_que_buscas____y_mucho_mas_*/
   .Todo_lo_que_buscas {
     font-family: "Arial";
+    font-size: 120%;
+    line-height:93%;
+    margin-bottom: 5px;
     color: rgb( 179, 169, 162 );
     -moz-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
-    /*
-    font-size: 0.847cm;
-    -webkit-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
-    position: absolute;
-    left: 12.1002777777778cm;
-    top: 2.57527777777778cm;
-    width: 9.878cm;
-    height: 0.67cm;
-    z-index: 135;
-    */
   }
 
   .xatem_mail_hotmail_com {
     font-family: "Verdana";
     color: rgb( 237, 110, 38 );
-    /*
-    font-size: 0.423cm;
-    position: absolute;
-    left: 12.9469444444444cm;
-    top: 3.4925cm;
-    width: 5.468cm;
-    height: 0.423cm;
-    z-index: 138;
-    */
   }
-  
-  
