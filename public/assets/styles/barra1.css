@@ -1,6 +1,32 @@
+#buscador_input
+{
+    width: 30%;
+}
+#buscador_input::-webkit-input-placeholder
+{
+    background-image: url("../../exact_images/buscador.png");
+    background-position: 100% 100%;
+    background-size: 6%;
+    background-repeat: no-repeat; 
+    /*
+    background-size: 3%;
+    color: transparent;
+    text-indent: -9999px;
+    */
+}  
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .mispan{
     position: absolute;
     right: 5px;
+    padding-left: 7px;
+    text-align: end;
 }
 
 .mispan a{
@@ -15,51 +41,40 @@
 .bara1_fondo {
     background-image: -moz-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
-    height: 1.87cm;
-    /*
-    width: 35.983cm;
-    position: absolute;
-    left: 10.16cm;
-    top: 4.657cm;
-    z-index: 172;
-    */
   }
-#buscador_input
-{
-    width: 20%;
-}
-#buscador_input::-webkit-input-placeholder
-{
-    background-image: url("../../exact_images/buscador.png");
-    background-position: 100% 100%;
-    background-size: 10%;
-    background-repeat: no-repeat; 
-    /*
-    color: transparent;
-    text-indent: -9999px;
-    */
-}  
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 
 /*.Nueva_cuenta_____Iniciar_seción*/
 .nueva_cuenta {
-    font-size: 0.423cm;
+    font-size: 90%;
     font-family: "Verdana";
-    color: rgb( 255, 255, 255 );
-    /*
-    position: absolute;
-    left: 38.8761111111111cm;
-    top: 5.46805555555556cm;
-    width: 6.456cm;
-    height: 0.459cm;
-    z-index: 179;
-    */
+    color: rgb( 255, 255, 255 ) !important;
+    /*padding: 7px !important;*/
+  }
+
+
+  @media screen and (max-width:680px) {
+    .navbar {
+        position: relative;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .mispan{
+      display: block;
+      text-align: left;
+      float: none;
+      position: relative;
+    }
+
+    #buscador_input{
+        width: 70%;
+    }
+
+    #buscador_input::-webkit-input-placeholder
+    {
+        background-size: 8%;
+    }  
   }
   

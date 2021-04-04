@@ -1,7 +1,12 @@
+
 .miul{
     margin: 10px;
     padding: 0px;
-    box-shadow: 0px 0px 10px 5px #888888;
+    /*   
+    box-shadow: 25px 5px 10px -25px #888888, -25px 5px 10px -25px #888888, 0px -22px 10px -25px #888888;
+    -moz-box-shadow: 25px 5px 10px -25px #888888, -25px 5px 10px -25px #888888, 0px -22px 10px -25px #888888;
+    */
+    -webkit-box-shadow: 25px 5px 10px -25px #888888, -25px 5px 10px -25px #888888, 0px -22px 10px -25px #888888;
     /* shadow: x y difuminado desbordado*/
     list-style-type: none;
     text-align: left;
@@ -20,7 +25,7 @@
     padding-left: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
-    box-shadow: 0px 15px 10px -10px #888888;
+    box-shadow: 0px 15px 10px -16px #888888;
 }
 
 #laX{
@@ -36,7 +41,7 @@
 
 .losPagos{
     text-align: center;
-    padding: 0px 3px;
+    padding: 0px 2px 0px 3px;
 }
 
 .losPagos td{

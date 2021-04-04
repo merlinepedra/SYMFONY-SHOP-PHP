@@ -7,26 +7,21 @@
 {% endblock %}
 
 
-<nav class="navbar navbar-expand-lg navbar-light bara1_fondo">
-    {#
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><img src="{{ asset('exact_images/buscador.png') }}"></button>
-        </form>
-    #}
 
-    <input id="buscador_input" class="form-control mr-sm-2" type="search" placeholder="Buscar producto..." aria-label="Search">
+
+<nav class="navbar navbar-expand-lg navbar-light bara1_fondo responsive" id="myTopnav1">
+    <input id="buscador_input" class="form-control mr-sm-2 " type="search" placeholder="Buscar producto..." aria-label="Search">
 
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-    <div class="mispan">
+    <div class="mispan ">
         {#<img src="{{ asset('exact_images/user.png') }}">#}
-        <i class="fa fa-user fa-2x" style="color: white;"></i><a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">Nueva cuenta</a>
-        <span style="border-right: 2px solid black; width: 5px;"></span>
+        <i class="fa fa-user" style="color: white; size: 100%;"></i><a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">Nueva cuenta</a>
+        <span style="border-right: 2px solid black;"></span>
         <a class="nav-link nueva_cuenta" href="{{url('app_login')}}">Iniciar sesión</a>
     </div>
     {% else %}
         {% if app.user %}
-        <div class="dropdown mispan">
+        <div class="dropdown  mispan">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown">
                 {% if app.user.foto %}
                         <img src="{{ asset('uploads/' ~ app.user.foto) }}" 

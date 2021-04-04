@@ -36,10 +36,10 @@
                     {% include 'barra2.html.twig' %}
                 </div>
             </div>
-            <div class='row row-no-gutters border'>
+            <div class='row row-no-gutters' style="border: 1px solid rgb( 224, 224, 224 );">
                 <div class='col-md-2' style="padding: 0;">                
                     <div id="MainMenu">
-                        <div class="list-group panel">
+                        <div class="list-group panel" style="border-bottom: 1px solid rgb( 224, 224, 224 );">
                             
                             {% set selected = products_repo.findAll()[0] %}
                             {% include 'carritoSection.html.twig' with {'selected_product': selected} %}

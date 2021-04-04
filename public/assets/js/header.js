@@ -18,4 +18,4 @@ var resize_mastercard = function(){
   };
 
 $(window).resize(resize_mastercard);
-$(window).bind('afterunload', resize_mastercard);
+$(window).on('load', resize_mastercard);
