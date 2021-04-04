@@ -14,9 +14,9 @@
 
 {% block body %}
 
-<ul class='listaDeElementos' style="padding-left: 10px;">
+<ul style="list-style-type: none; padding-left: 10px;">
         {% if novedades %}
-        <li class='listaDeElementos container-fluid'>
+        <li class='container-fluid'>
         <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
                 <div class="col-md-0 texto-vertical">
                         <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
@@ -39,7 +39,7 @@
         </li>
         {% endif %}
         {% if populares %}
-        <li class='listaDeElementos container-fluid'>
+        <li class='container-fluid'>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
                         <div class="col-md-0 texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="populares_section">
@@ -62,7 +62,7 @@
         </li>
         {% endif %}
         {% if valorados %}
-        <li class='listaDeElementos container-fluid'>
+        <li class=' container-fluid'>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
                         <div class="col-md-0 texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="valorados_section">

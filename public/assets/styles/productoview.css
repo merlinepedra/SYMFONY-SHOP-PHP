@@ -39,16 +39,6 @@
     font-size: 0.423cm;
     font-family: "Verdana";
     color: #6d6966;
-    /*
-    line-height: 2.002;
-    text-align: right;
-    position: absolute;
-    left: 37.7119444444444cm;
-    top: 18.8383333333333cm;
-    width: 1.623cm;
-    height: 3.492cm;
-    z-index: 118;
-    */
   }
   
 
@@ -95,15 +85,6 @@
     font-family: "Verdana";
     color: rgb( 254, 128, 58 );
     line-height: 2.002;
-    /*
-    text-align: center;
-    position: absolute;
-    left: 37.8530555555555cm;
-    top: 18.1680555555556cm;
-    width: 1.27cm;
-    height: 0.353cm;
-    z-index: 119;
-    */
   }
 
 
@@ -112,16 +93,6 @@
     font-size: 0.403cm;
     font-family: "Verdana";
     color: rgb( 128, 128, 128 );
-    /*
-    line-height: 2.002;
-    text-align: left;
-    position: absolute;
-    left: 32.6672222222222cm;
-    top: 17.5683333333333cm;
-    width: 9.807cm;
-    height: 0.423cm;
-    z-index: 116;
-    */
   }
 
   /*.Lorem_ipsum_dolor_sit_amet__consectetuer_adipis*/
@@ -143,19 +114,6 @@
     color: rgb( 117, 117, 117 );
     font-weight: bold;
     text-decoration: line-through;
-    /*
-    line-height: 1.091;
-    font-size: 0.776cm;
-    -moz-transform: matrix( 0.90153677293732, 0, 0, 0.90671941214752, 0, 0);
-    -webkit-transform: matrix( 0.90153677293732, 0, 0, 0.90671941214752, 0, 0);
-    text-align: justifyCenter;
-    position: absolute;
-    left: 29.8802777777778cm;
-    top: 11.7122222222222cm;
-    width: 2.928cm;
-    height: 0.564cm;
-    z-index: 106;
-    */
   }
   
 
@@ -165,14 +123,6 @@
     font-weight: bold;
     line-height: 1.285;
     text-align: left;
-    /*
-    position: absolute;
-    left: 18.6972222222222cm;
-    top: 28.6455555555556cm;
-    width: 5.433cm;
-    height: 0.388cm;
-    z-index: 130;
-    */
   }
 
 /*.Agregar_a_carrito_Ú*/
@@ -182,14 +132,6 @@
   color: rgb( 251, 251, 251 );
   line-height: 1.715;
   text-align: left;
-  /*
-  position: absolute;
-  left: 35.2777777777778cm;
-  top: 16.2277777777778cm;
-  z-index: 95;
-  width: 4.868cm;
-  height: 0.459cm;
-  */
 }
 
 /*.Rounded_Rectangle_3_copy_37*/

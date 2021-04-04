@@ -28,7 +28,7 @@
         {% include 'barra1.html.twig' %}
 
         <div class='container-fluid'>
-            <div class='row row-no-gutters'>
+            <div class='row'>
                 <div class='col-md-2' style="padding: 0;">
                     {% include 'minibarra.html.twig' %}
                 </div>
@@ -36,13 +36,11 @@
                     {% include 'barra2.html.twig' %}
                 </div>
             </div>
-            <div class='row row-no-gutters' style="border: 1px solid rgb( 224, 224, 224 );">
+            <div class='row' style="border: 1px solid rgb( 224, 224, 224 );">
                 <div class='col-md-2' style="padding: 0;">                
                     <div id="MainMenu">
                         <div class="list-group panel" style="border-bottom: 1px solid rgb( 224, 224, 224 );">
-                            
-                            {% set selected = products_repo.findAll()[0] %}
-                            {% include 'carritoSection.html.twig' with {'selected_product': selected} %}
+                            {% include 'carritoSection.html.twig' %}
                             <a href="#" class='list-group-item categorias_cartel' data-parent="#MainMenu" style="text-align: center; padding: 5px; color: white;">
                                 <span class="Categorías">Categorías</span>
                             </a>

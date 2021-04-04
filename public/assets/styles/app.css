@@ -29,7 +29,6 @@ ul.listaDeElementos{
 
 #MainMenu .list-group-item
 {
-    width: 100%;
     border-bottom: none;
     border-top: none;
     padding: 5px;
@@ -42,42 +41,23 @@ ul.listaDeElementos{
 
     font-family: "Verdana";
     font-weight: bold;
-    /*
-    -moz-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
-    -webkit-transform: matrix( 1.32043264723143, 0, 0, 1.30970581754641, 0, 0);
-    color: rgb( 117, 117, 117 );
-    line-height: 1.091;
-    font-size: 0.776cm;
-    text-align: justifyCenter;
-    text-shadow: 0.035cm 0.061cm 0.17638888888889cm rgb( 0, 0, 0 );
-    position: absolute;
-    left: 29.8097222222222cm;
-    top: 12.5941666666667cm;
-    width: 4.551cm;
-    height: 1.235cm;
-    z-index: 108;
-    */
   }
-
-
-
-
 
   /*.Rectangle_3*/
   .barra2_fondo   {
     background-image: -moz-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
-    height: 1.199cm;
-    /*
-    width: 27.587cm;
-    position: absolute;
-    left: 18.38cm;
-    top: 6.35cm;
-    z-index: 183;
-    */
   }
 
-
+  .other-box-index {
+      /*
+    float: left;
+    height: 160px;
+    width: 160px;
+    */
+    box-shadow: 3px 8px 6px #888888;
+    clear: both;
+}
 
 /*Responsive*/
 * {

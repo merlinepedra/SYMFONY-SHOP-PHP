@@ -1,16 +1,21 @@
 /*._____Todo_el_catálogo_____Envios_y_devoluciones*/
-.barra2_texto {
-    font-size: 0.423cm;
+.nav-item a {
+    font-size: 100%;
     font-family: "Verdana";
-    height: 0.459cm;
-    /*
-    width: 12.524cm;
-    color: rgb( 237, 110, 38 );
-    text-align: right;
-    position: absolute;
-    left: 20.5669444444444cm;
-    top: 6.80861111111111cm;
-    z-index: 184;
-    */
+    color: white !important;
   }
-  
+
+  @media screen and (max-width:680px) {
+    .navbar {
+        position: relative;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .nav-item{
+      display: block;
+      text-align: left;
+      float: none;
+      position: relative;
+    }  
+  }

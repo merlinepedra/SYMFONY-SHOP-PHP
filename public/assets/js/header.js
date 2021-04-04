@@ -11,8 +11,6 @@ $('.losPagos i').each(function(index, element){
 var resize_mastercard = function(){
     var visa_width = $('#mastercard_img').next('img').width()
     var visa_heigth = $('#mastercard_img').next('img').height()
-    console.log('visa_width: ', visa_width)
-    console.log('visa_heigth: ', visa_heigth)
     $('#mastercard_img').css('width', visa_width)
     $('#mastercard_img').css('height', visa_heigth)
   };

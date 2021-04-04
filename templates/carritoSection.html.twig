@@ -6,31 +6,39 @@
     <script src="{{asset('assets/js/carritoSection.js')}}" defer></script>
 {% endblock %}
 
-<div style="padding: 5px; border: 1px solid rgb( 224, 224, 224 );">
-    <div class="other-box-index" style="width: 50px; height: 50px;
-    margin-right: 20px; margin-bottom: 5px;
-    color: {{ selected_product.fotos[0] }};"></div>
-    <p id="cuadro_carrito_texto">{{ selected_product.nombre }}</p>
-    <br>
-    <div id="Rectangle_10">
-        <span id="_1_x_0000_00_€"><span style="color: rgb( 237, 110, 38 ) !important;">1</span> x 0000.00 $</span>
-        <img style="float: right; display: inline;" src="{{ asset('exact_images/Shape22.png') }}">
-    </div>
+{% set current_url = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) | split('/') %}
+{% set url_length = current_url|length %}
+{% set selected = products_repo.findAll()[0] %}
 
-    <div class="row" style="text-align: center; padding: 5px;">
-        <div style="border: 1px solid rgb( 224, 224, 224 ); margin: 5px; display: inline; padding: 3px;">
-            <p class="cantidad_texto">Cantidad</p>
-            <p id="_1">1</p>
+
+{% if current_url|slice(0, url_length -1)|last == 'productoView' %}
+    {% set selected = producto %}
+{% endif %}
+
+<div id="carritoSection" style="padding: 5px; border: 1px solid rgb( 224, 224, 224 );">
+    <div class="other-box-index" style="margin-right: 20px; background-color: {{ selected.fotos[0] }};"></div>
+    <p id="cuadro_carrito_texto">{{ selected.nombre }}</p>
+    <br>
+    <div id="secondPart" class="container-fluid" style="padding: 0px !important; position: relative; margin-bottom: 5px !important;">
+        <div id="Rectangle_10">
+            <span id="_1_x_0000_00_€"><span style="color: rgb( 237, 110, 38 ) !important;">1</span> x 0000.00 $</span>
+            <img style="position: absolute; right: 3px;" src="{{ asset('exact_images/Shape22.png') }}">
         </div>
-        <div style="border: 1px solid rgb( 224, 224, 224 ); margin: 5px; display: inline; padding: 3px;">
-            <p class="cantidad_texto">Subtotal</p>
-            <p id="_0000_00_€">0000.00 $</p>
-        </div>
-    </div>
     
-    <a class="btn btn-lg btn-primary Ver_carrito" id="ver_carrito_boton"
-    style="width: 100%; margin-bottom: 7px; margin-top: 7px;" 
-    href="{{url('changeOrdenAmounts')}}">
-    Ver carrito
-    </a>
+        <div id="cant_sub" class="row" style="text-align: center; padding: 5px;">
+            <div style="border: 1px solid rgb( 224, 224, 224 ); margin-left: 10px; margin-right: 6px; display: inline; padding: 3px;">
+                <p class="cantidad_texto">Cantidad</p>
+                <p id="_1">1</p>
+            </div>
+            <div style="border: 1px solid rgb( 224, 224, 224 ); margin-right: 10px; display: inline; padding: 3px;">
+                <p class="cantidad_texto">Subtotal</p>
+                <p id="_0000_00_€">0000.00 $</p>
+            </div>       
+        </div>
+        <a class="btn btn-lg btn-primary Ver_carrito" id="ver_carrito_boton"
+        style="width: 100%; margin-bottom: 7px; margin-top: 7px;" 
+        href="{{url('changeOrdenAmounts')}}">
+        Ver carrito
+        </a>
+    </div>
 </div>

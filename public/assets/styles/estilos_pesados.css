@@ -2,63 +2,26 @@
 .categorias_cartel {
     background-image: -moz-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
-    /*
-    position: absolute;
-    left: 10.336cm;
-    top: 13.406cm;
-    z-index: 65;
-    */
-    height: 1.094cm;
-    width: 7.973cm;
   }
 
   .Categorías {
-    font-size: 0.635cm;
+    font-size: 120%;
     font-family: "Verdana";
     color: rgb( 255, 255, 255 );
-    /*
-    text-align: right;
-    position: absolute;
-    left: 12.4530555555556cm;
-    top: 13.6525cm;
-    z-index: 66;
-    */
-    width: 3.387cm;
-    height: 0.67cm;
   }
 
 /*.Audio__TV_y_reproductores_Bebés_y__niños_Bellez*/
 .sidebar_texto {
-  font-size: 0.423cm;
+  font-size: 100%;
   font-family: "Verdana";
   color: rgb( 0, 0, 0 );
   text-align: left;
-  /*
-  line-height: 2.501;
-  position: absolute;
-  left: 10.5480555555556cm;
-  top: 14.8166666666667cm;
-  z-index: 67;
-  width: 6.809cm;
-  height: 24.765cm;
-  */
 }
 
 /*.________________________*/
 .sidebar_carets {
-  font-size: 0.494cm;
+  font-size: 100%;
   color: rgb( 237, 109, 37 );
-  /*
-  font-family: "Wingdings 3";
-  line-height: 2.142;
-  text-align: left;
-  position: absolute;
-  left: 17.78cm;
-  top: 15.0283333333333cm;
-  z-index: 68;
-  */
-  width: 0.388cm;
-  height: 24.518cm;
 }
 
 .Rounded_Rectangle_3 {
@@ -67,62 +30,9 @@
   border-color: rgb( 224, 224, 224 );
   background-image: -moz-linear-gradient( 90deg, rgb( 242, 245, 246 ) 0%, rgb( 231, 231, 231 ) 100%);
   background-image: -webkit-linear-gradient( 90deg, rgb( 242, 245, 246 ) 0%, rgb( 231, 231, 231 ) 100%);
-  /*
-  position: absolute;
-  left: 10.231cm;
-  top: 14.358cm;
-  z-index: 64;
-  */
-  width: 8.184cm;
-  height: 25.647cm;
-}
-
-
-
-._10 {
-  font-size: 0.423cm;
-  font-family: "Verdana";
-  color: rgb( 176, 82, 13 );
-  line-height: 2.002;
-  text-align: left;
-  /*
-  position: absolute;
-  left: 32.3497222222222cm;
-  top: 16.2983333333333cm;
-  width: 0.494cm;
-  height: 0.317cm;
-  z-index: 96;
-  */
-}
-
-._copy {
-  font-size: 0.635cm;
-  font-family: "Wingdings 3";
-  color: rgb( 237, 109, 37 );
-  line-height: 1.334;
-  text-align: left;
-  -moz-transform: matrix( 1, 0, 0, -1, 0, 0);
-  -webkit-transform: matrix( 1, 0, 0, -1, 0, 0);
-  /*
-  position: absolute;
-  left: 33.1963888888889cm;
-  top: 16.0161111111111cm;
-  z-index: 98;
-  */
-  height: 0.247cm;
-  width: 0.494cm;
 }
 
 .Pagos_seguros {
-  font-size: 0.564cm;
+  font-size: 100%;
   font-family: "Verdana";
-  /*
-  text-align: left;
-  position: absolute;
-  left: 38.0647222222222cm;
-  top: 62.7238888888889cm;
-  z-index: 291;
-  */
-  width: 4.198cm;
-  height: 0.564cm;
 }

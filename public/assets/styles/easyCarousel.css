@@ -10,16 +10,6 @@
     float: left;
 }
 
-.box {
-    /*
-    width: 80px;
-    height: 80px;
-    position: relative;
-    */
-    box-shadow: 5px 10px 8px #888888;
-    clear: both;
-}
-
 .carousel-control{
     width: 4%;
 }
@@ -41,6 +31,16 @@
     width: 200px;
     margin: 20px;
     box-shadow: 3px 8px 6px #888888;
+    clear: both;
+}
+
+.box {
+    /*
+    width: 80px;
+    height: 80px;
+    position: relative;
+    */
+    box-shadow: 5px 10px 8px #888888;
     clear: both;
 }
 
