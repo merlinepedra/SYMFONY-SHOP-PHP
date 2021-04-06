@@ -1,7 +1,6 @@
 tbody tr:nth-child(odd) td {
     margin-bottom: 0;
     padding-bottom: 0;
-    text-emphasis: ;
 }
 
 .table>tbody>tr>td {
@@ -17,9 +16,6 @@ tbody tr:nth-child(odd) td {
     text-align: center;
     font-weight: normal;
 }
-
-
-
 
 .texto-vertical {
     writing-mode: vertical-lr;
@@ -43,20 +39,6 @@ tbody tr:nth-child(odd) td {
     left: 5px;
     text-align: center;
 }
-
-  /*.Layer_8*/
-  .cuadraditos_index {
-      width: 4.304cm;
-      height: 4.304cm;
-      /*
-      height: 4.692cm;
-    background-image: url("images/Layer 8.png");
-    position: absolute;
-    left: 0.282cm;
-    top: 0.106cm;
-    z-index: 5;
-    */
-  }  
 
 
 /* Estilos pesados */
@@ -106,13 +88,15 @@ tbody tr:nth-child(odd) td {
   .mejor_valorados_fondo {
     background-image: -moz-linear-gradient( 180deg, rgb( 116, 117, 118 ) 0%, rgb( 210, 212, 214 ) 100%);
     background-image: -webkit-linear-gradient( 180deg, rgb( 116, 117, 118 ) 0%, rgb( 210, 212, 214 ) 100%);
-    /*
-    position: absolute;
-    left: 18.627cm;
-    top: 39.758cm;
-    width: 1.27cm;
-    height: 9.454cm;
-    z-index: 194;
-    */
   }
-  
+
+
+@media screen and (max-width:700px)  {
+  #todosLosProductos .col-md-0{
+      float: left;
+  }
+  #todosLosProductos .col-md-10{
+    float: right;
+    border: 2px solid hotpink;
+}
+}

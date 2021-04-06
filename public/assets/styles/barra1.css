@@ -1,12 +1,12 @@
 #buscador_input
 {
-    width: 30%;
+    width: 17%;
 }
 #buscador_input::-webkit-input-placeholder
 {
     background-image: url("../../exact_images/buscador.png");
     background-position: 100% 100%;
-    background-size: 6%;
+    background-size: 10%;
     background-repeat: no-repeat; 
     /*
     background-size: 3%;
@@ -50,11 +50,23 @@ input[type=number]::-webkit-outer-spin-button
     font-size: 90%;
     font-family: "Verdana";
     color: rgb( 255, 255, 255 ) !important;
+    padding-top: 2px;
+    padding-bottom: 2px;
     /*padding: 7px !important;*/
   }
 
+  @media screen and (min-width:600px) and (max-width:1000px)  {
+    #buscador_input{
+        width: 30%;
+    }
 
-  @media screen and (max-width:680px) {
+    #buscador_input::-webkit-input-placeholder
+    {
+        background-size: 10%;
+    }  
+  }
+
+  @media screen and (max-width:600px) {
     .navbar {
         position: relative;
         padding-left: 4px;
@@ -69,12 +81,12 @@ input[type=number]::-webkit-outer-spin-button
     }
 
     #buscador_input{
-        width: 70%;
+        width: 90%;
     }
 
     #buscador_input::-webkit-input-placeholder
     {
-        background-size: 8%;
+        background-size: 7%;
     }  
   }
   

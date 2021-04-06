@@ -1,6 +1,7 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~@fortawesome/fontawesome-free/css/v4-shims.css";
 
+
 body, .jumbotron {
     background-color: white;
 }
@@ -32,6 +33,7 @@ ul.listaDeElementos{
     border-bottom: none;
     border-top: none;
     padding: 5px;
+    width: 100%;
 }
 
 /*._28_05_€*/
@@ -50,11 +52,6 @@ ul.listaDeElementos{
   }
 
   .other-box-index {
-      /*
-    float: left;
-    height: 160px;
-    width: 160px;
-    */
     box-shadow: 3px 8px 6px #888888;
     clear: both;
 }

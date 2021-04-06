@@ -1,8 +1,9 @@
 /*.Reloj_de_pared_melodía_ave*/
 #cuadro_carrito_texto {
-    font-size: 100%;
+    font-size: 85%;
     font-family: "Verdana";
-    text-align: right;
+    text-align: left;
+    padding-left: 10px;
 
     position: absolute;
     right: 5px;
@@ -41,7 +42,7 @@
 
   /*.Cantidad*/
   .cantidad_texto {
-    font-size: 67%;
+    font-size: 70%;
     font-family: "Verdana";
     color: rgb( 168, 167, 166 );
     word-break: break-all;

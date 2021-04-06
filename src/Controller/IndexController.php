@@ -37,19 +37,12 @@ class IndexController extends AbstractController
                 $id = $p->getId();
                 $precio = $p->getPrecioUnidad();
 
-                //$nombre .= $nombre.' '.$nombre.' '.$nombre.' '.$nombre;
-                /*
+                
                 $columnas .= "
                 <td>
-                        <div class='other-box-index cuadraditos_index' data-color='$color'></div>
-                        <p><a class='pname' href='productoView/$id'>$nombre</a></p>
-                </td>";
-                */
-                $columnas .= "
-                <td>
-                        <div class='other-box-index cuadraditos_index' data-color='$color'></div>
-                        <p><a class='pname' href='productoView/$id'>$nombre</a></p>
-                        <span class='precio h3 font-weight-bolder'>$precio.00 $</span>
+                    <div class='other-box-index' data-color='$color'></div>
+                    <p><a class='pname' href='productoView/$id'>$nombre</a></p>
+                    <span class='precio h3 font-weight-bolder'>$precio.00 $</span>
                 </td>";
                 $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
             }

@@ -6,19 +6,19 @@
     <script src="{{asset('assets/js/barra1.js')}}" defer></script>
 {% endblock %}
 
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light bara1_fondo responsive" id="myTopnav1">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bara1_fondo responsive">
     <input id="buscador_input" class="form-control mr-sm-2 " type="search" placeholder="Buscar producto..." aria-label="Search">
 
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-    <div class="mispan ">
-        {#<img src="{{ asset('exact_images/user.png') }}">#}
-        <i class="fa fa-user" style="color: white; size: 100%;"></i><a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">Nueva cuenta</a>
-        <span style="border-right: 2px solid black;"></span>
-        <a class="nav-link nueva_cuenta" href="{{url('app_login')}}">Iniciar sesión</a>
-    </div>
+    <ul class="navbar-nav mr-auto mispan">
+        <li class="nav-item">
+            <a class="nav-link nueva_cuenta" href="{{url('sing_in')}}">
+                <i class="fa fa-user" style="color: white; size: 100%;"></i> Nueva cuenta <span style="border-right: 2px solid black; margin-left: 10px;"></span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nueva_cuenta" href="{{url('app_login')}}">Iniciar sesión</a>
+        </li>
+    </ul>
     {% else %}
         {% if app.user %}
         <div class="dropdown  mispan">
@@ -43,4 +43,5 @@
         </div>
         {% endif %}
     {% endif %}
+    
 </nav>
