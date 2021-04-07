@@ -6,14 +6,12 @@ var resize_all = function(){
     $('#cant_sub div').css('width', (parentWidth - 10)/ 2)
 
     if(value < 60){
-        console.log('El espacio es muy pequenno!!')
         $('.cantidad_texto').css('font-size', '40%')
         $('#_0000_00_€').css('font-size', '50%')
         $('#_1').css('font-size', '50%')
         $('.Ver_carrito').css('font-size', '70%')
     } 
     else{
-        console.log('El espacio es muy pequenno!!')
         $('.cantidad_texto').css('font-size', '70%')
         $('#_0000_00_€').css('font-size', '80%')
         $('#_1').css('font-size', '80%')

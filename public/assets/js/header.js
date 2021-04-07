@@ -9,10 +9,14 @@ $('.losPagos i').each(function(index, element){
 });
 
 var resize_mastercard = function(){
-    var visa_width = $('#mastercard_img').next('img').width()
-    var visa_heigth = $('#mastercard_img').next('img').height()
-    $('#mastercard_img').css('width', visa_width)
-    $('#mastercard_img').css('height', visa_heigth)
+  $('.mastercard_img').each(function(index, element){
+    var visa_width = $(this).next('img').width()
+    var visa_heigth = $(this).next('img').height()
+    console.log('visa width: ', visa_width)
+    console.log('visa heigth: ', visa_heigth)
+    $(this).css('width', visa_width)
+    $(this).css('height', visa_heigth)
+  })
   };
 
 $(window).resize(resize_mastercard);

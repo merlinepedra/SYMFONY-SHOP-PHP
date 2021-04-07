@@ -9,9 +9,6 @@ import 'bootstrap/scss/bootstrap.scss'
 import $ from 'jquery';
 */
 
-
-console.log('Al fin funciona!')
-
 $(document).ready(function() {
     //$('body').prepend('<h1>'+'Te amo'+'</h1>');
 });

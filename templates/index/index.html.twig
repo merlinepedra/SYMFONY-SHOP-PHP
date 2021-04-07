@@ -29,11 +29,17 @@
                         </a>
                 </div>
                 <div class="col-md-10">
-                        <table class="table">
+                        <table class="table tableMode1">
                                 <tbody>
-                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades})) }}
+                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':5})) }}
                                 </tbody>
-                        </table>  
+                        </table> 
+                        
+                        <table class="table tableMode2">
+                                <tbody>
+                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':1})) }}
+                                </tbody>
+                        </table> 
                 </div>
         </div>
         </li>
@@ -52,11 +58,17 @@
                                 </a>
                         </div>
                         <div class="col-md-10">
-                                <table class="table">
+                                <table class="table tableMode1">
                                         <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares})) }}
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':5})) }}
                                         </tbody>
-                                </table>  
+                                </table>
+                                
+                                <table class="table tableMode2">
+                                        <tbody>
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':1})) }}
+                                        </tbody>
+                                </table>
                         </div>
                 </div>
         </li>
@@ -75,9 +87,15 @@
                                 </a>
                         </div>
                         <div class="col-md-10">
-                                <table class="table">
+                                <table class="table tableMode1">
                                         <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados})) }}
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols': 5})) }}
+                                        </tbody>
+                                </table>  
+
+                                <table class="table tableMode2">
+                                        <tbody>
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols': 1})) }}
                                         </tbody>
                                 </table>  
                         </div>

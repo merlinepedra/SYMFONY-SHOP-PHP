@@ -1,11 +1,18 @@
 //import '../styles/index.css'
 
+
+
 var resize_boxes = function(){
     var parentWidth = $('#todosLosProductos').width()
-    var value = (parentWidth/5) - (parentWidth/20) - (parentWidth/300)
-    console.log('Value vale: ', value)
-    $('#todosLosProductos .other-box-index').css('width', value)
-    $('#todosLosProductos .other-box-index').css('height', value)
+    //var value = (parentWidth/5) - (parentWidth/30) - (parentWidth/300)
+    var value = (parentWidth/5) - 40
+    $('#todosLosProductos .tableMode1 .other-box-index').css('width', value)
+    $('#todosLosProductos .tableMode1 .other-box-index').css('height', value)
+
+    var value = (parentWidth/2) + (parentWidth/10)
+
+    $('#todosLosProductos .tableMode2 .other-box-index').css('width', value)
+    $('#todosLosProductos .tableMode2 .other-box-index').css('height', value)
 }
 
 $(window).resize(resize_boxes);
@@ -55,17 +62,15 @@ $('.other-box-index').each(function(index, element){
 });
 
 
+/*
 $('.pname').each(function(index, element){
     var imageWidth = $(this).closest('.other-box-index').width
     $(this).css('max-width', imageWidth-5)
 });
 
-
-/*
 $('tbody tr:nth-child(1) .precio').each(function(index, element){
     var obw = $('.other-box-index').height()
     var labels = $('tbody tr:nth-child(1) .precio').height()
-    console.log(obw)
     console.log(Math.max(labels))
     $(this).css('position', 'absolute')
     $(this).css('top', obw + Math.max(labels) + 100)

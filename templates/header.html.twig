@@ -36,32 +36,55 @@
                         Proveedor dropshipping</li>
                 </ul>    
             </div>
-            <div class="col-md-5  losPagos">
-                <table class="table">
+            <div class="col-md-5  losPagos"> 
+                <ul class="tableMode2" style="list-style: none;">
+                    <li>
+                        <img src="{{ asset('exact_images/check_128.png') }}">
+                        <p>Contra reembolso</p>
+                    </li>
+                    <li>
+                        <img src="{{ asset('exact_images/paypal_128.png') }}">
+                        <p>PyPal</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img class="mastercard_img" style="position: absolute;" src="{{ asset('exact_images/mastercard_48.png') }}">
+                            <img style="position: relative; bottom: 8px;" src="{{ asset('exact_images/visa_48.png') }}">
+                        </figure>
+                        <p>Tarjeta de crédito</p>
+                    </li>
+                    <li>
+                        <img src="{{ asset('exact_images/wire_transfer_128.png') }}">
+                        <p>Transferencia bancaria</p>
+                    </li>
+                </ul>
+                        
+                <table class="table tableMode1">
                     <tbody>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('exact_images/check_128.png') }}">
-                                    <p>Contra reembolso</p>
-                                </td>
-                                <td>
-                                    <img src="{{ asset('exact_images/paypal_128.png') }}">
-                                    <p>PyPal</p>
-                                </td>
-                                <td>
-                                    <figure>
-                                        <img id="mastercard_img" style="position: absolute;" src="{{ asset('exact_images/mastercard_48.png') }}">
-                                        <img style="position: relative; bottom: 8px;" src="{{ asset('exact_images/visa_48.png') }}">
-                                    </figure>
-                                    <p>Tarjeta de crédito</p>
-                                </td>
-                                <td>
-                                    <img src="{{ asset('exact_images/wire_transfer_128.png') }}">
-                                    <p>Transferencia bancaria</p>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <img src="{{ asset('exact_images/check_128.png') }}">
+                                <p>Contra reembolso</p>
+                            </td>
+                            <td>
+                                <img src="{{ asset('exact_images/paypal_128.png') }}">
+                                <p>PyPal</p>
+                            </td>
+                            <td>
+                                <figure>
+                                    <img class="mastercard_img" style="position: absolute;" src="{{ asset('exact_images/mastercard_48.png') }}">
+                                    <img style="position: relative; bottom: 8px;" src="{{ asset('exact_images/visa_48.png') }}">
+                                </figure>
+                                <p>Tarjeta de crédito</p>
+                            </td>
+                            <td>
+                                <img src="{{ asset('exact_images/wire_transfer_128.png') }}">
+                                <p>Transferencia bancaria</p>
+                            </td>
+                        </tr>
                     </tbody>
                 </table> 
+                       
                 <p class="¡Paga_como_quieras_" style="margin-bottom: 10px; text-align: center;">
                     ¡Paga como quieras!
                 </p>

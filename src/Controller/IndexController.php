@@ -22,14 +22,16 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class IndexController extends AbstractController
 {
-    public function tabla($collection)
+    public function tabla($collection, $cols)
     {
+        $filas = (count($collection)/$cols) + 1;
+        
         $response = "";
-        for ($i=0; $i < 2; $i++) { 
+        for ($i=0; $i < $filas; $i++) { 
             $columnas = "";
             $precios = "";
-            for ($j=0; $j < 5; $j++) { 
-                $index = 5*$i + $j;
+            for ($j=0; $j < $cols; $j++) { 
+                $index = $cols*$i + $j;
                 if($index > count($collection) - 1) continue;
                 $p = $collection[$index];
                 $nombre = $p->getNombre();
@@ -42,7 +44,7 @@ class IndexController extends AbstractController
                 <td>
                     <div class='other-box-index' data-color='$color'></div>
                     <p><a class='pname' href='productoView/$id'>$nombre</a></p>
-                    <span class='precio h3 font-weight-bolder'>$precio.00 $</span>
+                    <span class='precio'>$precio.00 $</span>
                 </td>";
                 $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
             }

@@ -4,7 +4,6 @@ const words_array = [
     'zapatillas', 'Ipsum', 'Lorem'
 ]
 
-console.log('Estamos en footer!!')
 
 $('#tercer_bloque_footer .col-md-4').each(function(index, element){
     var divider = ' · '

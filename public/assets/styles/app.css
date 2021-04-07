@@ -36,11 +36,23 @@ ul.listaDeElementos{
     width: 100%;
 }
 
+/*
+#MainMenu .collapse .list-group-item 
+{
+    background-color: rgb(228, 223, 223);
+}
+
+#MainMenu .list-group-submenu .list-group-item 
+{
+    background-color: rgb(245, 202, 178);
+}
+*/
+
 /*._28_05_€*/
 .precio {
     color: black;
     text-shadow: 0px 3px 2px white, 0px 4px 2px rgb( 117, 117, 117 );
-
+    font-size: 170%;
     font-family: "Verdana";
     font-weight: bold;
   }
@@ -60,3 +72,33 @@ ul.listaDeElementos{
 * {
     box-sizing: border-box;
 }
+
+.tableMode1{
+    display:block;
+}
+
+.tableMode2{
+    display: none;
+}
+
+@media screen and (max-width:800px) and (min-width:600px)
+{
+    .precio{
+        font-size: 100%;
+    }
+
+    .pname{
+        font-size: 30%;
+    }
+}
+
+@media screen and (max-width:700px)  {
+    
+    .tableMode1{
+        display:none;
+    }
+    
+    .tableMode2{
+        display: block;
+    }
+  }
