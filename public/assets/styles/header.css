@@ -88,19 +88,54 @@ color: rgb( 149, 64, 2 );
     font-family: "Verdana";
     color: rgb(9, 17, 26);
     font-size: 100%;
-  }  
+  } 
   
-  /*.Todo_lo_que_buscas____y_mucho_mas_*/
-  .Todo_lo_que_buscas {
-    font-family: "Arial";
-    font-size: 120%;
-    line-height:93%;
-    margin-bottom: 5px;
-    color: rgb( 179, 169, 162 );
-    -moz-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
+#xatem_imagen{
+    width: 95%; 
+    height: 40%;
+}
+  
+/*.Todo_lo_que_buscas____y_mucho_mas_*/
+.Todo_lo_que_buscas {
+font-family: "Arial";
+font-size: 120%;
+line-height:93%;
+margin-bottom: 5px;
+color: rgb( 179, 169, 162 );
+-moz-transform: matrix( 0.87216336164987, 0, 0, 0.89442078829567, 0, 0);
+}
+
+.xatem_mail_hotmail_com {
+font-family: "Verdana";
+font-size: 100%;
+color: rgb( 237, 110, 38 );
+}
+
+@media screen and (max-width:1000px) and (min-width:700px)
+{  
+  .descuentos_texto{
+      font-size: 60%;
+  }
+
+  #xatem_imagen{
+      width: 85%; 
+      height: 35%;
+  }
+
+  .Todo_lo_que_buscas{
+      font-size: 80%;
   }
 
   .xatem_mail_hotmail_com {
-    font-family: "Verdana";
-    color: rgb( 237, 110, 38 );
-  }
+      font-size: 70%;
+    }
+
+    .¡Paga_como_quieras_ {
+        font-size: 150%;
+    }
+
+
+    .losPagos td p, .losPagos li p {
+        font-size: 60%;
+    }
+}

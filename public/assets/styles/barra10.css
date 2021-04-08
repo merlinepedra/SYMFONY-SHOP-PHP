@@ -6,18 +6,12 @@
   #visualizacion_listado ul li{
     border: none;
     display: inline;
-    float: right;
-  }  
+  }
+
   
   #visualizacion_listado ul
   {
-    /*
-    float: right;
-    margin-bottom: 50px; 
-    */
-    border-bottom: 1px solid rgb( 224, 224, 224 );
-    margin-top: 10px;
-    padding-bottom: 40px;
+    text-align: right;
   }
 
 .path
@@ -38,6 +32,46 @@
 
 /*.Estás_en:_Inicio___Relojes_y_joyas___Colgantes_*/
 .estás_en {
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
   }
+
+
+@media screen and (max-width:400px)
+{ 
+  #visualizacion_listado ul li{
+    display: list-item;
+    padding: 10px;
+  }
+
+  #visualizacion_listado ul{
+    padding-left: 5px;
+  }
+}
+
+
+
+
+/* Custom select */
+#visualizacion_listado .dropdown-menu li{
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+#visualizacion_listado .dropdown-menu{
+  padding: 5px;
+  width: 60%;
+}
+
+#visualizacion_listado .dropdown a{
+  text-decoration: none;
+
+}
+
+#visualizacion_listado .dropdown-toggle .selectorValue{
+  border: 2px solid #b6b1b1;
+  color: rgb( 176, 82, 13 );
+  font-family: "Verdana";
+  padding: 8px;
+}

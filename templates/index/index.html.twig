@@ -18,7 +18,7 @@
         {% if novedades %}
         <li class='container-fluid'>
         <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
-                <div class="col-md-0 texto-vertical">
+                <div class="col-0 texto-vertical">
                         <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
                                 
                         </span>
@@ -28,16 +28,16 @@
                                 <i class="fas fa-plus"></i>
                         </a>
                 </div>
-                <div class="col-md-10">
+                <div class="col-10">
                         <table class="table tableMode1">
                                 <tbody>
                                         {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':5})) }}
                                 </tbody>
-                        </table> 
+                        </table>
                         
                         <table class="table tableMode2">
                                 <tbody>
-                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':1})) }}
+                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':2})) }}
                                 </tbody>
                         </table> 
                 </div>
@@ -47,7 +47,7 @@
         {% if populares %}
         <li class='container-fluid'>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
-                        <div class="col-md-0 texto-vertical">
+                        <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="populares_section">
                                         
                                 </span>
@@ -57,7 +57,7 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-10">
                                 <table class="table tableMode1">
                                         <tbody>
                                                 {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':5})) }}
@@ -66,7 +66,7 @@
                                 
                                 <table class="table tableMode2">
                                         <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':1})) }}
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':2})) }}
                                         </tbody>
                                 </table>
                         </div>
@@ -76,7 +76,7 @@
         {% if valorados %}
         <li class=' container-fluid'>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
-                        <div class="col-md-0 texto-vertical">
+                        <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="valorados_section">
                                         
                                 </span>
@@ -86,7 +86,7 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-10">
                                 <table class="table tableMode1">
                                         <tbody>
                                                 {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols': 5})) }}
@@ -95,7 +95,7 @@
 
                                 <table class="table tableMode2">
                                         <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols': 1})) }}
+                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols':2})) }}
                                         </tbody>
                                 </table>  
                         </div>

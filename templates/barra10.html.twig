@@ -16,20 +16,44 @@
             <span style="color: rgb( 255, 255, 255 );">Estás en: </span>
             <span>Inicio</span>
         </div>
-        <div id="visualizacion_listado" style="padding-right: 10px;">
-            <ul style="list-style: none;">
+        <div class="row" id="visualizacion_listado" style="padding-left: 10px; margin-top: 10px; margin-bottom: 20px; padding-bottom: 0px; border-bottom: 1px solid rgb( 224, 224, 224 );">
+            <div class="col-md-4"></div>
+            <ul class="col-md-8" style="list-style: none;">
                     <li>
-                            <img src="{{ asset('exact_images/Icono_Lista.png') }}">
-                            <img src="{{ asset('exact_images/Icono_Rejilla.png') }}">
+                        Mostrar: 
+
+                        <div class="dropdown" style="display: inline;">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown">
+                                <span class='selectorValue'>10</span>
+                                <i class='fa fa-caret-down sidebar_carets'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">10</a></li>
+                              <li><a href="#">20</a></li>
+                              <li><a href="#">30</a></li>
+                            </ul>
+                        </div>
+                        
+                        <span style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;"></span>
                     </li>
-                    <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
-                            <select>
-                                    <option>Baratos arriba</option>
-                                    <option>Caros arriba</option>
-                            </select>
+                    <li>
+                        <div class="dropdown" style="display: inline;">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown">
+                                <span class='selectorValue'>Baratos arriba</span>
+                                <i class='fa fa-caret-down sidebar_carets'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Baratos arriba</a></li>
+                              <li><a href="#">Caros arriba</a></li>
+                            </ul>
+                        </div>
+                        
+                        <span style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;"></span>
                     </li>
-                    <li style="border-right: 2px solid #b6b1b1; padding-right: 15px; margin-right: 15px;">
-                            Mostrar: <input style="display: inline;" type="number" min="1" class="form-control"></li>
+                    <li style="padding-right: 30px;">
+                        <img src="{{ asset('exact_images/Icono_Lista.png') }}">
+                        <img src="{{ asset('exact_images/Icono_Rejilla.png') }}">
+                    </li>
             </ul>
         </div>
     </div>

@@ -24,7 +24,8 @@ class IndexController extends AbstractController
 {
     public function tabla($collection, $cols)
     {
-        $filas = (count($collection)/$cols) + 1;
+        //$filas = (count($collection)/$cols) + 1;
+        $filas = count($collection);
         
         $response = "";
         for ($i=0; $i < $filas; $i++) { 
@@ -32,7 +33,7 @@ class IndexController extends AbstractController
             $precios = "";
             for ($j=0; $j < $cols; $j++) { 
                 $index = $cols*$i + $j;
-                if($index > count($collection) - 1) continue;
+                if($index > count($collection) - 1) break;
                 $p = $collection[$index];
                 $nombre = $p->getNombre();
                 $color = $p->getFotos()[0];
@@ -50,6 +51,7 @@ class IndexController extends AbstractController
             }
             //$response .= "<tr>$columnas</tr><tr>$precios</tr>";
             $response .= "<tr>$columnas</tr>";
+            if($index > count($collection) - 1) break;
         }
         return new Response($response);
     }

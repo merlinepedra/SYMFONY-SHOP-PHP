@@ -9,7 +9,7 @@ var resize_boxes = function(){
     $('#todosLosProductos .tableMode1 .other-box-index').css('width', value)
     $('#todosLosProductos .tableMode1 .other-box-index').css('height', value)
 
-    var value = (parentWidth/2) + (parentWidth/10)
+    var value = (parentWidth/2) - (parentWidth/5)
 
     $('#todosLosProductos .tableMode2 .other-box-index').css('width', value)
     $('#todosLosProductos .tableMode2 .other-box-index').css('height', value)

@@ -18,6 +18,20 @@ tbody tr:nth-child(odd) td {
     font-size: 100%;
 }
 
+@media screen and (max-width:1000px) and (min-width:768px)
+{
+  .pname{
+      font-size: 50%;
+  }
+}
+
+@media screen and (max-width:700px) 
+{
+  .pname{
+      font-size: 50%;
+  }
+}
+
 .texto-vertical {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
@@ -25,7 +39,14 @@ tbody tr:nth-child(odd) td {
     padding-right: 5px;
     padding-left: 5px;
     padding-bottom: 5px;
+
     /*
+    height: 100%;
+    width: 30px;
+    display:inline-flexbox;
+    position: relative;
+    left: 0px;
+    top: 0px;
     text-align: left;
     unicode-bidi: bidi-override;
     */
@@ -71,18 +92,10 @@ tbody tr:nth-child(odd) td {
 
 
   /*.Rectangle_7_copy_2*/
-  .lo_mas_popular_fondo {
+.lo_mas_popular_fondo {
     background-image: -moz-linear-gradient( 180deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
     background-image: -webkit-linear-gradient( 180deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
-    /*
-    position: absolute;
-    left: 18.627cm;
-    top: 29.457cm;
-    width: 1.27cm;
-    height: 9.313cm;
-    z-index: 210;
-    */
-  }
+}
 
 
   /*.Rectangle_7_copy_3*/
