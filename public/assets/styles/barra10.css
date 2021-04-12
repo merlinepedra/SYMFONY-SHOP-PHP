@@ -75,3 +75,9 @@
   font-family: "Verdana";
   padding: 8px;
 }
+
+
+.dropdown-toggle::after {
+  /*display:none;*/
+  color: rgb( 237, 109, 37 );
+}
