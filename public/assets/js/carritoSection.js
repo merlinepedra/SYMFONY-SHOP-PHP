@@ -1,8 +1,8 @@
 var resize_all = function(){
-    var parentWidth = $('#carritoSection .other-box-index').parent('div').width()
+    var parentWidth = $('#carritoSection .index-box').parent('div').width()
     var value = (parentWidth/3) + (parentWidth/10)
-    $('#carritoSection .other-box-index').css('width', value)
-    $('#carritoSection .other-box-index').css('height', value)
+    $('#carritoSection .index-box').css('width', value)
+    $('#carritoSection .index-box').css('height', value)
     $('#cant_sub div').css('width', (parentWidth - 10)/ 2)
 
     if(value < 60){

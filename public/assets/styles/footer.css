@@ -50,10 +50,12 @@
   /*.Lorem_ipsum__dolor_sit_amet*/
   .Lorem_ipsum__cortico {
     font-size: 100%;
+    vertical-align:middle;
     font-family: "Verdana";
     color: rgb( 0, 0, 0 );
     
     position: relative;
+    display: inline-block;
     right: 0px;
     top:0px;
     width: 60%;
@@ -137,9 +139,23 @@
   }
   */
 
+  .listaBolitas img{
+    margin: 5px;
+  }
+
   
   @media screen and (max-width:700px)
   {
+    .listaBolitas img{
+      width: 10%;
+    }
+    #Xatem_es_el_Multiprecio{
+      font-size: 170%;
+    }
+
+    #¿Por_que_comprar_en_Xatem_{
+      font-size: 120%;
+    }
       .third_bloque_texto{
           text-align: left !important;
           margin-top: 15px;

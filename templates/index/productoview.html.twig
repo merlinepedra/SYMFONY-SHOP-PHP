@@ -15,13 +15,15 @@
 {% block body %}
 {% if producto %}
 
-        <div style="border-bottom: 1px solid rgb( 224, 224, 224 ); padding-bottom: 10px; margin-bottom: 15px; margin-top: 30px;">
-                <span class="h1" style="margin-bottom: 30px;">{{ producto.nombre }}</span>
-                <span style="margin: 100px;">(Referencia: {{producto.id}})</span>
+        <div class="row" style="border-bottom: 1px solid rgb( 224, 224, 224 ); padding-bottom: 10px; margin-bottom: 15px; margin-top: 30px;">
+                <span class="col-md-9" id="titulo_producto">{{ producto.nombre }}</span>
+                <div class="col-md-2">
+                        <span id="ref_no" style="margin-left: 10px; position: absolute; right: 5px; bottom: 5px;">(Referencia: {{producto.id}})</span>
+                </div>
         </div>
 
         <div class="row" style="border-bottom: 1px solid rgb( 224, 224, 224 ); padding-bottom: 15px;">
-                <div class="col-md-3">
+                <div style="text-align: center;" class="col-md-3">
                         {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %} 
                 </div>
                 <div class="col-md-8 ">
@@ -121,18 +123,19 @@
                                         </li>
                         </ul>
                 </div>
-                <div style="float: left; padding-left: 10px;">
-                        <span><span style="font-weight:500; color: #ff8038;">0</span> Comentarios</span>
-                        <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                        <span><img src="{{ asset('exact_images/lapiz.png') }}"> Comentar</span>
-                        <span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span>
-                        <span><img src="{{ asset('exact_images/comentario.png') }}"> Recomendar</span>
+                <div id="comentario_barra" style="float: left; padding-left: 10px;">
+                        <ul id="barra_inferior" style="list-style: none;">
+                                <li><span><span style="font-weight:500; color: #ff8038;">0</span> Comentarios</span></li>
+                                <li><span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span></li>
+                                <li><span><img src="{{ asset('exact_images/lapiz.png') }}"> Comentar</span></li>
+                                <li><span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span></li>
+                                <li><span><img src="{{ asset('exact_images/comentario.png') }}"> Recomendar</span></li>
                 </div>
         </div>
 
         <div class="container" style="padding-left: 0px !important; padding-bottom: 20px !important;">
                 <p id="Productos_similares">Productos similares</p>
-                <table class="similares_table">
+                <table class="similares_table tableMode1">
                         <tbody>
                                 {% set colores = ['brown', 'khaki', 'red', 'blue', 'green'] %}
                                 <tr>
@@ -155,6 +158,31 @@
                                 </tr>
                         </tbody>
                 </table>
+
+                <table class="similares_table tableMode2">
+                        <tbody>
+                              <tr>
+                                {% for i in 1..2 %}
+                                <td>
+                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
+                                </td>
+                                {% endfor %}
+                              </tr>
+                              <tr>
+                                {% for i in 1..2 %}
+                                <td>
+                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
+                                </td>
+                                {% endfor %}
+                              </tr> 
+                              <tr>
+                                <td>
+                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
+                                </td>
+                              </tr>  
+                        </tbody>
+                </table>
+                
         </div>
 
 

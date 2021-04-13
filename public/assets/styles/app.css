@@ -63,7 +63,7 @@ ul.listaDeElementos{
     background-image: -webkit-linear-gradient( 90deg, rgb( 0, 0, 0 ) 0%, rgb( 69, 73, 77 ) 100%);
   }
 
-  .other-box-index {
+  .index-box {
     box-shadow: 3px 8px 6px #888888;
     clear: both;
 }
@@ -100,7 +100,7 @@ ul.listaDeElementos{
         margin-left: 3px !important;
     }
 
-    .precio{
+    table .precio{
         font-size: 80%;
     }
     

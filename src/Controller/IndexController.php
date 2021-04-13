@@ -43,7 +43,7 @@ class IndexController extends AbstractController
                 
                 $columnas .= "
                 <td>
-                    <div class='other-box-index' data-color='$color'></div>
+                    <div class='index-box' data-color='$color'></div>
                     <p><a class='pname' href='productoView/$id'>$nombre</a></p>
                     <span class='precio'>$precio.00 $</span>
                 </td>";

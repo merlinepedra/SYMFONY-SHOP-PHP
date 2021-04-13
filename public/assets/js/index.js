@@ -6,13 +6,13 @@ var resize_boxes = function(){
     var parentWidth = $('#todosLosProductos').width()
     //var value = (parentWidth/5) - (parentWidth/30) - (parentWidth/300)
     var value = (parentWidth/5) - 40
-    $('#todosLosProductos .tableMode1 .other-box-index').css('width', value)
-    $('#todosLosProductos .tableMode1 .other-box-index').css('height', value)
+    $('#todosLosProductos .tableMode1 .index-box').css('width', value)
+    $('#todosLosProductos .tableMode1 .index-box').css('height', value)
 
     var value = (parentWidth/2) - (parentWidth/5)
 
-    $('#todosLosProductos .tableMode2 .other-box-index').css('width', value)
-    $('#todosLosProductos .tableMode2 .other-box-index').css('height', value)
+    $('#todosLosProductos .tableMode2 .index-box').css('width', value)
+    $('#todosLosProductos .tableMode2 .index-box').css('height', value)
 }
 
 $(window).resize(resize_boxes);
@@ -56,7 +56,7 @@ $('.categoriaCarteles').each( function(index, element ){
     }
 });
 
-$('.other-box-index').each(function(index, element){
+$('.index-box').each(function(index, element){
     var color = $(this).data('color')
     $(this).css('background-color', color)
 });
@@ -64,12 +64,12 @@ $('.other-box-index').each(function(index, element){
 
 /*
 $('.pname').each(function(index, element){
-    var imageWidth = $(this).closest('.other-box-index').width
+    var imageWidth = $(this).closest('.index-box').width
     $(this).css('max-width', imageWidth-5)
 });
 
 $('tbody tr:nth-child(1) .precio').each(function(index, element){
-    var obw = $('.other-box-index').height()
+    var obw = $('.index-box').height()
     var labels = $('tbody tr:nth-child(1) .precio').height()
     console.log(Math.max(labels))
     $(this).css('position', 'absolute')

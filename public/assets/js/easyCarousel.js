@@ -1,7 +1,13 @@
 //import '../styles/easyCarousel.css'
 
+
+var parentBoxWidth = $('.other-box').parent('div').width()
+$('.other-box').css('width', parentBoxWidth - 20)
+$('.other-box').css('height', parentBoxWidth - 20)
+
 var otherBoxWidth = $('.other-box').width()
 $('.carousel').css('width', otherBoxWidth + 60)
+
 
 
 $('.carousel-item .box').click(function(){
