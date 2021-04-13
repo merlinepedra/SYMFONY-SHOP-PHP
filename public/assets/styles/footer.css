@@ -24,22 +24,15 @@
 }
 
 
-
-
-
-
-
-
-
 .Lorem_ipsum_dolor_sit_amet__consectetuer_adipis {
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: rgb( 87, 87, 87 );
     text-align: justifyLeft;
   } 
   
   #¿Por_que_comprar_en_Xatem_ {
-    font-size: 0.635cm;
+    font-size: 180%;
     font-family: "Verdana";
     text-align: center;
   }
@@ -47,7 +40,7 @@
 
   /*#Xatem_es_el_Multiprecio_o_todo_a_cien_más_grand*/
   #Xatem_es_el_Multiprecio {
-    font-size: 0.847cm;
+    font-size: 250%;
     font-family: "Verdana";
     /*color: rgb( 237, 109, 37 );*/
     font-weight: normal;
@@ -56,80 +49,57 @@
 
   /*.Lorem_ipsum__dolor_sit_amet*/
   .Lorem_ipsum__cortico {
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: rgb( 0, 0, 0 );
-    text-align: justifyLeft;
-    /*
-    position: absolute;
-    left: 41.6630555555556cm;
-    top: 49.3183333333333cm;
-    z-index: 266;
-    */
-    width: 2.963cm;
-    height: 0.847cm;
+    
+    position: relative;
+    right: 0px;
+    top:0px;
+    width: 60%;
   }
 
   /*.Búsquedas_recientes*/
   .third_bloque_texto {
-    font-size: 0.635cm;
+    font-size: 100%;
     font-family: "Verdana";
-    /*
-    text-align: center;
-    position: absolute;
-    left: 10.8302777777778cm;
-    top: 51.6466666666667cm;
-    width: 6.526cm;
-    height: 0.67cm;
-    z-index: 294;
-    */
+    margin-bottom: 5px;
   }
 
   /*.Lo___comprado*/
-  .caja_gris_carteles {
-    font-size: 0.434cm;
+ .caja_gris_carteles {
+    font-size: 100%;
+    margin-bottom: 5px;
     font-family: "Verdana";
-    /*
-    font-size: 0.564cm;
-    text-align: center;
-    position: absolute;
-    width: 4.516cm;
-    left: 11.1477777777778cm;
-    height: 0.6cm;
-    top: 68.1213888888889cm;
-    z-index: 339;
-    */
+    font-weight: bold;
   }
   
   /*._4Impuestos_4Formas_de_pago_4Entrega_y_envío_4Ga*/
   .caja_gris_plecas {
-    font-size: 0.388cm;
+    font-size: 100%;
     color: rgb( 0, 0, 0 );
     text-align: justifyLeft;
-    /*
-    line-height: 2.183;
-    font-family: "Webdings";
-    width: 5.362cm;
-    position: absolute;
-    left: 16.5805555555556cm;
-    top: 69.215cm;
-    height: 4.621cm;
-    z-index: 342;
-    */
   }
 
 
   /*.Rectangle_12*/
   .bloque_gris {
     background-color: rgb( 240, 238, 238 );
-    height: 7.761cm;
-    width: 35.595cm;
-    /*
-    position: absolute;
-    left: 10.372cm;
-    top: 67.557cm;
-    z-index: 331;
-    */
+    padding-bottom: 10px;
+    padding-top: 7px;
+  }
+
+  .bloque_gris table td:last-child {
+    width: 20%;
+  }
+
+  
+
+  .bloque_gris table td {
+    padding-top: 10px !important;
+    margin-top: 10px !important;
+    padding-left: 10px;
+    vertical-align: top !important;
   }
   
   /*.Los_precios_de_venta_no_incluyen_el_I_V_A_ni_la*/
@@ -140,31 +110,16 @@
     font-family: "Verdana";
     color: rgb( 84, 83, 83 );
     text-align: center;
-    /*
-    position: absolute;
-    left: 22.4366666666667cm;
-    top: 75.7061111111111cm;
-    z-index: 332;
-    height: 0.423cm;
-    width: 11.395cm;
-    */
   }
   
   /*.Copyright_©_2013_Xatem__Todos_los_derechos_rese*/
   .Copyright {
-    font-size: 0.353cm;
+    font-size: 70%;
     font-family: "Verdana";
     color: rgb( 84, 83, 83 );
-    line-height: 2.399;
+    line-height: 2;
     text-align: center;
-    /*
-    width: 10.16cm;
-    height: 0.353cm;
-    position: absolute;
-    left: 23.0716666666667cm;
-    top: 77.7169444444444cm;
-    z-index: 333;
-    */
+    padding: 10px;
   }
   
 
@@ -174,15 +129,6 @@
     color: rgb( 109, 109, 109 );
     line-height: 1.715;
     text-align: justifyCenter;
-    /*
-    font-size: 0.494cm;
-    position: absolute;
-    left: 22.225cm;
-    top: 62.5122222222222cm;
-    width: 10.195cm;
-    height: 3.775cm;
-    z-index: 379;
-    */
   }
 
   /*
@@ -190,4 +136,22 @@
     font-size: 0.47cm;
   }
   */
+
   
+  @media screen and (max-width:700px)
+  {
+      .third_bloque_texto{
+          text-align: left !important;
+          margin-top: 15px;
+      } 
+      
+      .caja_gris_carteles {
+        margin-top: 15px;
+      }
+      
+      .bloque_gris div[class^="col-"] 
+      { 
+        padding-left: 50px;
+        margin-bottom: 10px;
+      }
+  }

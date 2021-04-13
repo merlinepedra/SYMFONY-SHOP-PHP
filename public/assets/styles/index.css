@@ -73,21 +73,12 @@ tbody tr:nth-child(odd) td {
 
   /*.novedades*/
   .novedades_texto {
-    font-size: 0.659cm;
+    font-size: 100%;
     font-family: "Verdana";
     font-weight: bold;
     text-align: right;
     -moz-transform: matrix( 0, -1.30262564375489, 1.28373996945883, 0, 0, 0);
     -webkit-transform: matrix( 0, -1.30262564375489, 1.28373996945883, 0, 0, 0);
-    /*
-    color: rgb( 255, 255, 255 );
-    position: absolute;
-    left: 18.9088888888889cm;
-    top: 10.795cm;
-    z-index: 241;
-    */
-    width: 0.67cm;
-    height: 4.586cm;
   } 
 
 

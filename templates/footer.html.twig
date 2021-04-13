@@ -14,10 +14,10 @@
             </span> 
             es el Multiprecio o todo a cien más grande de Internet!</p>
         <div class="row">
-            <div class="col-md-6  col-xs-9 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo <span class="selected_words">consequat</span>. Duis autem vel eum iriure dolor in hendrerit in <span class="selected_words">vulputate</span> velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
             </div>
-            <div class="col-md-6  col-xs-9 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
+            <div class="col-md-6 Lorem_ipsum_dolor_sit_amet__consectetuer_adipis">
                 Lorem <span class="selected_words">ipsum dolor sit amet</span>, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <span class="selected_words">tation ullamcorper</span> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <span class="selected_words">accumsan</span> et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
             </div>
         </div>
@@ -29,10 +29,10 @@
             <span style="color: rgb( 237, 109, 37 );">X</span>atem
         </span> ?</p>
 
-        <div class="row">
+        <div class="row listaBolitas">
             {% for i in 1..6 %}
-            <div class="col-md-2  col-xs-3">
-                <span><img src="{{ asset('exact_images/bolita.png') }}"></span>
+            <div class="col-md-2">
+                <img src="{{ asset('exact_images/bolita.png') }}">
                 <span class="Lorem_ipsum__cortico">Lorem ipsum  dolor sit amet</span>
             </div>
             {% endfor %}
@@ -41,15 +41,15 @@
 
     <div id="tercer_bloque_footer" class="container-fluid">
         <div class="row">
-            <div class="col-md-4  col-xs-6">
+            <div class="col-md-4">
                 <p class="third_bloque_texto" style="text-align: left;">
                     Búsquedas recientes</p>
             </div>
-            <div class="col-md-4  col-xs-6">
+            <div class="col-md-4">
                 <p class="third_bloque_texto" style="text-align: center;">
                     Búsquedas populares</p>
             </div>
-            <div class="col-md-4 col-xs-6">
+            <div class="col-md-4">
                 <p class="third_bloque_texto" style="text-align: right;">
                     Etiquetas populares</p>
             </div>
@@ -57,9 +57,171 @@
     </div>
 
     <div class="container-fluid bloque_gris">
+
+        <table style="width: 100%;" class="tableMode1">
+            <tbody>
+                <tr>
+                    <td id="lo_mas_comprado">
+                        <p class="caja_gris_carteles">Lo <span style="color: #ed6d25;">+</span> comprado</p>
         
-        <div class="row">
-            <div class="col-md-2  col-xs-3" id="lo_mas_comprado">
+                        <ul class="list-group  caja_gris_plecas">
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Manguera
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Reloj
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Regadera
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Cepillo
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Pasta termica
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Calculadora
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Aspiradora
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p class="caja_gris_carteles">Condiciones generales</p>
+        
+                        <ul class="list-group  caja_gris_plecas">
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Impuestos
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Formas de pago
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Entrega y envio
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Garantia
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Condiciones post-venta
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Politica de privacidad
+                            </li>      
+                        </ul>
+                    </td>
+                    <td>
+                        <p class="caja_gris_carteles">Venta al mayor</p>
+        
+                        <ul class="list-group  caja_gris_plecas">
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Venta al mayor - B2B
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Envio anonimo Dropshiping
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Tienda Dropshiping
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Quiere ser distribuidor?
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Preguntas frecuentes FAQs
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Import - Export
+                            </li>      
+                        </ul>
+                    </td>
+                    <td>
+                        <p class="caja_gris_carteles">Atencion al cliente</p>
+        
+                        <ul class="list-group  caja_gris_plecas">
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Sobre nosotros
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Como comprar?
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Registrarse
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Mi cuenta
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Mis pedidos
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-caret-right"></i>
+                                Contactenos
+                            </li>      
+                        </ul>
+                    </td>
+                    <td>
+                        <div>
+                            <p class="caja_gris_carteles">Redes sociales</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <img src="{{ asset('exact_images/facebook.png') }}">
+                                    <i class="fa fa-caret-right"></i>
+                                    Facebook
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="{{ asset('exact_images/la_que_sea.png') }}">
+                                    <i class="fa fa-caret-right"></i>
+                                    La que sea
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="{{ asset('exact_images/twitter.png') }}">
+                                    <i class="fa fa-caret-right"></i>
+                                    Twitter
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="caja_gris_carteles">Pagos seguros</p>
+                            <figure>
+                                <img src="{{ asset('exact_images/pagos1.png') }}">
+                                <img src="{{ asset('exact_images/pagos2.png') }}">
+                                <img src="{{ asset('exact_images/pagos3.png') }}">
+                            </figure>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="row tableMode2">
+            <div class="col-md-2" id="lo_mas_comprado">
                 <p class="caja_gris_carteles">Lo <span style="color: #ed6d25;">+</span> comprado</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -93,7 +255,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 ">
+            <div class="col-md-2">
                 <p class="caja_gris_carteles">Condiciones generales</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -123,7 +285,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-2  col-xs-3">
+            <div class="col-md-3">
                 <p class="caja_gris_carteles">Venta al mayor</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -153,7 +315,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-2  col-xs-3">
+            <div class="col-md-2">
                 <p class="caja_gris_carteles">Atencion al cliente</p>
 
                 <ul class="list-group  caja_gris_plecas">
@@ -183,7 +345,7 @@
                     </li>      
                 </ul>
             </div>
-            <div class="col-md-3 ">
+            <div class="col-md-3">
                 <div>
                     <p class="caja_gris_carteles">Redes sociales</p>
                     <ul class="list-group">

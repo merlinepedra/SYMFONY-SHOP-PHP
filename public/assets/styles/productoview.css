@@ -36,7 +36,7 @@
    padding: 0px !important;
 
 
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: #6d6966;
   }
@@ -68,20 +68,11 @@
     font-family: "Verdana";
     font-weight: normal;
     font-size: small;
-    /*
-    text-align: justifyLeft;
-    position: absolute;
-    left: 37.8177777777778cm;
-    top: 13.6877777777778cm;
-    width: 2.505cm;
-    height: 0.353cm;
-    z-index: 121;
-    */
   }
 
   /*.Precio*/
   .descuentos_header_texto {
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: rgb( 254, 128, 58 );
     line-height: 2.002;
@@ -90,23 +81,16 @@
 
   /*.Descuentos_para_compras_de_más_de_1_unidad*/
   #encabezado_texto {
-    font-size: 0.403cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: rgb( 128, 128, 128 );
   }
 
   /*.Lorem_ipsum_dolor_sit_amet__consectetuer_adipis*/
   .descripcion_texto {
-    font-size: 0.423cm;
+    font-size: 100%;
     font-family: "Verdana";
     color: rgb( 0, 0, 0 );
-    text-align: justifyLeft;
-    position: absolute;
-    left: 29.8802777777778cm;
-    top: 22.8952777777778cm;
-    width: 15.522cm;
-    height: 3.986cm;
-    z-index: 109;
   } 
   
   ._32_05_€ {
@@ -118,7 +102,7 @@
   
 
   #Productos_similares {
-    font-size: 0.494cm;
+    font-size: 100%;
     font-family: "Verdana";
     font-weight: bold;
     line-height: 1.285;
@@ -127,7 +111,7 @@
 
 /*.Agregar_a_carrito_Ú*/
 .agregar_al_carrito_texto {
-  font-size: 0.494cm;
+  font-size: 100%;
   font-family: "Verdana";
   color: rgb( 251, 251, 251 );
   line-height: 1.715;
@@ -143,11 +127,5 @@
   background-image: -webkit-linear-gradient( 90deg, rgb( 237, 109, 37 ) 0%, rgb( 251, 176, 96 ) 100%);
   height: 1.446cm;
   width: 8.361cm;
-  /*
-  position: absolute;
-  left: 34.043cm;
-  top: 15.663cm;
-  z-index: 94;
-  */
 }
   
