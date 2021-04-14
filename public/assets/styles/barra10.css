@@ -37,7 +37,7 @@
   }
 
 
-@media screen and (max-width:400px)
+@media screen and (max-width:500px)
 { 
   #visualizacion_listado ul li{
     display: list-item;
@@ -46,6 +46,11 @@
 
   #visualizacion_listado ul{
     padding-left: 5px;
+  }
+
+  #visualizacion_listado ul
+  {
+    text-align: center;
   }
 }
 
