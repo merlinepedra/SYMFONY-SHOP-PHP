@@ -22,6 +22,41 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class IndexController extends AbstractController
 {
+    public function tabla_bootstrap($collection)
+    {
+        //$filas = (count($collection)/$cols) + 1;
+        $filas = count($collection);
+        $cols = 5;
+        
+        $response = "";
+        for ($i=0; $i < $filas; $i++) { 
+            $columnas = "";
+            $precios = "";
+            for ($j=0; $j < $cols; $j++) { 
+                $index = $cols*$i + $j;
+                if($index > count($collection) - 1) break;
+                $p = $collection[$index];
+                $nombre = $p->getNombre();
+                $color = $p->getFotos()[0];
+                $id = $p->getId();
+                $precio = $p->getPrecioUnidad();
+
+                
+                $columnas .= "
+                <div class='col-sm-12 col-md-2 col-lg-2'>
+                    <div class='index-box p-5' data-color='$color'></div>
+                    <p><a class='pname' href='productoView/$id'>$nombre</a></p>
+                    <span class='precio'>$precio.00 $</span>
+                </div>";
+                $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
+            }
+            $response .= "<div class='row justify-content-end' style='padding: 0px !important; margin:0px !important'>$columnas</div>";
+            if($index > count($collection) - 1) break;
+        }
+        //return new Response("<div class='container-fluid'>$response</div>");
+        return new Response($response);
+    }
+
     public function tabla($collection, $cols)
     {
         //$filas = (count($collection)/$cols) + 1;

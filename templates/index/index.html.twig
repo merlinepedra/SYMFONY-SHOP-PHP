@@ -16,36 +16,26 @@
 
 <ul id="todosLosProductos" style="list-style-type: none; padding-left: 10px;">
         {% if novedades %}
-        <li class='container-fluid'>
-        <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
-                <div class="col-0 texto-vertical">
-                        <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
-                                
-                        </span>
-                        <a class="h6 font-weight-light ver-mas">
-                                ver
-                                <br>
-                                <i class="fas fa-plus"></i>
-                        </a>
+        <li>
+                <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
+                        <div class="col-0 texto-vertical">
+                                <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
+                                        
+                                </span>
+                                <a class="h6 font-weight-light ver-mas">
+                                        ver
+                                        <br>
+                                        <i class="fas fa-plus"></i>
+                                </a>
+                        </div>
+                        <div class="col-md-10 col-lg-10  ">
+                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': novedades})) }}
+                        </div>
                 </div>
-                <div class="col-10">
-                        <table class="table tableMode1">
-                                <tbody>
-                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':5})) }}
-                                </tbody>
-                        </table>
-                        
-                        <table class="table tableMode2">
-                                <tbody>
-                                        {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': novedades, 'cols':1})) }}
-                                </tbody>
-                        </table> 
-                </div>
-        </div>
         </li>
         {% endif %}
         {% if populares %}
-        <li class='container-fluid'>
+        <li>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
                         <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="populares_section">
@@ -57,24 +47,14 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-10">
-                                <table class="table tableMode1">
-                                        <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':5})) }}
-                                        </tbody>
-                                </table>
-                                
-                                <table class="table tableMode2">
-                                        <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': populares, 'cols':1})) }}
-                                        </tbody>
-                                </table>
+                        <div class="col-md-10 col-lg-10  ">
+                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': populares})) }}
                         </div>
                 </div>
         </li>
         {% endif %}
         {% if valorados %}
-        <li class=' container-fluid'>
+        <li>
                 <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
                         <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="valorados_section">
@@ -86,18 +66,8 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-10">
-                                <table class="table tableMode1">
-                                        <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols': 5})) }}
-                                        </tbody>
-                                </table>  
-
-                                <table class="table tableMode2">
-                                        <tbody>
-                                                {{ render(controller('App\\Controller\\IndexController::tabla', {'collection': valorados, 'cols':1})) }}
-                                        </tbody>
-                                </table>  
+                        <div class="col-md-10 col-lg-10  ">
+                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': valorados})) }}
                         </div>
                 </div>
         </li>

@@ -133,56 +133,17 @@
                 </div>
         </div>
 
-        <div class="container" style="padding-left: 0px !important; padding-bottom: 20px !important;">
+        <div class="container-fluid" style="padding-left: 0px !important; padding-bottom: 20px !important;">
                 <p id="Productos_similares">Productos similares</p>
-                <table class="similares_table tableMode1">
-                        <tbody>
-                                {% set colores = ['brown', 'khaki', 'red', 'blue', 'green'] %}
-                                <tr>
-                                {#
-                                        {% for color in colores %}
-                                        <td>
-                                                <div class="similares_box" style="color: {{color}};"></div>
-                                                <p>Reloj Orient B-678542-D Cro. Acero 200m</p>
-                                                <p class="precio h3">0000.0 $</p>
-                                        </td>
-                                        {% endfor %}
-                                #}
-                                
-
-                                {% for i in 1..5 %}
-                                <td>
-                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
-                                </td>
-                                {% endfor %}
-                                </tr>
-                        </tbody>
-                </table>
-
-                <table class="similares_table tableMode2">
-                        <tbody>
-                              <tr>
-                                {% for i in 1..2 %}
-                                <td>
-                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
-                                </td>
-                                {% endfor %}
-                              </tr>
-                              <tr>
-                                {% for i in 1..2 %}
-                                <td>
-                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
-                                </td>
-                                {% endfor %}
-                              </tr> 
-                              <tr>
-                                <td>
-                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
-                                </td>
-                              </tr>  
-                        </tbody>
-                </table>
                 
+
+                <div class="row">
+                        {% for i in 1..5 %}
+                                <div class="col-sm-12 col-md-2 col-lg-2">
+                                        <img src="{{ asset('exact_images/Layer_7.png') }}">
+                                </div>
+                        {% endfor %}
+                </div>                
         </div>
 
 

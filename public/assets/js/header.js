@@ -12,8 +12,7 @@ var resize_mastercard = function(){
   $('.mastercard_img').each(function(index, element){
     var visa_width = $(this).next('img').width()
     var visa_heigth = $(this).next('img').height()
-    console.log('visa width: ', visa_width)
-    console.log('visa heigth: ', visa_heigth)
+    
     $(this).css('width', visa_width)
     $(this).css('height', visa_heigth)
   })
