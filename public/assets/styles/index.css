@@ -18,14 +18,14 @@ tbody tr:nth-child(odd) td {
     font-size: 100%;
 }
 
-@media screen and (max-width:1000px) and (min-width:768px)
+@media screen and (max-width:1000px) and (min-width:767px)
 {
   .pname{
       font-size: 50%;
   }
 }
 
-@media screen and (max-width:700px) 
+@media screen and (max-width:767px) 
 {
   .pname{
       font-size: 50%;

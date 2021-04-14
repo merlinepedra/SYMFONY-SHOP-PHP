@@ -1,6 +1,9 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~@fortawesome/fontawesome-free/css/v4-shims.css";
 
+body{
+    overflow-x: hidden;
+}
 
 body, .jumbotron {
     background-color: white;
@@ -81,16 +84,22 @@ ul.listaDeElementos{
     display: none;
 }
 
+.misdividers{
+    display: inline;
+}
 
-
-@media screen and (max-width:1000px) and (min-width:700px)
+@media screen and (max-width:1000px) and (min-width:767px)
 {
     .precio{
         font-size: 100%;
     }
 }
 
-@media screen and (max-width:700px)  {
+@media screen and (max-width:767px)  {
+    .misdividers{
+        display: none;
+    }
+
     #mainContent{
         padding-left: 0px !important;
     }

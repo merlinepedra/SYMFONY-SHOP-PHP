@@ -144,8 +144,11 @@
   }
 
   
-  @media screen and (max-width:700px)
+  @media screen and (max-width:767px)
   {
+    footer{
+      text-align: center;
+    }
     .listaBolitas img{
       width: 10%;
     }

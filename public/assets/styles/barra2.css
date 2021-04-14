@@ -5,17 +5,25 @@
     color: white !important;
   }
 
-  @media screen and (max-width:700px) {
+  @media screen and (max-width:767px) {
     .navbar {
-        position: relative;
-        padding-left: 4px;
-        padding-right: 4px;
+      padding-left: 4px;
+      padding-right: 4px;
+      
+      /*position: relative;*/
+      text-align: center;
+      display: inherit;
     }
 
+
+
     .nav-item{
+      text-align: center;
+
+      /*
       display: block;
-      text-align: left;
       float: none;
       position: relative;
+      */
     }  
   }
