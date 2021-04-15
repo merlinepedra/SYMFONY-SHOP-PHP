@@ -16,19 +16,13 @@ tbody tr:nth-child(odd) td {
     text-align: center;
     font-weight: normal;
     font-size: 100%;
+    line-height: 15px;
 }
 
 @media screen and (max-width:1000px) and (min-width:767px)
 {
   .pname{
-      font-size: 50%;
-  }
-}
-
-@media screen and (max-width:767px) 
-{
-  .pname{
-      font-size: 50%;
+      font-size: 70%;
   }
 }
 

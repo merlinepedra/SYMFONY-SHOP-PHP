@@ -148,5 +148,9 @@
   #titulo_producto{
     font-size: 180%;
   }
+
+  #product_details{
+    text-align: center;
+  }
 }
   

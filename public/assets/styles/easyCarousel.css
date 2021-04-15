@@ -10,12 +10,14 @@
     float: left;
 }
 
+/*
 .carousel-control{
-    width: 4%;
+    width: 1%;
 }
+*/
 
 .carousel{
-    width: 100%;
+    width: 80%;
     /*
     left: 0;
     position:relative;*/

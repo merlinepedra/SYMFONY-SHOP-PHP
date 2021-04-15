@@ -17,7 +17,7 @@
 <ul id="todosLosProductos" style="list-style-type: none; padding-left: 10px;">
         {% if novedades %}
         <li>
-                <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
+                <div class="row my-2 mx-1" style="border: 1px solid rgb( 224, 224, 224 );">
                         <div class="col-0 texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="novedades_section">
                                         
@@ -28,7 +28,7 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-md-10 col-lg-10  ">
+                        <div class="col-10">
                                 {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': novedades})) }}
                         </div>
                 </div>
@@ -36,7 +36,7 @@
         {% endif %}
         {% if populares %}
         <li>
-                <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
+                <div class="row my-2 mx-1" style="border: 1px solid rgb( 224, 224, 224 );">
                         <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="populares_section">
                                         
@@ -47,7 +47,7 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-md-10 col-lg-10  ">
+                        <div class="col-10">
                                 {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': populares})) }}
                         </div>
                 </div>
@@ -55,7 +55,7 @@
         {% endif %}
         {% if valorados %}
         <li>
-                <div class="row" style="border: 1px solid rgb( 224, 224, 224 ); margin-bottom: 20px;">
+                <div class="row my-2 mx-1" style="border: 1px solid rgb( 224, 224, 224 );">
                         <div class="col-0  texto-vertical">
                                 <span class="h5 font-weight-normal categoriaCarteles" id="valorados_section">
                                         
@@ -66,7 +66,7 @@
                                         <i class="fas fa-plus"></i>
                                 </a>
                         </div>
-                        <div class="col-md-10 col-lg-10  ">
+                        <div class="col-10">
                                 {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': valorados})) }}
                         </div>
                 </div>

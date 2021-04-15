@@ -53,36 +53,3 @@
     text-align: center;
   }
 }
-
-
-
-
-/* Custom select */
-#visualizacion_listado .dropdown-menu li{
-  display: block;
-  width: 100%;
-  text-align: left;
-}
-
-#visualizacion_listado .dropdown-menu{
-  padding: 5px;
-  width: 60%;
-}
-
-#visualizacion_listado .dropdown a{
-  text-decoration: none;
-
-}
-
-#visualizacion_listado .dropdown-toggle .selectorValue{
-  border: 2px solid #b6b1b1;
-  color: rgb( 176, 82, 13 );
-  font-family: "Verdana";
-  padding: 8px;
-}
-
-
-.dropdown-toggle::after {
-  /*display:none;*/
-  color: rgb( 237, 109, 37 );
-}

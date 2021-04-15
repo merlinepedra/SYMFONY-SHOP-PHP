@@ -43,14 +43,14 @@ class IndexController extends AbstractController
 
                 
                 $columnas .= "
-                <div class='col-sm-12 col-md-2 col-lg-2'>
+                <div class='col-sm-12 col-md-2 col-lg-2 mx-2'>
                     <div class='index-box p-5' data-color='$color'></div>
                     <p><a class='pname' href='productoView/$id'>$nombre</a></p>
                     <span class='precio'>$precio.00 $</span>
                 </div>";
                 $precios .= "<td><p class='precio h3 font-weight-bolder'>$precio.00 $</p></td>";
             }
-            $response .= "<div class='row justify-content-end' style='padding: 0px !important; margin:0px !important'>$columnas</div>";
+            $response .= "<div class='row justify-content-end py-3'>$columnas</div>";
             if($index > count($collection) - 1) break;
         }
         //return new Response("<div class='container-fluid'>$response</div>");

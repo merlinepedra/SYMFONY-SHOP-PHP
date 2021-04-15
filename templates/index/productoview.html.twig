@@ -15,9 +15,10 @@
 {% block body %}
 {% if producto %}
 
+<div id="product_details">
         <div class="row" style="border-bottom: 1px solid rgb( 224, 224, 224 ); padding-bottom: 10px; margin-bottom: 15px; margin-top: 30px;">
-                <span class="col-md-9" id="titulo_producto">{{ producto.nombre }}</span>
-                <div class="col-md-2">
+                <span class="col-md-8" id="titulo_producto">{{ producto.nombre }}</span>
+                <div class="col-md-3">
                         <span id="ref_no" style="margin-left: 10px; position: absolute; right: 5px; bottom: 5px;">(Referencia: {{producto.id}})</span>
                 </div>
         </div>
@@ -27,26 +28,33 @@
                         {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %} 
                 </div>
                 <div class="col-md-8 ">
-                        <ul class="list-group">
-                                <li class="list-group-item">
-                                        <div style="float: left;">
-                                                <p class="carteles_producto_texto">Precio:</p>
-                                                <p class='h4 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
-                                                <p class='precio h2'>{{ producto.preciounidad }}.00 $</p>
-                                        </div> 
-                                        <div style="float: right;"><img src="{{ asset('exact_images/redes_sociales.png') }}"></div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div style="float: left;">
-                                                <span class="carteles_producto_texto">Elige tu inicial</span>
-                                                <img src="{{ asset('exact_images/help.png') }}">
-                                                <select>
+                        <div class="row row-cols-sm-1 row-cols-md-2">
+                                <div class="col my-3 mx-auto">
+                                        <p class="carteles_producto_texto">Precio:</p>
+                                        <p class='h4 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
+                                        <p class='precio' style="font-size: 200% !important;">{{ producto.preciounidad }}.00 $</p>
+                                </div>
+                                <div class="col my-3 mx-auto">
+                                        <img src="{{ asset('exact_images/redes_sociales.png') }}">
+                                </div>
+                                <div class="col my-3 mx-auto">
+                                        <span class="carteles_producto_texto">Elige tu inicial</span>
+                                        <img style="vertical-align:auto;" src="{{ asset('exact_images/help.png') }}">
+                                        
+                                        <div class="dropdown midropdownSelect my-1" style="display: inline;">
+                                                <a class="dropdown-toggle" role="button" data-toggle="dropdown">
+                                                        <span class='selectorValue'>A</span>       
+                                                </a>
+                                                <ul class="dropdown-menu">
                                                         {% for x in 'A'..'Z' %}
-                                                        <option>{{x}}</option>
+                                                        <li><a href="#">{{x}}</a></li>
                                                         {% endfor %}
-                                                </select>
+                                                </ul>
                                         </div>
-                                        <div class="calificacion" style="float: right;">
+
+                                </div>
+                                <div class="col my-3 mx-auto">
+                                        <div class="calificacion">
                                                 <p class="carteles_producto_texto">Calificación:</p>
                                                 {% for i in 1..5 %}
                                                         <figure>
@@ -55,7 +63,9 @@
                                                         </figure>
                                                 {% endfor %}
                                         </div>
-                                </li>
+                                </div>
+                        </div>
+                        <ul class="list-group">
                                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                
                                 <li class="list-group-item" id="formulario">
                                         {{ form_start(form, {'method': 'post'}) }}
@@ -123,7 +133,7 @@
                                         </li>
                         </ul>
                 </div>
-                <div id="comentario_barra" style="float: left; padding-left: 10px;">
+                <div id="comentario_barra" style="float: left; padding-left: 10px; padding-right: 5px;">
                         <ul id="barra_inferior" style="list-style: none;">
                                 <li><span><span style="font-weight:500; color: #ff8038;">0</span> Comentarios</span></li>
                                 <li><span style="border-right: 2px solid black; width: 1px; margin-left: 10px; margin-right: 10px;"></span></li>
@@ -145,6 +155,7 @@
                         {% endfor %}
                 </div>                
         </div>
+</div>
 
 
 {% else %}

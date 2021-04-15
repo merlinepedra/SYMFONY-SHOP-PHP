@@ -7,8 +7,8 @@
 {% endblock %}
 
 
-<div class="container-fluid my-4">
-  <div class='other-box' style="border: 1px solid rgb( 224, 224, 224 ); background-color: {{fotos[0]}};"></div>
+<div class="container-fluid">
+  <div class='other-box px-5 py-5 text-center' style="width: 60%; border: 1px solid rgb( 224, 224, 224 ); background-color: {{fotos[0]}};"></div>
   <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
@@ -18,7 +18,7 @@
 
     {% if slidersCount > 1 %}
     <!--Controls-->
-    <div class="carousel-controls">
+    <div class="carousel-controls mx-auto">
       <a class="carousel-control carousel-control-prev" href="#multi-item-example" data-slide="prev">
         <i class="fa fa-chevron-left"></i>
       </a>
@@ -38,7 +38,7 @@
     <!--/.Indicators-->
 
     <!--Slides-->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner mx-auto" role="listbox">
       <!--First slide-->
       {% for i in 0..(slidersCount - 1) %}
       <div class="carousel-item">
@@ -47,7 +47,7 @@
               {% set index = (i*toShow) + j %}
               {% if index < fotos|length %}
               <li>
-                <div class="box" style="background-color: {{fotos[index]}};"></div>
+                <div class="box p-3 m-2" style="background-color: {{fotos[index]}};"></div>
               </li>
               {% endif %}
             {% endfor %}

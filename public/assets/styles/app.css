@@ -69,7 +69,7 @@ ul.listaDeElementos{
   .index-box {
     box-shadow: 3px 8px 6px #888888;
     clear: both;
-}
+    }
 
 /*Responsive*/
 * {
@@ -88,14 +88,19 @@ ul.listaDeElementos{
     display: inline;
 }
 
-@media screen and (max-width:1000px) and (min-width:767px)
+@media screen and (max-width:1025px) and (min-width:766px)
 {
-    .precio{
-        font-size: 100%;
+    #todosLosProductos .precio{
+        font-size: 80%;
     }
 }
 
 @media screen and (max-width:767px)  {
+    .index-box {
+        width: 60%;
+        margin-top: 10px;
+    }
+
     .misdividers{
         display: none;
     }
@@ -108,10 +113,6 @@ ul.listaDeElementos{
         padding-left: 0px !important;
         margin-left: 3px !important;
     }
-
-    table .precio{
-        font-size: 80%;
-    }
     
     .tableMode1{
         display:none;
@@ -120,4 +121,35 @@ ul.listaDeElementos{
     .tableMode2{
         display: block;
     }
+  }
+
+
+/* Custom select */
+.midropdownSelect .dropdown-menu li{
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .midropdownSelect .dropdown-menu{
+    padding: 5px;
+    width: 60%;
+  }
+  
+  .midropdownSelect .dropdown a{
+    text-decoration: none;
+  
+  }
+  
+  .midropdownSelect .dropdown-toggle .selectorValue{
+    border: 2px solid #b6b1b1;
+    color: rgb( 176, 82, 13 );
+    font-family: "Verdana";
+    padding: 8px;
+  }
+  
+  
+  .midropdownSelect .dropdown-toggle::after {
+    /*display:none;*/
+    color: rgb( 237, 109, 37 );
   }
