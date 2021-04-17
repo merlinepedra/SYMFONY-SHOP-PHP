@@ -12,6 +12,30 @@
         <script src="{{asset('assets/js/index.js')}}" defer></script>
 {% endblock %}
 
+{% macro tabla_bootstrap(collection, cols = 6) %}
+        {% set break = false %}
+        {% for i in 0..collection|length %}
+                {% if not break %}
+                <div class='row py-3'>
+                        {% for j in  0..cols-1 %}
+                                {% if not break %}
+                                        {% set  index = cols*i + j %}
+                                        {% if index == collection|length - 1 %}
+                                                {% set break = true %}
+                                        {% endif %}
+                                        {% set thisProduct = collection[index] %}
+                                        <div class='col-sm-12 col-md-2 col-lg-2'>
+                                                <div class='index-box p-5' data-color='{{thisProduct.fotos[0]}}'></div>
+                                                <p><a class='pname' href='productoView/{{thisProduct.id}}'>{{thisProduct.nombre}}</a></p>
+                                                <span class='precio'>{{thisProduct.precioUnidad}}.00 $</span>
+                                        </div>
+                                {% endif %}
+                        {% endfor %}
+                </div>
+                {% endif %}
+        {% endfor %}
+{% endmacro %}
+
 {% block body %}
 
 <ul id="todosLosProductos" style="list-style-type: none; padding-left: 10px;">
@@ -29,7 +53,7 @@
                                 </a>
                         </div>
                         <div class="col-10">
-                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': novedades})) }}
+                                {{_self.tabla_bootstrap(novedades)}}
                         </div>
                 </div>
         </li>
@@ -48,7 +72,7 @@
                                 </a>
                         </div>
                         <div class="col-10">
-                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': populares})) }}
+                                {{_self.tabla_bootstrap(populares)}}
                         </div>
                 </div>
         </li>
@@ -67,7 +91,7 @@
                                 </a>
                         </div>
                         <div class="col-10">
-                                {{ render(controller('App\\Controller\\IndexController::tabla_bootstrap', {'collection': valorados})) }}
+                                {{_self.tabla_bootstrap(valorados)}}
                         </div>
                 </div>
         </li>
