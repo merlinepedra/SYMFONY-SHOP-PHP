@@ -20,7 +20,7 @@ class Orden
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="ordens")
+     * @ORM\ManyToOne(targetEntity=Usuario::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $usuario;

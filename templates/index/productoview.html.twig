@@ -28,20 +28,20 @@
                         {% include 'index/easyCarousel.html.twig' with {'fotos': producto.fotos} %} 
                 </div>
                 <div class="col-md-8 ">
-                        <div class="row row-cols-sm-1 row-cols-md-2">
-                                <div class="col my-3 mx-auto">
+                        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
+                                <div class="col-sm-8 col-md-4 col-lg-4 my-3 mx-3 px-0">
                                         <p class="carteles_producto_texto">Precio:</p>
                                         <p class='h4 _32_05_€'>{{ producto.preciounidad + 20 }}.00 $</p>
                                         <p class='precio' style="font-size: 200% !important;">{{ producto.preciounidad }}.00 $</p>
                                 </div>
-                                <div class="col my-3 mx-auto">
+                                <div class="col my-3 mx-sm-3 mx-md-0 mx-lg-0">
                                         <img src="{{ asset('exact_images/redes_sociales.png') }}">
                                 </div>
-                                <div class="col my-3 mx-auto">
+                                <div class="col my-3 mx-sm-3 mx-md-0 mx-lg-0">
                                         <span class="carteles_producto_texto">Elige tu inicial</span>
                                         <img style="vertical-align:auto;" src="{{ asset('exact_images/help.png') }}">
                                         
-                                        <div class="dropdown midropdownSelect my-1" style="display: inline;">
+                                        <div class="dropdown midropdownSelect" style="display: inline-block; margin: 10px;">
                                                 <a class="dropdown-toggle" role="button" data-toggle="dropdown">
                                                         <span class='selectorValue'>A</span>       
                                                 </a>
@@ -53,7 +53,7 @@
                                         </div>
 
                                 </div>
-                                <div class="col my-3 mx-auto">
+                                <div class="col my-3 mx-sm-3 mx-md-0 mx-lg-0">
                                         <div class="calificacion">
                                                 <p class="carteles_producto_texto">Calificación:</p>
                                                 {% for i in 1..5 %}

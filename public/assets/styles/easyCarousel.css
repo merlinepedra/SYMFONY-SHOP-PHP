@@ -7,7 +7,12 @@
 
 .carousel-item li {
     display: inline;
-    float: left;
+    /*float: left;*/
+}
+
+.carousel-item li .box{
+    display:inline-flex;
+    /*float: left;*/
 }
 
 /*
@@ -16,24 +21,15 @@
 }
 */
 
-.carousel{
-    width: 80%;
-    /*
-    left: 0;
-    position:relative;*/
-}
-
 .other-box {
     /*
-    top: 20px;
-    */
     position: relative;
     left: 10px;
-    /*
+    top: 20px;
     height: 200px;
     width: 200px;
     */
-    margin: 20px;
+    margin-bottom: 20px;
     box-shadow: 3px 8px 6px #888888;
     clear: both;
 }
@@ -44,7 +40,7 @@
     height: 80px;
     position: relative;
     */
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 2px 8px 6px #888888;
     clear: both;
 }
 
@@ -55,4 +51,11 @@
     /*
     background-color: gray;
     */
+}
+
+@media screen and (max-width:767px)
+{
+    #elCarrusel{
+        width: 60%;
+    }
 }

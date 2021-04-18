@@ -7,10 +7,10 @@
 {% endblock %}
 
 
-<div class="container-fluid">
-  <div class='other-box px-5 py-5 text-center' style="width: 60%; border: 1px solid rgb( 224, 224, 224 ); background-color: {{fotos[0]}};"></div>
+<div class="container-fluid" id="elCarrusel">
+  <div class='other-box p-5' style="border: 1px solid rgb( 224, 224, 224 ); background-color: {{fotos[0]}};"></div>
   <!--Carousel Wrapper-->
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+  <div id="multi-item-example" class="carousel slide carousel-multi-item mx-auto" data-ride="carousel">
 
     {% set toShow = 3 %}
     {% set div = fotos|length is divisible by(toShow) ? 0 : 1 %}
@@ -42,7 +42,7 @@
       <!--First slide-->
       {% for i in 0..(slidersCount - 1) %}
       <div class="carousel-item">
-          <ul>
+          <ul class="px-4">
             {% for j in 0..(toShow - 1) %}
               {% set index = (i*toShow) + j %}
               {% if index < fotos|length %}

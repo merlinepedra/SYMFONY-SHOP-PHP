@@ -97,7 +97,7 @@ ul.listaDeElementos{
 
 @media screen and (max-width:767px)  {
     .index-box {
-        width: 60%;
+        /*width: 60%;*/
         margin-top: 10px;
     }
 
@@ -126,7 +126,7 @@ ul.listaDeElementos{
 
 /* Custom select */
 .midropdownSelect .dropdown-menu li{
-    display: block;
+    /*display: block;*/
     width: 100%;
     text-align: left;
   }
