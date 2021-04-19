@@ -68,3 +68,37 @@
     color: rgb( 255, 255, 255 ) !important;
     text-shadow: 0.018cm 0.031cm 0.03527777777778cm rgb( 0, 0, 0 );
   }
+
+
+  @media screen and (max-width:1117px) and (min-width:986px)
+  {
+      .cantidad_texto{
+          font-size: 60%;
+      }
+
+      #_0000_00_€, #_1{
+        font-size: 68%;
+      }
+  }
+
+  @media screen and (max-width:986px) and (min-width:877px)
+  {
+      .cantidad_texto{
+          font-size: 50%;
+      }
+
+      #_0000_00_€, #_1{
+        font-size: 58%;
+      }
+  }
+
+  @media screen and (max-width:877px) and (min-width:768px)
+  {
+      .cantidad_texto{
+          font-size: 40%;
+      }
+
+      #_0000_00_€, #_1{
+        font-size: 47%;
+      }
+  }
