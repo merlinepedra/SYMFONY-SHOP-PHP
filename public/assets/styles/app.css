@@ -67,8 +67,14 @@ ul.listaDeElementos{
   }
 
   .index-box {
-    box-shadow: 3px 8px 6px #888888;
-    clear: both;
+        box-shadow: 3px 8px 6px #888888;
+        clear: both;
+    }
+
+    .index-box::after {
+        content: "";
+        display:inline-flex;
+        padding-bottom: 100%;
     }
 
 /*Responsive*/
@@ -97,7 +103,6 @@ ul.listaDeElementos{
 
 @media screen and (max-width:767px)  {
     .index-box {
-        /*width: 60%;*/
         margin-top: 10px;
     }
 

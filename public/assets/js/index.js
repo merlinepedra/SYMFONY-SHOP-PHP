@@ -1,23 +1,5 @@
 //import '../styles/index.css'
 
-
-
-var resize_boxes = function(){
-    var parentWidth = $('#todosLosProductos').width()
-    //var value = (parentWidth/5) - (parentWidth/30) - (parentWidth/300)
-    var value = (parentWidth/5) - 40
-    $('#todosLosProductos .tableMode1 .index-box').css('width', value)
-    $('#todosLosProductos .tableMode1 .index-box').css('height', value)
-
-    var value = (parentWidth/2) - (parentWidth/5)
-
-    $('#todosLosProductos .tableMode2 .index-box').css('width', value)
-    $('#todosLosProductos .tableMode2 .index-box').css('height', value)
-}
-
-$(window).resize(resize_boxes);
-$(window).on('load', resize_boxes);
-
 $('.categoriaCarteles').each( function(index, element ){
     if($(this).attr('id') == 'novedades_section')
     {
@@ -55,24 +37,3 @@ $('.categoriaCarteles').each( function(index, element ){
         $(this).parent('div').addClass('mejor_valorados_fondo')
     }
 });
-
-$('.index-box').each(function(index, element){
-    var color = $(this).data('color')
-    $(this).css('background-color', color)
-});
-
-
-/*
-$('.pname').each(function(index, element){
-    var imageWidth = $(this).closest('.index-box').width
-    $(this).css('max-width', imageWidth-5)
-});
-
-$('tbody tr:nth-child(1) .precio').each(function(index, element){
-    var obw = $('.index-box').height()
-    var labels = $('tbody tr:nth-child(1) .precio').height()
-    console.log(Math.max(labels))
-    $(this).css('position', 'absolute')
-    $(this).css('top', obw + Math.max(labels) + 100)
-})
-*/
